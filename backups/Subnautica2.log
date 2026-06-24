@@ -1,218 +1,218 @@
-[2026.06.17-06.29.16:535][437]LogUIActionRouter: Display: Applying input config for leaf-most node [WBP_SaveBeforeExitScreen_C_2147245748]
-[2026.06.17-06.29.16:535][438]LogUIActionRouter: Display: UIInputConfig being changed. bForceRefresh: 0
-[2026.06.17-06.29.16:535][438]LogUIActionRouter: Display: 	InputMode: Previous (ECommonInputMode::Menu), New (ECommonInputMode::All)
-[2026.06.17-06.29.16:535][438]LogUIActionRouter: Display: [User 0] Leaf-most node [WBP_SaveBeforeExitScreen_C_2147245748] did not set focus through desired methods, but the currently focused widget is acceptable. Doing nothing, but this widget should be updated.
-[2026.06.17-06.29.17:876][518]LogSaveSystem: UUWESaveCommunicationComponent::TriggerAsyncSaveGame_Implementation called for checkpoint DefaultSaveGame
-[2026.06.17-06.29.18:177][536]LogGlobalStatus: UEngine::Browse Started Browse: "/Game/Maps/L_ClientLobby?MenuReturnReason=Quit"
-[2026.06.17-06.29.18:177][536]LogNet: Browse: /Game/Maps/L_ClientLobby?MenuReturnReason=Quit
-[2026.06.17-06.29.18:177][536]LogLoadingScreen: Showing loading screen when 'IsShowingInitialLoadingScreen()' is false.
-[2026.06.17-06.29.18:177][536]LogLoadingScreen: bCurrentlyInLoadMap is true
-[2026.06.17-06.29.18:177][536]LogStreaming: Display: FlushAsyncLoading(29580): 1 QueuedPackages, 0 AsyncPackages
-[2026.06.17-06.29.18:181][536]LogRHI: ShaderPipelineCache: Batch mode changed (1): Size: 1 -> 50, Time: 0.000000 -> 16.000000
-[2026.06.17-06.29.18:181][536]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
-[2026.06.17-06.29.18:182][536]LogLoadingScreen: Loading screen showing: 1. Reason: bCurrentlyInLoadMap is true
-[2026.06.17-06.29.18:182][536]LogLoadingScreen: Showing loading screen when 'IsShowingInitialLoadingScreen()' is false.
-[2026.06.17-06.29.18:182][536]LogLoadingScreen: bCurrentlyInLoadMap is true
-[2026.06.17-06.29.18:183][536]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
-[2026.06.17-06.29.18:184][536]LogLoadingScreen: Loading screen showing: 1. Reason: bCurrentlyInLoadMap is true
-[2026.06.17-06.29.18:185][536]LogLoad: LoadMap: /Game/Maps/L_ClientLobby?MenuReturnReason=Quit
-[2026.06.17-06.29.18:185][536]LogWorld: BeginTearingDown for /Game/Maps/Main/L_Main
-[2026.06.17-06.29.18:188][536]LogWindowManager: OnWidgetRemoved: Removing MainScreen
-[2026.06.17-06.29.18:532][536]LogSN2: ROLE_Authority: ASN2BaseCharacter::UnPossessed | Character: BP_Character_01_C_2147480323
-[2026.06.17-06.29.18:532][536]LogSN2: RemoveCurrentMappingContext: IMC_PlayerCharacter with priority 0
-[2026.06.17-06.29.18:532][536]LogSN2: RemoveAddedMappingContexts: IMC_BuilderEquipped with priority 0
-[2026.06.17-06.29.18:532][536]LogUWEAbility: AbilityInput: SetupInputComponent None
-[2026.06.17-06.29.18:533][536]LogSN2: ROLE_Authority - BP_Character_01_C_2147480323: EndPlay | Reason: EEndPlayReason::Destroyed
-[2026.06.17-06.29.18:534][536]LogInventory: Error: RemoveInventory will not remove inventory 12 (BP_Character_01_C_2147480323) which has 4 items. The caller must empty the inventory before destroying the actor.
-[2026.06.17-06.29.18:534][536]LogInventory: AUWEBaseItem: Unequipping BP_Fins_C_2147480308 of type Basic Fins
-[2026.06.17-06.29.18:535][536]LogUWEAnalytics: Warning: RecordPlayerEvent called without a player! Ensure a valid Pawn, PlayerState or PlayerController is passed in.
-[2026.06.17-06.29.18:535][536]LogInventory: AUWEBaseItem: Unequipping BP_OxygenTank_Small_C_2147480304 of type Standard Air Tank
-[2026.06.17-06.29.18:535][536]LogSaveSystem: Error: Calling store for BP_OxygenTank_Small_C_2147480304 when SaveHandle is invalid or has been reset. Are you trying to Store in EndPlay?
-[2026.06.17-06.29.18:535][536]LogSN2: ASN2OxygenTank::OnUnequipped store OxygenLevel: 30.000000, set player max oxygen to 45.000000
-[2026.06.17-06.29.18:536][536]LogUWEAnalytics: Warning: RecordPlayerEvent called without a player! Ensure a valid Pawn, PlayerState or PlayerController is passed in.
-[2026.06.17-06.29.18:536][536]LogInventory: AUWEBaseItem: Unequipping BP_Builder_C_2147472955 of type Habitat Builder
-[2026.06.17-06.29.18:536][536]LogEquipment: Energy Tool BP_Builder_C_2147472955 was unequipped by BP_Character_01_C_2147480323
-[2026.06.17-06.29.18:536][536]LogEquipment: Setting energy on dropped tool to 92.00 from owner
-[2026.06.17-06.29.18:537][536]LogSaveSystem: Error: Calling store for BP_Builder_C_2147472955 when SaveHandle is invalid or has been reset. Are you trying to Store in EndPlay?
-[2026.06.17-06.29.18:537][536]LogUWEAnalytics: Warning: RecordPlayerEvent called without a player! Ensure a valid Pawn, PlayerState or PlayerController is passed in.
-[2026.06.17-06.29.18:538][536]LogAbilitySystem: Warning: GameplayCueNotify_Actor GC_Player_Exit_Water_latent_C_2147461521 has active latent actions (Delays, etc) when it was recycled.
-[2026.06.17-06.29.18:540][536]LogUWE: Logout : Player BP_SN2PlayerController_C_2147480344 is exiting | Class=ASN2WorldGameMode Function=Logout Line=294 NetID=Role=ROLE_Authority NetMode=Standalone Version=0.10.3 
-[2026.06.17-06.29.18:540][536]LogGameMode: Deactivate Player Controller: ROLE_Authority
-[2026.06.17-06.29.18:540][536]LogSaveSystem: Warning: Saving a pointer to a non-asset BP_DeepPlayerStart_C_UAID_548D5A201FC9C6FC01_2080715229 is not supported
-[2026.06.17-06.29.18:540][536]LogSaveSystem: Releasing save handles for player id 256
-[2026.06.17-06.29.18:540][536]LogGameplayMessage: ForwardMessageToRecipients Channel=GameplayMessage.HUDMessage.Notify, String=(Severity=(TagName="Notify.Severity.Warning"),LocalizedMessageKey="PlayerHasLeft",LocalizedMessageStringTableID="/Game/StringTables/ST_Game.ST_Game",TextArgs=(INVTEXT("chub"))), Sender=0, ReceiverPlayerIds=1
-[2026.06.17-06.29.18:540][536]LogGameplayMessage: ForwardMessageToClient_Implementation
-[2026.06.17-06.29.18:540][536]LogGameplayMessage: MessageReceivedInternal Channel=GameplayMessage.HUDMessage.Notify, String=(Severity=(TagName="Notify.Severity.Warning"),LocalizedMessageKey="PlayerHasLeft",LocalizedMessageStringTableID="/Game/StringTables/ST_Game.ST_Game",TextArgs=(INVTEXT("chub"))), Sender=0
-[2026.06.17-06.29.18:541][536]LogUObjectGlobals: Warning: Failed to find object 'InputAction None.'
-[2026.06.17-06.29.18:542][536]LogUWE: [BP_SN2PlayerState_C_2147480343] Removing player state BP_SN2PlayerState_C_2147480343 from team view model | Class=USN2TeamViewModel Function=RemovePlayerState Line=119 NetID=Role=ROLE_Authority NetMode=Standalone Version=0.10.3 
-[2026.06.17-06.29.18:559][536]LogGameMode: ASN2WorldGameMode::EndPlay
-[2026.06.17-06.29.18:559][536]LogSaveSystem: Deinitialize save system
-[2026.06.17-06.29.18:732][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:783][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:783][536]LogWorldPartition: UWorldPartition::Uninitialize : World = /Game/Maps/Main/L_Main.L_Main
-[2026.06.17-06.29.18:785][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:785][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:804][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:804][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:820][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:820][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:837][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:837][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:853][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:853][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:870][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:870][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:886][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:886][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:903][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:903][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:922][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:922][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:938][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:938][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:954][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:954][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:970][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:971][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.18:986][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.18:986][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:002][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:002][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:017][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:017][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:033][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:033][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:048][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:048][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:064][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:064][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:079][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:079][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:094][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:094][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:110][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:110][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:125][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:125][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:140][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:140][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:155][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:155][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:170][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:170][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:186][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:186][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:201][536]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.19:201][536]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.19:404][536]LogAudio: Display: Audio Device unregistered from world 'None'.
-[2026.06.17-06.29.20:126][536]LogRenderer: Forcing update for all mesh draw commands: SkyLight real-time capture change
-[2026.06.17-06.29.20:261][536]LogUObjectHash: Compacting FUObjectHashTables data took   6.20ms
-[2026.06.17-06.29.20:392][536]LogShaderLibrary: Warning: Spent 22.51 ms in a blocking wait for shader preload, NumRefs: 31, FramePreloadStarted: 143537, CurrentFrame: 143537
-[2026.06.17-06.29.20:392][536]LogShaderLibrary: Warning: Spent 9.98 ms in a blocking wait for shader preload, NumRefs: 2, FramePreloadStarted: 143537, CurrentFrame: 143537
-[2026.06.17-06.29.20:392][536]LogShaderLibrary: Warning: Spent 19.49 ms in a blocking wait for shader preload, NumRefs: 40, FramePreloadStarted: 143537, CurrentFrame: 143537
-[2026.06.17-06.29.20:392][536]LogShaderLibrary: Warning: Spent 19.28 ms in a blocking wait for shader preload, NumRefs: 40, FramePreloadStarted: 143537, CurrentFrame: 143537
-[2026.06.17-06.29.20:392][536]LogShaderLibrary: Warning: Spent 19.70 ms in a blocking wait for shader preload, NumRefs: 45, FramePreloadStarted: 143537, CurrentFrame: 143537
-[2026.06.17-06.29.20:392][536]LogShaderLibrary: Warning: Spent 22.86 ms in a blocking wait for shader preload, NumRefs: 14, FramePreloadStarted: 143537, CurrentFrame: 143537
-[2026.06.17-06.29.20:392][536]LogShaderLibrary: Warning: Spent 22.73 ms in a blocking wait for shader preload, NumRefs: 14, FramePreloadStarted: 143537, CurrentFrame: 143537
-[2026.06.17-06.29.20:458][536]LogStaticMesh: [SM_BO_CG_RockBoulderSmall_01a] Mesh is marked for CPU read.
-[2026.06.17-06.29.20:507][536]LogAudio: Display: Audio Device (ID: 1) registered with world 'L_ClientLobby'.
-[2026.06.17-06.29.20:525][536]LogUWEAmbienceSound: UUWEAmbienceSoundSubsystem::Initialize: Loaded Ambience Sound: BP_BaseInterior_AmbienceSound_C_2147245535
-[2026.06.17-06.29.20:525][536]LogUWEAmbienceSound: UUWEAmbienceSoundSubsystem::Initialize: Loaded Ambience Sound: BP_Submerged_AmbienceSound_C_2147245534
-[2026.06.17-06.29.20:525][536]LogUWEAmbienceSound: UUWEAmbienceSoundSubsystem::Initialize: Loaded Ambience Sound: BP_Surface_AmbienceSound_C_2147245533
-[2026.06.17-06.29.20:525][536]LogUWEAmbienceSound: UUWEAmbienceSoundSubsystem::Initialize: Loaded Ambience Sound: BP_TadpoleInterior_AmbienceSound_C_2147245532
-[2026.06.17-06.29.20:526][536]LogUWEAmbienceSound: UUWEAmbienceSoundSubsystem::Initialize: Loaded Ambience Sound: BP_TridentInterior_AmbienceSound_C_2147245531
-[2026.06.17-06.29.20:534][536]LogLoad: Game class is 'BP_ClientLobbyGameMode_C'
-[2026.06.17-06.29.20:554][536]LogWorld: Bringing World /Game/Maps/L_ClientLobby.L_ClientLobby up for play (max tick rate 120) at 2026.06.16-23.29.20
-[2026.06.17-06.29.20:565][536]LogWorld: Bringing up level for play took: 0.030792
-[2026.06.17-06.29.20:566][536]LogSN2: GetGameLoginOptions returning '?SonarPlayerId=1470665020?PlatformUserId=76561198797039235?PlatformProvider=STEAM'
-[2026.06.17-06.29.20:566][536]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
-[2026.06.17-06.29.20:566][536]LogUWESmoketest: Adding Smoketest component to UWEFrontendPlayerController_2147245186
-[2026.06.17-06.29.20:567][536]LogMovieScene: Starting new camera cut: 'CineCameraActor_26'
-[2026.06.17-06.29.20:570][536]LogSN2Weather: Weather is now enabled
-[2026.06.17-06.29.20:570][536]r.VolumetricCloud.ShadowMap.MaxResolution = "1024"
-[2026.06.17-06.29.20:572][536]LogUWEGameplay: Game Instance has been notified that Game Mode BP_ClientLobbyGameMode_C_2147245482 is ready
-[2026.06.17-06.29.20:599][536]LogTemp: Turned off Nvidia Reflex
-[2026.06.17-06.29.20:600][536]LogUWECrashWatchdog: Warning: Lobby mark does not exist upon lobby reached
-[2026.06.17-06.29.20:600][536]LogUWEAnalytics: Init
-[2026.06.17-06.29.20:600][536]LogUWEAnalytics: Already initialized
-[2026.06.17-06.29.20:601][536]LogLoad: Took 2.416212 seconds to LoadMap(/Game/Maps/L_ClientLobby)
-[2026.06.17-06.29.20:601][536]LogGlobalStatus: UEngine::LoadMap Load map complete /Game/Maps/L_ClientLobby
-[2026.06.17-06.29.20:602][536]LogNiagara: Warning: Invalid system handle in export data interface callback, skipping
-[2026.06.17-06.29.20:602][536]LogNiagara: Warning: Invalid system handle in export data interface callback, skipping
-[2026.06.17-06.29.20:605][536]LogUWEFrontend: [JoinTraceUI] TickPendingInvites state -> NoInviteProcessingInCurrentState FrontendState=0
-[2026.06.17-06.29.20:649][536]LogUIActionRouter: Display: Applying input config for leaf-most node [WBP_LoadingScreen_C_2147245609]
-[2026.06.17-06.29.20:649][536]LogUIActionRouter: Display: UIInputConfig being changed. bForceRefresh: 1
-[2026.06.17-06.29.20:649][536]LogUIActionRouter: Display: 	InputMode: Previous (None), New (ECommonInputMode::All)
-[2026.06.17-06.29.20:649][536]LogViewport: Display: Player bShowMouseCursor Changed, False -> True
-[2026.06.17-06.29.20:649][537]LogUIActionRouter: Display: [User 0] No focus target for leaf-most node [WBP_LoadingScreen_C_2147245609], and the widget isn't focusable - focusing the game viewport.
-[2026.06.17-06.29.20:649][537]LogUIActionRouter: Display: Applying input config for leaf-most node [WBP_LoadingScreen_C_2147245607]
-[2026.06.17-06.29.20:649][537]LogUIActionRouter: Display: [User 0] No focus target for leaf-most node [WBP_LoadingScreen_C_2147245607], and the widget isn't focusable - focusing the game viewport.
-[2026.06.17-06.29.20:653][537]LogUWEImGuiWindowManager: Not opening saved diagnostic windows because this is not a development build.
-[2026.06.17-06.29.20:661][537]LogRenderer: Forcing update for all mesh draw commands: SkyLight change
-[2026.06.17-06.29.20:742][543]LogRenderer: Forcing update for all mesh draw commands: SkyLight real-time capture change
-[2026.06.17-06.29.21:248][584]LogLoadingScreen: Loading screen showing: 1. Reason: Keeping loading screen up for an additional 1.00 seconds to allow texture streaming
-[2026.06.17-06.29.21:248][584]LogLoadingScreen: Loading screen showing: 1. Reason: Keeping loading screen up for an additional 1.00 seconds to allow texture streaming
-[2026.06.17-06.29.21:703][624]LogLoadingScreen: Hiding loading screen when 'IsShowingInitialLoadingScreen()' is false.
-[2026.06.17-06.29.21:703][624]LogLoadingScreen: (nothing wants to show it anymore)
-[2026.06.17-06.29.21:703][624]LogRHI: ShaderPipelineCache: Batch mode changed (0): Size: 50 -> 1, Time: 16.000000 -> 0.000000
-[2026.06.17-06.29.21:703][624]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
-[2026.06.17-06.29.21:703][624]LogWindowManager: RegisterLayer: Layer 1
-[2026.06.17-06.29.21:703][624]LogWindowManager: RegisterLayer: Layer 3
-[2026.06.17-06.29.21:704][624]LogWindowManager: RegisterLayer: Layer 4
-[2026.06.17-06.29.21:704][624]LogWindowManager: RegisterLayer: Layer 5
-[2026.06.17-06.29.21:704][624]LogWindowManager: RegisterLayer: Layer 6
-[2026.06.17-06.29.21:704][624]LogWindowManager: RegisterLayer: Layer 7
-[2026.06.17-06.29.21:704][624]LogWindowManager: ConstructMainScreenIfNeeded: Created
-[2026.06.17-06.29.21:704][624]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.21:704][624]LogWindowManager: SetWidgetOnLayer: Layer 1 Widget WBP_ClientLobbyHUD_C
-[2026.06.17-06.29.21:704][624]LogStreaming: Display: FlushAsyncLoading(30095): 1 QueuedPackages, 0 AsyncPackages
-[2026.06.17-06.29.21:704][624]LogWindowManager: SetWidgetOnLayer: Layer 3 Widget WBP_MainLobbyScreen_C
-[2026.06.17-06.29.21:717][624]LogLoadingScreen: LoadingScreen was visible for 3.53s
-[2026.06.17-06.29.21:717][624]LogLoadingScreen: Hiding loading screen when 'IsShowingInitialLoadingScreen()' is false.
-[2026.06.17-06.29.21:717][624]LogLoadingScreen: (nothing wants to show it anymore)
-[2026.06.17-06.29.21:718][624]LogFMOD: Warning: Failed to stop event instance
-[2026.06.17-06.29.21:718][624]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
-[2026.06.17-06.29.21:718][624]LogLoadingScreen: LoadingScreen was visible for 3.54s
-[2026.06.17-06.29.21:721][624]LogUIActionRouter: Display: Applying input config for leaf-most node [WBP_ClientLobbyHUD_C_2147244464]
-[2026.06.17-06.29.21:721][624]LogUIActionRouter: Display: UIInputConfig being changed. bForceRefresh: 1
-[2026.06.17-06.29.21:721][624]LogUIActionRouter: Display: 	InputMode: Previous (None), New (ECommonInputMode::All)
-[2026.06.17-06.29.21:721][624]LogUIActionRouter: Display: [User 0] No focus target for leaf-most node [WBP_ClientLobbyHUD_C_2147244464], and the widget isn't focusable - focusing the game viewport.
-[2026.06.17-06.29.21:721][624]LogUIActionRouter: Display: Applying input config for leaf-most node [WBP_MainLobbyScreen_C_2147244457]
-[2026.06.17-06.29.21:721][624]LogUIActionRouter: Display: [User 0] Focused desired target PlaySinglePlayerButton
-[2026.06.17-06.29.21:723][625]LogUWEFrontend: [JoinTraceUI] TickPendingInvites state -> Menu_NoPendingInvite FrontendState=2 SessionID='<none>' StartHandled=0
-[2026.06.17-06.29.23:314][721]LogEOSSDK: LogEOSRTC: TickTracker Tick is delayed. TimePeriod=[10.024612s]  TickIntervalThreshold=[0.100000s] MaxTickInterval=[2.537703s] MaxExecutionTime=[0.000025s] TicksCount=[118] ExpectedTicksCount=[1002]
-[2026.06.17-06.29.25:412][847]Closing by request
-[2026.06.17-06.29.25:412][847]LogWindows: FPlatformMisc::RequestExit(0, UGameEngine::HandleExitCommand)
-[2026.06.17-06.29.25:412][847]LogWindows: FPlatformMisc::RequestExitWithStatus(0, 0, UGameEngine::HandleExitCommand)
-[2026.06.17-06.29.25:412][847]LogCore: Engine exit requested (reason: Win RequestExit)
-[2026.06.17-06.29.25:416][848]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)
-[2026.06.17-06.29.25:428][848]LogInit: Display: PreExit Game.
-[2026.06.17-06.29.25:429][848]LogWorld: BeginTearingDown for /Game/Maps/L_ClientLobby
-[2026.06.17-06.29.25:430][848]LogWindowManager: OnWidgetRemoved: Removing MainScreen
-[2026.06.17-06.29.25:434][848]LogUWEAnalytics: Shutdown
-[2026.06.17-06.29.25:435][848]LogOnline: OSS: Created online subsystem instance for: GPP
-[2026.06.17-06.29.25:435][848]LogUWEAnalytics: Logging out of GPP
-[2026.06.17-06.29.25:436][848]LogSonar: Deinitializing Subsystem
-[2026.06.17-06.29.25:436][848]LogSonar: [SonarReconnect] EndSonarSession restart=0 initialized=1 inStartup=0 restartCount=0 updateTimerActive=1 startTimerActive=0 refreshTimerActive=1
-[2026.06.17-06.29.25:437][848]LogSonarAPI: Warning: Attempting to create an http request without being logged in /api/v1/player/logout
-[2026.06.17-06.29.25:437][848]LogWorld: UWorld::CleanupWorld for L_ClientLobby, bSessionEnded=true, bCleanupResources=true
-[2026.06.17-06.29.25:440][848]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
-[2026.06.17-06.29.26:083][848]LogBlueprintUserMessages: [WBP_CompilingShadersScreen_C_2147480838] *** DECONSTRUCT
-[2026.06.17-06.29.26:085][848]LogSentrySdk: Verbose: sending envelope
-[2026.06.17-06.29.26:085][848]LogSentrySdk: Verbose: submitting task to background worker thread
-[2026.06.17-06.29.26:085][848]LogSentrySdk: Verbose: shutting down backend
-[2026.06.17-06.29.26:085][848]LogSentrySdk: Verbose: shutting down transport
-[2026.06.17-06.29.26:085][848]LogSentrySdk: Verbose: shutting down background worker thread
-[2026.06.17-06.29.26:085][848]LogSentrySdk: Verbose: submitting task to background worker thread
-[2026.06.17-06.29.26:085][848]LogSentrySdk: Verbose: executing task on worker thread
-[2026.06.17-06.29.26:085][848]LogSentrySdk: Verbose: sending request using winhttp to "https://o1251021.ingest.us.sentry.io:443/api/4511196504522752/envelope/":
+[2026.06.23-06.04.06:255][533]LogSN2: ASN2Fabricator::ClearProxyCraftCue - Removing Gameplay Cue for fabricating item
+[2026.06.23-06.04.07:229][584]LogWindowManager: Display: UWindowManager::PushToLayer 5, WBP_EscapeMenu_C
+[2026.06.23-06.04.07:235][584]LogWindowManager: PushToLayer: Layer 5 Widget WBP_EscapeMenu_C
+[2026.06.23-06.04.07:246][584]LogUIActionRouter: Display: Applying input config for leaf-most node [WBP_EscapeMenu_C_2147462471]
+[2026.06.23-06.04.07:246][584]LogUIActionRouter: Display: UIInputConfig being changed. bForceRefresh: 0
+[2026.06.23-06.04.07:246][584]LogUIActionRouter: Display: 	InputMode: Previous (ECommonInputMode::All), New (ECommonInputMode::Menu)
+[2026.06.23-06.04.07:246][584]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> NoCapture
+[2026.06.23-06.04.07:247][584]LogViewport: Display: Viewport HideCursorDuringCapture Changed, True -> False
+[2026.06.23-06.04.07:247][584]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> DoNotLock
+[2026.06.23-06.04.07:247][584]LogViewport: Display: Player bShowMouseCursor Changed, False -> True
+[2026.06.23-06.04.07:247][584]LogUIActionRouter: Display: [User 0] Focused desired target WBP_RoundedButton_BackToGame
+[2026.06.23-06.04.07:247][585]LogCommonUI: User[0] focus changed while the cursor is captured - releasing now before moving cursor to focused widget.
+[2026.06.23-06.04.09:648][729]LogWindowManager: Display: UWindowManager::PushToLayer 5, WBP_SaveBeforeExitScreen_C
+[2026.06.23-06.04.09:650][729]LogWindowManager: PushToLayer: Layer 5 Widget WBP_SaveBeforeExitScreen_C
+[2026.06.23-06.04.09:656][729]LogUIActionRouter: Display: Applying input config for leaf-most node [WBP_SaveBeforeExitScreen_C_2147462351]
+[2026.06.23-06.04.09:656][730]LogUIActionRouter: Display: UIInputConfig being changed. bForceRefresh: 0
+[2026.06.23-06.04.09:656][730]LogUIActionRouter: Display: 	InputMode: Previous (ECommonInputMode::Menu), New (ECommonInputMode::All)
+[2026.06.23-06.04.09:657][730]LogUIActionRouter: Display: [User 0] Leaf-most node [WBP_SaveBeforeExitScreen_C_2147462351] did not set focus through desired methods, but the currently focused widget is acceptable. Doing nothing, but this widget should be updated.
+[2026.06.23-06.04.10:915][805]LogGlobalStatus: UEngine::Browse Started Browse: "/Game/Maps/L_ClientLobby?MenuReturnReason=Quit"
+[2026.06.23-06.04.10:915][805]LogNet: Browse: /Game/Maps/L_ClientLobby?MenuReturnReason=Quit
+[2026.06.23-06.04.10:915][805]LogLoadingScreen: Showing loading screen when 'IsShowingInitialLoadingScreen()' is false.
+[2026.06.23-06.04.10:915][805]LogLoadingScreen: bCurrentlyInLoadMap is true
+[2026.06.23-06.04.10:915][805]LogStreaming: Display: FlushAsyncLoading(18425): 1 QueuedPackages, 0 AsyncPackages
+[2026.06.23-06.04.10:919][805]LogRHI: ShaderPipelineCache: Batch mode changed (1): Size: 1 -> 50, Time: 0.000000 -> 16.000000
+[2026.06.23-06.04.10:919][805]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
+[2026.06.23-06.04.10:922][805]LogLoadingScreen: Loading screen showing: 1. Reason: bCurrentlyInLoadMap is true
+[2026.06.23-06.04.10:922][805]LogLoadingScreen: Showing loading screen when 'IsShowingInitialLoadingScreen()' is false.
+[2026.06.23-06.04.10:922][805]LogLoadingScreen: bCurrentlyInLoadMap is true
+[2026.06.23-06.04.10:922][805]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
+[2026.06.23-06.04.10:924][805]LogLoadingScreen: Loading screen showing: 1. Reason: bCurrentlyInLoadMap is true
+[2026.06.23-06.04.10:925][805]LogLoad: LoadMap: /Game/Maps/L_ClientLobby?MenuReturnReason=Quit
+[2026.06.23-06.04.10:925][805]LogWorld: BeginTearingDown for /Game/Maps/Main/L_Main
+[2026.06.23-06.04.10:927][805]LogWindowManager: OnWidgetRemoved: Removing MainScreen
+[2026.06.23-06.04.11:382][805]LogSN2: ROLE_Authority: ASN2BaseCharacter::UnPossessed | Character: BP_Character_01_C_2147479664
+[2026.06.23-06.04.11:382][805]LogSN2: RemoveCurrentMappingContext: IMC_PlayerCharacter with priority 0
+[2026.06.23-06.04.11:382][805]LogSN2: RemoveAddedMappingContexts: IMC_BuilderEquipped with priority 0
+[2026.06.23-06.04.11:382][805]LogUWEAbility: AbilityInput: SetupInputComponent None
+[2026.06.23-06.04.11:382][805]LogSN2: ROLE_Authority - BP_Character_01_C_2147479664: EndPlay | Reason: EEndPlayReason::Destroyed
+[2026.06.23-06.04.11:384][805]LogInventory: Error: RemoveInventory will not remove inventory 12 (BP_Character_01_C_2147479664) which has 4 items. The caller must empty the inventory before destroying the actor.
+[2026.06.23-06.04.11:385][805]LogInventory: AUWEBaseItem: Unequipping BP_Fins_C_2147479649 of type Basic Fins
+[2026.06.23-06.04.11:385][805]LogUWEAnalytics: Warning: RecordPlayerEvent called without a player! Ensure a valid Pawn, PlayerState or PlayerController is passed in.
+[2026.06.23-06.04.11:386][805]LogInventory: AUWEBaseItem: Unequipping BP_OxygenTank_Small_C_2147479645 of type Standard Air Tank
+[2026.06.23-06.04.11:386][805]LogSaveSystem: Error: Calling store for BP_OxygenTank_Small_C_2147479645 when SaveHandle is invalid or has been reset. Are you trying to Store in EndPlay?
+[2026.06.23-06.04.11:386][805]LogSN2: ASN2OxygenTank::OnUnequipped store OxygenLevel: 30.000000, set player max oxygen to 45.000000
+[2026.06.23-06.04.11:387][805]LogUWEAnalytics: Warning: RecordPlayerEvent called without a player! Ensure a valid Pawn, PlayerState or PlayerController is passed in.
+[2026.06.23-06.04.11:387][805]LogInventory: AUWEBaseItem: Unequipping BP_Builder_C_2147472051 of type Habitat Builder
+[2026.06.23-06.04.11:387][805]LogEquipment: Energy Tool BP_Builder_C_2147472051 was unequipped by BP_Character_01_C_2147479664
+[2026.06.23-06.04.11:387][805]LogEquipment: Setting energy on dropped tool to 92.00 from owner
+[2026.06.23-06.04.11:388][805]LogSaveSystem: Error: Calling store for BP_Builder_C_2147472051 when SaveHandle is invalid or has been reset. Are you trying to Store in EndPlay?
+[2026.06.23-06.04.11:388][805]LogUWEAnalytics: Warning: RecordPlayerEvent called without a player! Ensure a valid Pawn, PlayerState or PlayerController is passed in.
+[2026.06.23-06.04.11:389][805]LogUWE: Logout : Player BP_SN2PlayerController_C_2147479685 is exiting | Class=ASN2WorldGameMode Function=Logout Line=294 NetID=Role=ROLE_Authority NetMode=Standalone Version=0.10.3 
+[2026.06.23-06.04.11:389][805]LogGameMode: Deactivate Player Controller: ROLE_Authority
+[2026.06.23-06.04.11:389][805]LogSaveSystem: Warning: Saving a pointer to a non-asset BP_DeepPlayerStart_C_UAID_548D5A201FC9C6FC01_2080715229 is not supported
+[2026.06.23-06.04.11:389][805]LogSaveSystem: Releasing save handles for player id 256
+[2026.06.23-06.04.11:390][805]LogGameplayMessage: ForwardMessageToRecipients Channel=GameplayMessage.HUDMessage.Notify, String=(Severity=(TagName="Notify.Severity.Warning"),LocalizedMessageKey="PlayerHasLeft",LocalizedMessageStringTableID="/Game/StringTables/ST_Game.ST_Game",TextArgs=(INVTEXT("chub"))), Sender=0, ReceiverPlayerIds=1
+[2026.06.23-06.04.11:390][805]LogGameplayMessage: ForwardMessageToClient_Implementation
+[2026.06.23-06.04.11:390][805]LogGameplayMessage: MessageReceivedInternal Channel=GameplayMessage.HUDMessage.Notify, String=(Severity=(TagName="Notify.Severity.Warning"),LocalizedMessageKey="PlayerHasLeft",LocalizedMessageStringTableID="/Game/StringTables/ST_Game.ST_Game",TextArgs=(INVTEXT("chub"))), Sender=0
+[2026.06.23-06.04.11:390][805]LogUObjectGlobals: Warning: Failed to find object 'InputAction None.'
+[2026.06.23-06.04.11:391][805]LogUWE: [BP_SN2PlayerState_C_2147479684] Removing player state BP_SN2PlayerState_C_2147479684 from team view model | Class=USN2TeamViewModel Function=RemovePlayerState Line=119 NetID=Role=ROLE_Authority NetMode=Standalone Version=0.10.3 
+[2026.06.23-06.04.11:402][805]LogGameMode: ASN2WorldGameMode::EndPlay
+[2026.06.23-06.04.11:402][805]LogSaveSystem: Deinitialize save system
+[2026.06.23-06.04.11:408][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:447][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:447][805]LogWorldPartition: UWorldPartition::Uninitialize : World = /Game/Maps/Main/L_Main.L_Main
+[2026.06.23-06.04.11:448][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:448][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:463][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:463][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:477][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:477][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:491][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:491][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:505][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:505][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:519][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:519][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:533][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:533][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:547][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:547][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:561][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:561][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:575][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:575][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:589][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:589][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:603][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:603][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:617][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:617][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:631][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:631][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:645][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:645][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:659][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:659][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:673][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:673][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:687][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:687][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:701][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:701][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:715][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:715][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:729][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:729][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:743][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:743][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:758][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:758][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:777][805]LogWorld: UWorld::CleanupWorld for L_Main, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.11:777][805]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.11:994][805]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2026.06.23-06.04.12:627][805]LogRenderer: Forcing update for all mesh draw commands: SkyLight real-time capture change
+[2026.06.23-06.04.12:724][805]LogUObjectHash: Compacting FUObjectHashTables data took   5.66ms
+[2026.06.23-06.04.12:933][805]LogStaticMesh: [SM_BO_CG_RockBoulderSmall_01a] Mesh is marked for CPU read.
+[2026.06.23-06.04.12:969][805]LogAudio: Display: Audio Device (ID: 1) registered with world 'L_ClientLobby'.
+[2026.06.23-06.04.12:972][805]LogUWEAmbienceSound: UUWEAmbienceSoundSubsystem::Initialize: Loaded Ambience Sound: BP_BaseInterior_AmbienceSound_C_2147462140
+[2026.06.23-06.04.12:972][805]LogUWEAmbienceSound: UUWEAmbienceSoundSubsystem::Initialize: Loaded Ambience Sound: BP_Submerged_AmbienceSound_C_2147462139
+[2026.06.23-06.04.12:973][805]LogUWEAmbienceSound: UUWEAmbienceSoundSubsystem::Initialize: Loaded Ambience Sound: BP_Surface_AmbienceSound_C_2147462138
+[2026.06.23-06.04.12:973][805]LogUWEAmbienceSound: UUWEAmbienceSoundSubsystem::Initialize: Loaded Ambience Sound: BP_TadpoleInterior_AmbienceSound_C_2147462137
+[2026.06.23-06.04.12:973][805]LogUWEAmbienceSound: UUWEAmbienceSoundSubsystem::Initialize: Loaded Ambience Sound: BP_TridentInterior_AmbienceSound_C_2147462136
+[2026.06.23-06.04.12:981][805]LogLoad: Game class is 'BP_ClientLobbyGameMode_C'
+[2026.06.23-06.04.13:000][805]LogWorld: Bringing World /Game/Maps/L_ClientLobby.L_ClientLobby up for play (max tick rate 120) at 2026.06.22-23.04.13
+[2026.06.23-06.04.13:010][805]LogWorld: Bringing up level for play took: 0.029646
+[2026.06.23-06.04.13:011][805]LogSN2: GetGameLoginOptions returning '?SonarPlayerId=1470665020?PlatformUserId=76561198797039235?PlatformProvider=STEAM'
+[2026.06.23-06.04.13:011][805]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2026.06.23-06.04.13:011][805]LogUWESmoketest: Adding Smoketest component to UWEFrontendPlayerController_2147461791
+[2026.06.23-06.04.13:012][805]LogMovieScene: Starting new camera cut: 'CineCameraActor_26'
+[2026.06.23-06.04.13:015][805]LogSN2Weather: Weather is now enabled
+[2026.06.23-06.04.13:015][805]r.VolumetricCloud.ShadowMap.MaxResolution = "1024"
+[2026.06.23-06.04.13:017][805]LogUWEGameplay: Game Instance has been notified that Game Mode BP_ClientLobbyGameMode_C_2147462087 is ready
+[2026.06.23-06.04.13:043][805]LogTemp: Turned off Nvidia Reflex
+[2026.06.23-06.04.13:044][805]LogUWECrashWatchdog: Warning: Lobby mark does not exist upon lobby reached
+[2026.06.23-06.04.13:044][805]LogUWEAnalytics: Init
+[2026.06.23-06.04.13:044][805]LogUWEAnalytics: Already initialized
+[2026.06.23-06.04.13:045][805]LogLoad: Took 2.119728 seconds to LoadMap(/Game/Maps/L_ClientLobby)
+[2026.06.23-06.04.13:045][805]LogGlobalStatus: UEngine::LoadMap Load map complete /Game/Maps/L_ClientLobby
+[2026.06.23-06.04.13:045][805]LogNiagara: Warning: Invalid system handle in export data interface callback, skipping
+[2026.06.23-06.04.13:046][805]LogNiagara: Warning: Invalid system handle in export data interface callback, skipping
+[2026.06.23-06.04.13:046][805]LogNiagara: Warning: Invalid system handle in export data interface callback, skipping
+[2026.06.23-06.04.13:049][805]LogUWEFrontend: [JoinTraceUI] TickPendingInvites state -> NoInviteProcessingInCurrentState FrontendState=0
+[2026.06.23-06.04.13:095][805]LogUIActionRouter: Display: Applying input config for leaf-most node [WBP_LoadingScreen_C_2147462214]
+[2026.06.23-06.04.13:095][805]LogUIActionRouter: Display: UIInputConfig being changed. bForceRefresh: 1
+[2026.06.23-06.04.13:095][806]LogUIActionRouter: Display: 	InputMode: Previous (None), New (ECommonInputMode::All)
+[2026.06.23-06.04.13:095][806]LogViewport: Display: Player bShowMouseCursor Changed, False -> True
+[2026.06.23-06.04.13:095][806]LogUIActionRouter: Display: [User 0] No focus target for leaf-most node [WBP_LoadingScreen_C_2147462214], and the widget isn't focusable - focusing the game viewport.
+[2026.06.23-06.04.13:095][806]LogUIActionRouter: Display: Applying input config for leaf-most node [WBP_LoadingScreen_C_2147462212]
+[2026.06.23-06.04.13:095][806]LogUIActionRouter: Display: [User 0] No focus target for leaf-most node [WBP_LoadingScreen_C_2147462212], and the widget isn't focusable - focusing the game viewport.
+[2026.06.23-06.04.13:099][806]LogUWEImGuiWindowManager: Not opening saved diagnostic windows because this is not a development build.
+[2026.06.23-06.04.13:102][806]LogRenderer: Forcing update for all mesh draw commands: SkyLight change
+[2026.06.23-06.04.13:180][809]LogEOSSDK: LogEOSRTC: TickTracker Tick is delayed. TimePeriod=[10.017291s]  TickIntervalThreshold=[0.100000s] MaxTickInterval=[2.244516s] MaxExecutionTime=[0.000026s] TicksCount=[130] ExpectedTicksCount=[1001]
+[2026.06.23-06.04.13:241][812]LogRenderer: Forcing update for all mesh draw commands: SkyLight real-time capture change
+[2026.06.23-06.04.13:716][830]LogLoadingScreen: Loading screen showing: 1. Reason: Keeping loading screen up for an additional 1.00 seconds to allow texture streaming
+[2026.06.23-06.04.13:716][830]LogLoadingScreen: Loading screen showing: 1. Reason: Keeping loading screen up for an additional 1.00 seconds to allow texture streaming
+[2026.06.23-06.04.14:191][851]LogLoadingScreen: Hiding loading screen when 'IsShowingInitialLoadingScreen()' is false.
+[2026.06.23-06.04.14:191][851]LogLoadingScreen: (nothing wants to show it anymore)
+[2026.06.23-06.04.14:191][851]LogRHI: ShaderPipelineCache: Batch mode changed (0): Size: 50 -> 1, Time: 16.000000 -> 0.000000
+[2026.06.23-06.04.14:191][851]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
+[2026.06.23-06.04.14:191][851]LogWindowManager: RegisterLayer: Layer 1
+[2026.06.23-06.04.14:192][851]LogWindowManager: RegisterLayer: Layer 3
+[2026.06.23-06.04.14:192][851]LogWindowManager: RegisterLayer: Layer 4
+[2026.06.23-06.04.14:192][851]LogWindowManager: RegisterLayer: Layer 5
+[2026.06.23-06.04.14:192][851]LogWindowManager: RegisterLayer: Layer 6
+[2026.06.23-06.04.14:192][851]LogWindowManager: RegisterLayer: Layer 7
+[2026.06.23-06.04.14:192][851]LogWindowManager: ConstructMainScreenIfNeeded: Created
+[2026.06.23-06.04.14:192][851]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.14:192][851]LogWindowManager: SetWidgetOnLayer: Layer 1 Widget WBP_ClientLobbyHUD_C
+[2026.06.23-06.04.14:192][851]LogStreaming: Display: FlushAsyncLoading(18941): 1 QueuedPackages, 0 AsyncPackages
+[2026.06.23-06.04.14:993][851]LogWindowManager: SetWidgetOnLayer: Layer 3 Widget WBP_MainLobbyScreen_C
+[2026.06.23-06.04.15:011][851]LogLoadingScreen: LoadingScreen was visible for 4.09s
+[2026.06.23-06.04.15:011][851]LogLoadingScreen: Hiding loading screen when 'IsShowingInitialLoadingScreen()' is false.
+[2026.06.23-06.04.15:011][851]LogLoadingScreen: (nothing wants to show it anymore)
+[2026.06.23-06.04.15:012][851]LogFMOD: Warning: Failed to stop event instance
+[2026.06.23-06.04.15:012][851]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
+[2026.06.23-06.04.15:012][851]LogLoadingScreen: LoadingScreen was visible for 4.10s
+[2026.06.23-06.04.15:018][851]LogUIActionRouter: Display: Applying input config for leaf-most node [WBP_ClientLobbyHUD_C_2147461106]
+[2026.06.23-06.04.15:018][851]LogUIActionRouter: Display: UIInputConfig being changed. bForceRefresh: 1
+[2026.06.23-06.04.15:018][851]LogUIActionRouter: Display: 	InputMode: Previous (None), New (ECommonInputMode::All)
+[2026.06.23-06.04.15:018][851]LogUIActionRouter: Display: [User 0] No focus target for leaf-most node [WBP_ClientLobbyHUD_C_2147461106], and the widget isn't focusable - focusing the game viewport.
+[2026.06.23-06.04.15:018][851]LogUIActionRouter: Display: Applying input config for leaf-most node [WBP_MainLobbyScreen_C_2147461099]
+[2026.06.23-06.04.15:018][851]LogUIActionRouter: Display: [User 0] Focused desired target PlaySinglePlayerButton
+[2026.06.23-06.04.15:024][852]LogUWEFrontend: [JoinTraceUI] TickPendingInvites state -> Menu_NoPendingInvite FrontendState=2 SessionID='<none>' StartHandled=0
+[2026.06.23-06.04.17:171][968]Closing by request
+[2026.06.23-06.04.17:171][968]LogWindows: FPlatformMisc::RequestExit(0, UGameEngine::HandleExitCommand)
+[2026.06.23-06.04.17:171][968]LogWindows: FPlatformMisc::RequestExitWithStatus(0, 0, UGameEngine::HandleExitCommand)
+[2026.06.23-06.04.17:171][968]LogCore: Engine exit requested (reason: Win RequestExit)
+[2026.06.23-06.04.17:188][969]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)
+[2026.06.23-06.04.17:218][969]LogInit: Display: PreExit Game.
+[2026.06.23-06.04.17:220][969]LogWorld: BeginTearingDown for /Game/Maps/L_ClientLobby
+[2026.06.23-06.04.17:222][969]LogWindowManager: OnWidgetRemoved: Removing MainScreen
+[2026.06.23-06.04.17:226][969]LogUWEAnalytics: Shutdown
+[2026.06.23-06.04.17:226][969]LogOnline: OSS: Created online subsystem instance for: GPP
+[2026.06.23-06.04.17:226][969]LogUWEAnalytics: Logging out of GPP
+[2026.06.23-06.04.17:226][969]LogSonar: Deinitializing Subsystem
+[2026.06.23-06.04.17:226][969]LogSonar: [SonarReconnect] EndSonarSession restart=0 initialized=1 inStartup=0 restartCount=0 updateTimerActive=1 startTimerActive=0 refreshTimerActive=1
+[2026.06.23-06.04.17:227][969]LogSonarAPI: Warning: Attempting to create an http request without being logged in /api/v1/player/logout
+[2026.06.23-06.04.17:227][969]LogWorld: UWorld::CleanupWorld for L_ClientLobby, bSessionEnded=true, bCleanupResources=true
+[2026.06.23-06.04.17:232][969]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2026.06.23-06.04.18:098][969]LogBlueprintUserMessages: [WBP_CompilingShadersScreen_C_2147480723] *** DECONSTRUCT
+[2026.06.23-06.04.18:099][969]LogSentrySdk: Verbose: sending envelope
+[2026.06.23-06.04.18:099][969]LogSentrySdk: Verbose: submitting task to background worker thread
+[2026.06.23-06.04.18:099][969]LogSentrySdk: Verbose: shutting down backend
+[2026.06.23-06.04.18:099][969]LogSentrySdk: Verbose: executing task on worker thread
+[2026.06.23-06.04.18:099][969]LogSentrySdk: Verbose: shutting down transport
+[2026.06.23-06.04.18:099][969]LogSentrySdk: Verbose: shutting down background worker thread
+[2026.06.23-06.04.18:099][969]LogSentrySdk: Verbose: submitting task to background worker thread
+[2026.06.23-06.04.18:099][969]LogSentrySdk: Verbose: sending request using winhttp to "https://o1251021.ingest.us.sentry.io:443/api/4511196504522752/envelope/":
 x-sentry-auth:Sentry sentry_key=999ad4661303dd92b260766aa885e91f, sentry_version=7, sentry_client=sentry.native.unreal/0.11.1
 content-type:application/x-sentry-envelope
-content-length:329
+content-length:328
 
-[2026.06.17-06.29.26:181][848]LogSentrySdk: Verbose: received response:
+[2026.06.23-06.04.18:163][969]LogSentrySdk: Verbose: received response:
 HTTP/1.1 200 OK
-Date: Wed, 17 Jun 2026 06:29:26 GMT
+Date: Tue, 23 Jun 2026 06:04:19 GMT
 Via: 1.1 google
 Content-Length: 2
 Content-Type: application/json
@@ -223,78 +223,78 @@ access-control-expose-headers: x-sentry-error,x-sentry-rate-limits,retry-after
 cross-origin-resource-policy: cross-origin
 strict-transport-security: max-age=31536000; includeSubDomains; preload
 Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2
-[2026.06.17-06.29.26:181][848]LogSentrySdk: Verbose: request handled in 95ms
-[2026.06.17-06.29.26:182][848]LogSentrySdk: Verbose: executing task on worker thread
-[2026.06.17-06.29.26:182][848]LogSentrySdk: Verbose: background worker thread shut down
-[2026.06.17-06.29.26:184][848]LogUWECrashReporter: Warning: Currently can't disable Sentry crash reporting without restarting
-[2026.06.17-06.29.26:184][848]LogUWECrashReporter: Display: Sentry deinitialization done
-[2026.06.17-06.29.26:187][848]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerXAudio2)...
-[2026.06.17-06.29.26:187][848]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...
-[2026.06.17-06.29.26:187][848]LogAudio: Display: Audio Device unregistered from world 'L_ClientLobby'.
-[2026.06.17-06.29.26:187][848]LogAudio: Display: Shutting down audio device while 1 references to it are still alive. For more information, compile with INSTRUMENT_AUDIODEVICE_HANDLES.
-[2026.06.17-06.29.26:246][848]LogAudioMixer: Display: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1, StreamState=4
-[2026.06.17-06.29.26:247][848]LogAudioMixer: Display: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1, StreamState=2
-[2026.06.17-06.29.26:259][848]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID -1
-[2026.06.17-06.29.26:259][848]LogAudio: Display: Audio Device Manager Shutdown
-[2026.06.17-06.29.26:259][848]LogSlate: Request Window 'Subnautica 2 - Build 115506' being destroyed
-[2026.06.17-06.29.26:262][848]LogSlate: Window 'Subnautica 2 - Build 115506' being destroyed
-[2026.06.17-06.29.26:268][848]LogWindowsTextInputMethodSystem: Activated input method: English (United States) - (Keyboard).
-[2026.06.17-06.29.26:277][848]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
-[2026.06.17-06.29.26:277][848]LogSlate: Slate User Destroyed.  User Index 1, Is Virtual User: 0
-[2026.06.17-06.29.26:278][848]LogExit: Preparing to exit.
-[2026.06.17-06.29.26:278][848]LogMoviePlayer: Shutting down movie player
-[2026.06.17-06.29.26:366][848]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
-[2026.06.17-06.29.26:386][848]LogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled
-[2026.06.17-06.29.26:433][848]LogExit: Game engine shut down
-[2026.06.17-06.29.26:468][848]LogRenderer: Forcing update for all mesh draw commands: SkyLight change
-[2026.06.17-06.29.26:468][848]LogRenderer: Forcing update for all mesh draw commands: SkyLight real-time capture change
-[2026.06.17-06.29.26:706][848]LogExit: Object subsystem successfully closed.
-[2026.06.17-06.29.26:794][848]LogRHI: FPipelineFileCacheManager Incremental saved 160 total, 13 new, 0 removed, 0 cons .upipelinecache (took   4.87ms): C:/Users/jake/AppData/Local/Subnautica2/Saved/Subnautica2_PCD3D_SM6.upipelinecache.
-[2026.06.17-06.29.26:899][848]LogStreamline: FStreamlineCoreModule::ShutdownModule Enter
-[2026.06.17-06.29.26:899][848]LogStreamline: UnregisterStreamlineReflexHooks Enter
-[2026.06.17-06.29.26:899][848]LogStreamline: UnregisterStreamlineReflexHooks Leave
-[2026.06.17-06.29.26:899][848]LogStreamline: FStreamlineCoreModule::ShutdownModule Leave
-[2026.06.17-06.29.26:899][848]LogNIS: FNISCoreModule::ShutdownModule Enter
-[2026.06.17-06.29.26:899][848]LogNIS: FNISCoreModule::ShutdownModule Leave
-[2026.06.17-06.29.26:899][848]LogDLSS: FDLSSModule::ShutdownModule Enter
-[2026.06.17-06.29.26:899][848]LogDLSS: FDLSSDenoiserWrapper(Inactive) unwrapping ScreenSpaceDenoiser
-[2026.06.17-06.29.26:899][848]LogDLSSNGXD3D12RHI: FNGXD3D12RHI::~FNGXD3D12RHI Enter
-[2026.06.17-06.29.26:899][848]LogDLSSNGXRHI: NGXRHI::ReleaseAllocatedFeatures Enter
-[2026.06.17-06.29.26:899][848]LogDLSSNGXRHI: NGXRHI::ReleaseAllocatedFeatures Leave
-[2026.06.17-06.29.26:899][848]LogDLSSNGXD3D12RHI: NVSDK_NGX_D3D12_DestroyParameters -> (1 NVSDK_NGX_Result_Success)
-[2026.06.17-06.29.26:899][848]LogDLSSNGXD3D12RHI: FNGXD3D12RHI::~FNGXD3D12RHI Leave
-[2026.06.17-06.29.26:899][848]LogDLSSNGXRHI: NGXRHI::~NGXRHI Enter
-[2026.06.17-06.29.26:899][848]LogDLSSNGXRHI: NGXRHI::~NGXRHI Leave
-[2026.06.17-06.29.26:899][848]LogDLSS: FDLSSModule::ShutdownModule Leave
-[2026.06.17-06.29.26:899][848]LogDLSSNGXRHI: FNGXRHIModule::ShutdownModule Enter
-[2026.06.17-06.29.26:899][848]LogDLSSNGXRHI: FNGXRHIModule::ShutdownModule Leave
-[2026.06.17-06.29.27:116][848]LogAudioModulation: Audio Modulation Shutdown
-[2026.06.17-06.29.27:129][848]LogGauntlet: Gauntlet Shutdown
-[2026.06.17-06.29.27:157][848]LogStreamlineRHI: FStreamlineRHIModule::ShutdownModule Enter
-[2026.06.17-06.29.27:157][848]LogStreamlineD3D12RHI: FStreamlineD3D12RHI::~FStreamlineD3D12RHI Enter
-[2026.06.17-06.29.27:157][848]LogStreamlineD3D12RHI: FStreamlineD3D12RHI::~FStreamlineD3D12RHI Leave
-[2026.06.17-06.29.27:157][848]LogStreamlineRHI: FStreamlineRHI::~FStreamlineRHI Enter
-[2026.06.17-06.29.27:157][848]LogStreamlineRHI: FStreamlineRHI::~FStreamlineRHI Leave
-[2026.06.17-06.29.27:157][848]LogStreamlineRHI: FStreamlineRHIModule::ShutdownModule Leave
-[2026.06.17-06.29.27:157][848]LogStreamlineD3D12RHI: FStreamlineD3D12RHIModule::ShutdownModule Enter
-[2026.06.17-06.29.27:157][848]LogStreamlineD3D12RHI: FStreamlineD3D12RHIModule::ShutdownModule Leave
-[2026.06.17-06.29.27:157][848]LogDLSSNGXVulkanRHIPreInit: FNGXVulkanRHIPreInitModule::ShutdownModule Enter
-[2026.06.17-06.29.27:157][848]LogDLSSNGXVulkanRHIPreInit: FNGXVulkanRHIPreInitModule::ShutdownModule Leave
-[2026.06.17-06.29.27:157][848]LogOnline: Display: STEAM: OnlineSubsystemSteam::Shutdown()
-[2026.06.17-06.29.27:160][848]LogOnline: STEAM: AUTH: Revoking all tickets.
-[2026.06.17-06.29.27:160][848]LogSteamShared: Unloading the Steam server API...
-[2026.06.17-06.29.27:175][848]LogOnline: Display: STEAM: OnlineSubsystemSteam::Shutdown()
-[2026.06.17-06.29.27:175][848]LogHttp: Warning: [FHttpManager::Shutdown] Unbinding delegates for 1 outstanding Http Requests:
-[2026.06.17-06.29.27:175][848]LogHttp: Warning: 	verb=[POST] url=[https://api.live.subnautica.net/api/v1/player/logout] refs=[2] status=Processing
-[2026.06.17-06.29.27:181][848]LogEOSSDK: Warning: LogEOSP2P: Leave all connections due to P2P network shutdown
-[2026.06.17-06.29.27:188][848]LogEOSSDK: LogEOSRTC: [Core] Shutting down LibRTC...
-[2026.06.17-06.29.27:892][848]LogEOSShared: FEOSSDKManager::Shutdown EOS_Shutdown Result=[EOS_Success]
-[2026.06.17-06.29.27:892][848]LogSteamShared: Unloading the Steam API...
-[2026.06.17-06.29.27:923][848]LogSteamShared: Freeing the Steam Loaded Modules...
-[2026.06.17-06.29.27:925][848]LogNFORDenoise: NFORDenoise function shutting down
-[2026.06.17-06.29.27:939][848]LogIris: FNetObjectFactoryRegistry::UnregisterFactory is unregistering factory: None name: NetActorFactory id: 0
-[2026.06.17-06.29.27:939][848]LogIris: FNetObjectFactoryRegistry::UnregisterFactory is unregistering factory: None name: NetSubObjectFactory id: 1
-[2026.06.17-06.29.27:939][848]LogPakFile: Destroying PakPlatformFile
-[2026.06.17-06.29.30:815][848]LogD3D12RHI: ~FD3D12DynamicRHI
-[2026.06.17-06.29.31:207][848]LogExit: Exiting.
-[2026.06.17-06.29.31:572][848]Log file closed, 06/16/26 23:29:31
+[2026.06.23-06.04.18:163][969]LogSentrySdk: Verbose: request handled in 64ms
+[2026.06.23-06.04.18:164][969]LogSentrySdk: Verbose: executing task on worker thread
+[2026.06.23-06.04.18:164][969]LogSentrySdk: Verbose: background worker thread shut down
+[2026.06.23-06.04.18:166][969]LogUWECrashReporter: Warning: Currently can't disable Sentry crash reporting without restarting
+[2026.06.23-06.04.18:166][969]LogUWECrashReporter: Display: Sentry deinitialization done
+[2026.06.23-06.04.18:166][969]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerXAudio2)...
+[2026.06.23-06.04.18:166][969]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...
+[2026.06.23-06.04.18:166][969]LogAudio: Display: Audio Device unregistered from world 'L_ClientLobby'.
+[2026.06.23-06.04.18:166][969]LogAudio: Display: Shutting down audio device while 1 references to it are still alive. For more information, compile with INSTRUMENT_AUDIODEVICE_HANDLES.
+[2026.06.23-06.04.18:166][969]LogAudioMixer: Display: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1, StreamState=4
+[2026.06.23-06.04.18:167][969]LogAudioMixer: Display: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1, StreamState=2
+[2026.06.23-06.04.18:175][969]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID -1
+[2026.06.23-06.04.18:175][969]LogAudio: Display: Audio Device Manager Shutdown
+[2026.06.23-06.04.18:175][969]LogSlate: Request Window 'Subnautica 2 - Build 115506' being destroyed
+[2026.06.23-06.04.18:176][969]LogSlate: Window 'Subnautica 2 - Build 115506' being destroyed
+[2026.06.23-06.04.18:184][969]LogWindowsTextInputMethodSystem: Activated input method: English (United States) - (Keyboard).
+[2026.06.23-06.04.18:190][969]LogWindowsTextInputMethodSystem: Activated input method: English (United States) - (Keyboard).
+[2026.06.23-06.04.18:194][969]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
+[2026.06.23-06.04.18:194][969]LogSlate: Slate User Destroyed.  User Index 1, Is Virtual User: 0
+[2026.06.23-06.04.19:986][969]LogExit: Preparing to exit.
+[2026.06.23-06.04.19:986][969]LogMoviePlayer: Shutting down movie player
+[2026.06.23-06.04.20:035][969]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2026.06.23-06.04.20:050][969]LogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled
+[2026.06.23-06.04.20:069][969]LogExit: Game engine shut down
+[2026.06.23-06.04.20:099][969]LogRenderer: Forcing update for all mesh draw commands: SkyLight change
+[2026.06.23-06.04.20:099][969]LogRenderer: Forcing update for all mesh draw commands: SkyLight real-time capture change
+[2026.06.23-06.04.20:214][969]LogExit: Object subsystem successfully closed.
+[2026.06.23-06.04.20:344][969]LogStreamline: FStreamlineCoreModule::ShutdownModule Enter
+[2026.06.23-06.04.20:344][969]LogStreamline: UnregisterStreamlineReflexHooks Enter
+[2026.06.23-06.04.20:344][969]LogStreamline: UnregisterStreamlineReflexHooks Leave
+[2026.06.23-06.04.20:344][969]LogStreamline: FStreamlineCoreModule::ShutdownModule Leave
+[2026.06.23-06.04.20:344][969]LogNIS: FNISCoreModule::ShutdownModule Enter
+[2026.06.23-06.04.20:344][969]LogNIS: FNISCoreModule::ShutdownModule Leave
+[2026.06.23-06.04.20:344][969]LogDLSS: FDLSSModule::ShutdownModule Enter
+[2026.06.23-06.04.20:344][969]LogDLSS: FDLSSDenoiserWrapper(Inactive) unwrapping ScreenSpaceDenoiser
+[2026.06.23-06.04.20:344][969]LogDLSSNGXD3D12RHI: FNGXD3D12RHI::~FNGXD3D12RHI Enter
+[2026.06.23-06.04.20:344][969]LogDLSSNGXRHI: NGXRHI::ReleaseAllocatedFeatures Enter
+[2026.06.23-06.04.20:344][969]LogDLSSNGXRHI: NGXRHI::ReleaseAllocatedFeatures Leave
+[2026.06.23-06.04.20:344][969]LogDLSSNGXD3D12RHI: NVSDK_NGX_D3D12_DestroyParameters -> (1 NVSDK_NGX_Result_Success)
+[2026.06.23-06.04.20:344][969]LogDLSSNGXD3D12RHI: FNGXD3D12RHI::~FNGXD3D12RHI Leave
+[2026.06.23-06.04.20:344][969]LogDLSSNGXRHI: NGXRHI::~NGXRHI Enter
+[2026.06.23-06.04.20:344][969]LogDLSSNGXRHI: NGXRHI::~NGXRHI Leave
+[2026.06.23-06.04.20:344][969]LogDLSS: FDLSSModule::ShutdownModule Leave
+[2026.06.23-06.04.20:344][969]LogDLSSNGXRHI: FNGXRHIModule::ShutdownModule Enter
+[2026.06.23-06.04.20:344][969]LogDLSSNGXRHI: FNGXRHIModule::ShutdownModule Leave
+[2026.06.23-06.04.20:571][969]LogAudioModulation: Audio Modulation Shutdown
+[2026.06.23-06.04.20:572][969]LogGauntlet: Gauntlet Shutdown
+[2026.06.23-06.04.20:577][969]LogStreamlineRHI: FStreamlineRHIModule::ShutdownModule Enter
+[2026.06.23-06.04.20:577][969]LogStreamlineD3D12RHI: FStreamlineD3D12RHI::~FStreamlineD3D12RHI Enter
+[2026.06.23-06.04.20:577][969]LogStreamlineD3D12RHI: FStreamlineD3D12RHI::~FStreamlineD3D12RHI Leave
+[2026.06.23-06.04.20:577][969]LogStreamlineRHI: FStreamlineRHI::~FStreamlineRHI Enter
+[2026.06.23-06.04.20:577][969]LogStreamlineRHI: FStreamlineRHI::~FStreamlineRHI Leave
+[2026.06.23-06.04.20:577][969]LogStreamlineRHI: FStreamlineRHIModule::ShutdownModule Leave
+[2026.06.23-06.04.20:577][969]LogStreamlineD3D12RHI: FStreamlineD3D12RHIModule::ShutdownModule Enter
+[2026.06.23-06.04.20:577][969]LogStreamlineD3D12RHI: FStreamlineD3D12RHIModule::ShutdownModule Leave
+[2026.06.23-06.04.20:577][969]LogDLSSNGXVulkanRHIPreInit: FNGXVulkanRHIPreInitModule::ShutdownModule Enter
+[2026.06.23-06.04.20:577][969]LogDLSSNGXVulkanRHIPreInit: FNGXVulkanRHIPreInitModule::ShutdownModule Leave
+[2026.06.23-06.04.20:577][969]LogOnline: Display: STEAM: OnlineSubsystemSteam::Shutdown()
+[2026.06.23-06.04.20:577][969]LogOnline: STEAM: AUTH: Revoking all tickets.
+[2026.06.23-06.04.20:578][969]LogSteamShared: Unloading the Steam server API...
+[2026.06.23-06.04.20:590][969]LogOnline: Display: STEAM: OnlineSubsystemSteam::Shutdown()
+[2026.06.23-06.04.20:590][969]LogHttp: Warning: [FHttpManager::Shutdown] Unbinding delegates for 1 outstanding Http Requests:
+[2026.06.23-06.04.20:590][969]LogHttp: Warning: 	verb=[POST] url=[https://api.live.subnautica.net/api/v1/player/logout] refs=[2] status=Processing
+[2026.06.23-06.04.20:592][969]LogEOSSDK: Warning: LogEOSP2P: Leave all connections due to P2P network shutdown
+[2026.06.23-06.04.20:593][969]LogEOSSDK: LogEOSRTC: [Core] Shutting down LibRTC...
+[2026.06.23-06.04.20:814][969]LogEOSShared: FEOSSDKManager::Shutdown EOS_Shutdown Result=[EOS_Success]
+[2026.06.23-06.04.20:814][969]LogSteamShared: Unloading the Steam API...
+[2026.06.23-06.04.20:853][969]LogSteamShared: Freeing the Steam Loaded Modules...
+[2026.06.23-06.04.20:854][969]LogNFORDenoise: NFORDenoise function shutting down
+[2026.06.23-06.04.20:861][969]LogIris: FNetObjectFactoryRegistry::UnregisterFactory is unregistering factory: None name: NetActorFactory id: 0
+[2026.06.23-06.04.20:862][969]LogIris: FNetObjectFactoryRegistry::UnregisterFactory is unregistering factory: None name: NetSubObjectFactory id: 1
+[2026.06.23-06.04.20:862][969]LogPakFile: Destroying PakPlatformFile
+[2026.06.23-06.04.21:907][969]LogD3D12RHI: ~FD3D12DynamicRHI
+[2026.06.23-06.04.22:197][969]LogExit: Exiting.
+[2026.06.23-06.04.22:498][969]Log file closed, 06/22/26 23:04:22

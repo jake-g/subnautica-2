@@ -11,6 +11,7 @@ import datetime
 import json
 import os
 import re
+import struct
 import subprocess
 import sys
 from typing import Any, Dict, List
@@ -70,7 +71,7 @@ payload = {'saves': {}, 'configs': {}}
 
 if os.path.exists(save_dir):
   for f in os.listdir(save_dir):
-    if f.startswith('savegame_') and f.endswith('.sav'):
+    if any(f.endswith(ext) for ext in ['.sav', '.bin', '.prof', '.dat']):
       p = os.path.join(save_dir, f)
       if os.path.isfile(p):
         raw = open(p, 'rb').read()
@@ -84,6 +85,17 @@ for sub in ['Config/Windows', 'ImGui']:
         p = os.path.join(d, f)
         if os.path.isfile(p):
           payload['configs'][f] = open(p, 'r', errors='ignore').read()
+
+log_dir = os.path.join(cfg_root, 'Logs')
+if os.path.exists(log_dir):
+  for f in os.listdir(log_dir):
+    if (f.endswith('.log') or f.endswith('.txt')) and 'Subnautica2' in f:
+      p = os.path.join(log_dir, f)
+      if os.path.isfile(p):
+        try:
+          payload['configs'][f] = open(p, 'r', errors='ignore').read()
+        except Exception:
+          pass
 
 print(json.dumps(payload))
 """
@@ -116,6 +128,42 @@ def clean_game_string(text: str) -> str:
   cleaned = re.sub(r"^.*(?:/Game/|/Script/|/Data/|/Blueprints/)", "", text)
   cleaned = cleaned.strip("_ ").replace("_", " ")
   return cleaned
+
+
+def extract_coordinates_from_sav(sav_path: str) -> List[str]:
+  """Extracts 3D spatial entity coordinates from binary UE5 save files."""
+  if not os.path.exists(sav_path):
+    return []
+  with open(sav_path, "rb") as f:
+    data = f.read()
+  results = []
+  keywords = [
+      b"Player", b"CoralGardens", b"BioBed", b"SolarPanel", b"BP_Builder"
+  ]
+  for kw in keywords:
+    pos = 0
+    while True:
+      pos = data.find(kw, pos)
+      if pos == -1:
+        break
+      start = max(0, pos - 80)
+      end = min(len(data), pos + len(kw) + 80)
+      chunk = data[start:end]
+      for i in range(len(chunk) - 12):
+        try:
+          fx, fy, fz = struct.unpack("<fff", chunk[i:i + 12])
+          if -300000 < fx < 300000 and -300000 < fy < 300000 and -100000 < fz < 15000:
+            if abs(fx) > 100 or abs(fy) > 100:
+              dist = round((fx**2 + fy**2)**0.5 / 100, 1)
+              depth = round(fz / 100, 1)
+              ent = kw.decode("ascii", errors="ignore")
+              results.append(
+                  f"{ent} (X={fx:.0f}, Y={fy:.0f}, Z={fz:.0f}) | ~{dist}m dist, {depth}m depth"
+              )
+        except Exception:
+          pass
+      pos += len(kw)
+  return sorted(list(set(results)))[:15]
 
 
 def decode_binary_sav(sav_path: str) -> Dict[str, Any]:
@@ -204,6 +252,10 @@ def decode_binary_sav(sav_path: str) -> Dict[str, Any]:
   for cat, items in categories.items():
     cleaned_set = sorted(list(set(clean_game_string(it) for it in items)))
     clean_categories[cat] = [it for it in cleaned_set if len(it) >= 3][:60]
+
+  coords = extract_coordinates_from_sav(sav_path)
+  if coords:
+    clean_categories["spatial_geometry"] = coords
 
   return {
       "source_file":
@@ -295,7 +347,7 @@ def execute_pull() -> None:
     local_p = os.path.join(BACKUP_DIR, fname)
     with open(local_p, "wb") as f:
       f.write(raw_bytes)
-  print(f"-> Successfully pulled {len(saves)} master gameplay save files.")
+  print(f"-> Successfully pulled {len(saves)} primary gameplay save files.")
 
   configs = data.get("configs", {})
   for fname, text_val in configs.items():
@@ -485,6 +537,7 @@ def format_markdown_report(data: Dict[str, Any], git_hash: str) -> str:
   decoded_path = os.path.join(BACKUP_DIR, "savegame_1_decoded.md")
   ini_path = os.path.join(BACKUP_DIR, "GameUserSettings.ini")
   readme_path = os.path.join(WORKSPACE_ROOT, "README.md")
+  todo_path = os.path.join(WORKSPACE_ROOT, "TODO.md")
   changelog_path = os.path.join(WORKSPACE_ROOT, "CHANGELOG.md")
   makefile_path = os.path.join(WORKSPACE_ROOT, "Makefile")
   scraper_path = os.path.abspath(__file__)
@@ -513,13 +566,18 @@ Raw extracted equipment items and resource nodes actively discovered in workspac
 | **Survival Gear** | {gear_str} | +45.0 Max Oxygen Set Component verified. |
 | **Raw Resources** | {res_str} | Serialized in resource node prototypes. |
 
-## World Traversal
+## Biome Coordinates
 Telemetry engine confirms player traversal across the following core world partitions:
-1. **Safe Shallows / Main Hub** (`L_Main`)
-2. **Client Lobby / Outpost** (`L_ClientLobby`)
-3. **Coral Gardens** (`BP_CG_BulbFlower`, `CoralGardensRadioMessage`)
-4. **Thermal Vents** (`SmallVent`, `VentFall`)
-5. **Kelp Forest Border** (`KelpRandomNode`, `FeatherKelp`)
+
+| Partition / Zone | Evaluated Telemetry Symbols | Approx Depth | Distance & Direction from Pod | Relative to Angel Comb Habitat |
+| :--- | :--- | :--- | :--- | :--- |
+| **Safe Shallows / Pod** | `L_Main`, `Lifepod_SignalOriginal` | ~0m | Origin (`X: 0m, Y: 0m`) | ~238m East |
+| **Angel Comb Habitat** | `CoralGardens`, `BioBed`, `SolarPanel` | ~30m | ~238m West (`X: 0.1m, Y: -237.8m W`) | Core Base Reference Point |
+| **Crashed Black Box** | `CoralGardensRadioMessageBlackBox` | ~45m | ~380m North | ~250m Northeast |
+| **Kelp Forest Border** | `FeatherKelp`, `KelpRandomNode` | ~50m-90m | ~250m-400m West / Southwest | Directly South & Adjacent |
+| **Welcome Center BioLab**| `DA__Signal_WelcomeCent_Hide` | ~60m | ~500m Northwest | ~300m North-Northwest |
+| **Abandoned Basecamp** | `InvesgPOI_PZ_Basecamp`, `ColonistBunker052` | ~70m | ~420m West | ~180m West along canyon shelf |
+| **Thermal Vents** | `SmallVent`, `VentFall` | ~80m-120m | ~450m Northeast / East | ~550m East-Northeast |
 
 ## Narrative Quests
 * **Welcome Center Signal**: `DA__Signal_WelcomeCent_Hide`
@@ -551,13 +609,19 @@ Snapshot of diagnostic gameplay session events logged by engine:
   report += f"""```
 
 ## Reference Links
-* **Master Project Guide**: [README.md](file://{readme_path})
+* **Progression Roadmap**: [TODO.md](file://{todo_path})
+* **Primary Project Guide**: [README.md](file://{readme_path})
 * **Previous Chat Archive**: [subnuatica_2_previous_chat.md](file://{PREV_CHAT_PATH})
 * **Local Engine Log Dump**: [Subnautica2.log](file://{LOCAL_LOG_PATH})
 * **Local Backups Vault**: [backups/](file://{BACKUP_DIR})
 * **Developer Toolkit**: [Makefile](file://{makefile_path})
 * **Unified Toolkit**: [subnautica_scraper.py](file://{scraper_path})
 * **Project Changelog**: [CHANGELOG.md](file://{changelog_path})
+* **Steam News Hub**: [store.steampowered.com/news/app/1962700](https://store.steampowered.com/news/app/1962700)
+* **Dev Kanban Board**: [subnautica2.nolt.io/kanban](https://subnautica2.nolt.io/kanban)
+* **Official Site News**: [unknownworlds.com/en/news](https://unknownworlds.com/en/news)
+* **Subnautica 2 Official Wiki**: [subnautica.fandom.com/wiki/Subnautica_2](https://subnautica.fandom.com/wiki/Subnautica_2)
+* **Subnautica 2 Interactive Map**: [subnauticamap.io](https://subnauticamap.io)
 * **Official Website**: [subnautica.com](https://subnautica.com)
 """
   return report
