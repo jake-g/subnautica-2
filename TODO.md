@@ -8,40 +8,38 @@ A structured coaching roadmap and systematic exploration checklist for **Subnaut
 
 ---
 
-## 📋 Immediate Action Roadmap (Next Session Focus)
+## 📋 Sequenced Action Roadmap (Next Session Focus)
 
 > [!IMPORTANT]
-> **Active Origin**: Starting safely inside **Angel Comb Base** (`~30m depth`) with `2x Salt` in inventory.
+> **Active Origin**: Starting safely inside **Angel Comb Base** (`~30m depth`) with a functional power grid (6 Solar, 3 Hydro Turbines), Biolab, Processor, and Scanner Station.
 
-### 🚀 Priority 1: Kelp Forest Border Harvest & Scan (`~250m South` | `~50m depth`)
-* [ ] **Harvest Creepvine**: Grab at least **2x Creepvine Seed Clusters** (glowing yellow pods needed for Silicone Rubber / Lubricant) and slash stalks for **Creepvine Leaves** (`FiberMesh`). *Essential for crafting Seaglide!*
-* [ ] **Scan Seaglide (`BP_Seaglide`)**: Sweep shallow seafloor directly under the glowing seed pods. Scan white Alterra equipment boxes for missing Seaglide handlebars/propellers (`3` needed).
-* [ ] **HIGH PRIORITY — Gather Gold & Lead (`Galena Outcrops`)**:
-  - *How to find & identify*: Look for **dark grey, metallic cube-shaped crystalline rocks** sticking out of ravine walls (unlike brownish Limestone or reddish Sandstone). When cracked, Galena drops either **Lead** or Titanium. Also crack Sandstone/Shale for **Gold** (`BP_Gold`).
-  - *Why this is crucial*: **Lead** builds your **Sonic Resonator** & base foundations; **Gold** crafts **Computer Chips** (needed for base automation & Scanner Room upgrades) and Advanced Wiring Kits. *(Silver Ore: Grab when seen to restock reserves).*
-* [ ] **HIGH PRIORITY — Slice Shelf Bracket Corals (`Table Coral`)**: You haven't been doing this! Use your Survival Knife to slice red/purple/green shelf coral brackets growing horizontally along canyon walls for **Table Coral Samples** (`BP_TableCoral`). *Required to craft Computer Chips and Scanner Room Range Upgrades!*
-* [ ] **Bonus Salt Collection**: Pick up any extra crystalline **Salt deposits** spotted on the seafloor (supplies battery crafting & water purification). *(Note: 2x Salt already saved in base inventory)*.
-* [ ] **HUD Triage**: Confirm `Wu "Wu" Lianghai`, `Old Habitat`, and `Blackbox - Ruby` are marked **Green** / OFF. Set `Blackbox - Wander` to Green once swept.
+### 📍 Step 1: Scanner Room Calibration & visor HUD Setup
+* [ ] **Harvest Table Coral & Copper**: Use your Survival Knife on canyon walls to slice red/green shelf corals for **Table Coral Samples** (`BP_TableCoral`). Gather Copper.
+* [ ] **Craft Scanner Room Upgrades**:
+  - [ ] Craft **Scanner Room Range Upgrades** (`BP_ScannerRoomUpgrade_Range`) at the Scanner Room console to extend radar coverage.
+  - [ ] Craft the **Scanner Room HUD Chip** at the Fabricator and equip it. *This highlights scanned resources directly on your visor!*
+* [ ] **Locate Key Materials**: Set Scanner Room to target **Galena Outcrops** (for Lead) and **Table Coral** to stock up on building materials.
 
-### 🏠 Priority 2: Base Assembly & Power Network (Angel Comb Base)
-* [ ] **Deploy Hydroelectric Turbine**: Place your newly unlocked **Hydroelectric Turbine** (`HydroelectricTurbine`) in the bubbling hydrothermal vent current near your base to generate continuous renewable energy.
-* [ ] **Connect Power Transmitter**: Deploy a **Power Transmitter** (`BP_PowerTransmitter`) to relay remote thermal current back to your base corridors.
-* [ ] **Construct Bioreactor**: Build an interior **Bioreactor** (`BP_Bioreactor`) inside your multipurpose room to supplement solar/hydro power.
-* [ ] **Craft Seaglide & Repair Tool**: Using gathered Creepvine materials, craft your **Seaglide** (`BP_Seaglide`) and **Repair Tool** (`BP_RepairTool`) at your interior Fabricator.
-* [ ] **Scanner Room Upgrades** *(Along the way bonus)*: Craft **Scanner Room Range Upgrades** (`BP_ScannerRoomUpgrade_Range`) at your Fabricator using Copper + Table Coral to expand radar coverage across the entire 400m perimeter.
+### 🏊‍♂️ Step 2: Wreckage Clean-up & Blueprint Close-out
+Set your Scanner Room to target **Technology Fragments** to pinpoint these items:
+* [ ] **Close out Camp One Wreckage** *(Swim ~180m West | ~70m depth)*:
+  - [ ] Scan final **Repair Tool** (`BP_RepairTool`) fragment (2/3 completed, `+1` left). *Then craft it at your Fabricator!*
+  - [ ] Scan final **Work Light** (`BP_WorkLight`) fragment (1/2 completed, `+1` left).
+  - [ ] Scan remaining **Wall Rack** (`BP_WallRack`) fragments (1/3 completed, `+2` left).
+  - [ ] Scan broken **Battery Charger** (`BP_BatteryCharger`) terminals on bunker walls (`2` scans needed to unlock battery recharging).
+  - [ ] Set Camp One Beacon to **Green** / OFF once clear.
+* [ ] **Scan Mobile Vehicle Bay Fragments**: Check along the 100m shelf border and near the Welcome Center BioLab hangar for floating **Mobile Vehicle Bay** (`BP_MobileVehicleBay`) consoles. Scan to unlock.
 
-### 🏊‍♂️ Priority 3: Wreckage Sweep Circuit (Camp One & BioLab Hangar)
-* [ ] **Stop 1: Camp One Wreckage** *(Swim ~180m West | ~70m depth)*:
-  - Search open white Alterra cargo crates sitting in the sand directly outside the bunker entrance to scan remaining **Repair Tool** (`BP_RepairTool`) fragments (`+1` left for 3/3).
-  - Search roughly `~30m South/West` of the bunker doors among broken docking rings / thruster pods for **Tadpole Submersible** (`BP_Tadpole`) fragments (`+1` left for 3/3).
-  - Check small tripod **Work Light** (`BP_WorkLight`) posts lying in the sand near the hatch (`+1` or `+2` left).
-  - Inspect interior wall storage compartments inside damaged habitat tubes for **Wall Rack** (`BP_WallRack`) fragments (`+2` left).
-  - *Along the way bonus*: Scan broken **Battery Charger** (`BP_BatteryCharger`) terminals on bunker walls (`2` scans needed to unlock battery recharging).
-  - *HUD Triage*: Once swept, set `Camp One` Beacon to **Green** (or toggle OFF).
-* [ ] **Stop 2: Welcome Center BioLab Hangar** *(Swim ~300m NNW | ~60m depth)*:
-  - Check inside crashed BioLab moonpool hangar bay (water-level catwalks) or split yellow shipping containers along the shelf for any missed **Tadpole Submersible** fragments (`+1` left).
-  - *Along the way bonus*: Keep an eye out for floating **Mobile Vehicle Bay** (`BP_MobileVehicleBay`) deployment consoles along the 100m drop-off shelf.
-  - *HUD Triage*: Confirm `Welcome Center`, `Blackbox - Anita`, and `Blackbox - Chap` are set to **Green** / OFF.
+### 🏗️ Step 3: Vehicle Construction & Refinement
+* [ ] **Process Advanced Alloys**: Gather raw Titanium and Germanium, and use your base **Processor** to refine:
+  - [ ] **Titanium Ingots**
+  - [ ] **Germanium Ingots**
+* [ ] **Build & Deploy Mobile Vehicle Bay**: Craft at the Fabricator, take it to the surface, and deploy it.
+* [ ] **Build Tadpole Submersible**: Use the Mobile Vehicle Bay to construct your unlocked **Tadpole Submersible** (`BP_Tadpole`).
+
+### 🧭 Step 4: Deeper Exploration Transition
+* [ ] **Search for Dive Elevator**: Sweep the Thermal Vents border and deeper areas for the remaining **Dive Elevator** (`BP_DiveElevator`) fragment (1/2 completed, `+1` left) to enable easy vertical transport to deeper biomes.
+* [ ] **HUD Triage**: Toggle OFF/Green any cleared beacons (`Wu Lianghai`, `Old Habitat`, `Blackbox - Ruby`, `Camp One`) to keep your compass clean.
 
 ---
 
@@ -49,7 +47,7 @@ A structured coaching roadmap and systematic exploration checklist for **Subnaut
 
 Before marking an area as **Closed / Fully Explored** and toggling OFF its HUD Beacon in your PDA Signals tab, verify against these 3 concrete pieces of evidence:
 1. **Telemetry StoryGoal Trigger (`_Hide`)**: Check [savegame_1_decoded.md](./backups/savegame_1_decoded.md#L227). When you interact with a major signal's core terminal, the engine records `DA__Signal_..._Hide`. If `_Hide` is present, the primary narrative objective is 100% complete.
-2. **Zero Partial Blueprints (No Leftover Crates)**: Open your PDA **Blueprints** tab under `In Progress`. If you have unresolved fractions (like `2/3 Repair Tool`, `2/3 Tadpole`), wreckage sites you previously visited still contain un-scanned cargo crates!
+2. **Zero Partial Blueprints (No Leftover Crates)**: Open your PDA **Blueprints** tab under `In Progress`. If you have unresolved fractions (like `2/3 Repair Tool`, `1/2 Dive Elevator`), wreckage sites you previously visited still contain un-scanned cargo crates!
 3. **Sealed Bulkhead Audit (Laser Cutter Check)**: Many crashed Alterra structures contain sealed titanium bulkhead doors requiring a **Laser Cutter** (`BP_LaserCutter`). Do not disable its signal until you return with a cutting tool!
 
 ### Active Perimeter Destination Tracker
@@ -73,5 +71,11 @@ Before marking an area as **Closed / Fully Explored** and toggling OFF its HUD B
   - [ ] Scan Thermal Plant fragments and Power Transmitter fragments near active volcanic vents.
   - [ ] Scan Vehicle Modification Station fragments.
   - [ ] Identify and harvest Magnetite and crystalline Lithium deposits surrounding hydrothermal fissures.
+
+#### 4. Tadpole Pens (New Narrative Outpost)
+- **Approx Location**: Unlocked via PDA story goal (`DA_StoryGoal_Investigation_TadpolePensNoA`).
+- **Status**: **UNEXPLORED**
+  - [ ] Explore the Tadpole Pens area and scan technology fragments.
+  - [ ] Locate the source of the story goal transmission.
 
 * **Visual Telemetry via Screenshots**: Capture in-game screenshots of your **PDA Blueprints tab** and **Base Storage Lockers**. Share or drop these screenshots directly in chat for 100% AI vision verification!

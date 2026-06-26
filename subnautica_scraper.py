@@ -136,9 +136,19 @@ def extract_coordinates_from_sav(sav_path: str) -> List[str]:
     data = f.read()
   results = []
   keywords = [
-      b"Player", b"CoralGardens", b"BioBed", b"SolarPanel", b"BP_Builder",
-      b"BP_WorldSupplyLocker", b"Locker", b"Hatch", b"Wakemaker", b"Beacon",
-      b"CampOne", b"Storage", b"Fabricator",
+      b"Player",
+      b"CoralGardens",
+      b"BioBed",
+      b"SolarPanel",
+      b"BP_Builder",
+      b"BP_WorldSupplyLocker",
+      b"Locker",
+      b"Hatch",
+      b"Wakemaker",
+      b"Beacon",
+      b"CampOne",
+      b"Storage",
+      b"Fabricator",
   ]
   for kw in keywords:
     pos = 0
@@ -197,33 +207,95 @@ def decode_binary_sav(sav_path: str) -> Dict[str, Any]:
   for s in sorted(list(decoded)):
     low = s.lower()
     if any(k in low for k in [
-        "titanium", "copper", "quartz", "silver", "lead", "glass", "wire",
-        "medkit", "battery", "tank", "scanner", "builder", "flashlight",
-        "flare", "rebreather", "knife", "o2", "salt", "gold", "diamond",
-        "magnetite", "lithium", "sulfur", "silicone", "lubricant", "fibermesh",
-        "repair", "laser", "resonat", "powercell", "water",
+        "titanium",
+        "copper",
+        "quartz",
+        "silver",
+        "lead",
+        "glass",
+        "wire",
+        "medkit",
+        "battery",
+        "tank",
+        "scanner",
+        "builder",
+        "flashlight",
+        "flare",
+        "rebreather",
+        "knife",
+        "o2",
+        "salt",
+        "gold",
+        "diamond",
+        "magnetite",
+        "lithium",
+        "sulfur",
+        "silicone",
+        "lubricant",
+        "fibermesh",
+        "repair",
+        "laser",
+        "resonat",
+        "powercell",
+        "water",
     ]):
       categories["survival_gear_and_tools"].append(s)
     elif any(k in low for k in [
-        "hatch", "locker", "solarpanel", "biobed", "stackedroom", "corridor",
-        "foundation", "fabricator", "bioreactor", "turbine", "waterfilter",
-        "growbed", "scannerroom", "wakemaker", "chair", "bench", "table",
-        "floodlight", "processor", "biolab", "beacon",
+        "hatch",
+        "locker",
+        "solarpanel",
+        "biobed",
+        "stackedroom",
+        "corridor",
+        "foundation",
+        "fabricator",
+        "bioreactor",
+        "turbine",
+        "waterfilter",
+        "growbed",
+        "scannerroom",
+        "wakemaker",
+        "chair",
+        "bench",
+        "table",
+        "floodlight",
+        "processor",
+        "biolab",
+        "beacon",
     ]):
       categories["constructed_base_modules"].append(s)
     elif any(k in low for k in [
-        "tadpole", "seaglide", "seamoth", "prawn", "cyclops", "submersible",
-        "dock", "vehiclebay",
+        "tadpole",
+        "seaglide",
+        "seamoth",
+        "prawn",
+        "cyclops",
+        "submersible",
+        "dock",
+        "vehiclebay",
     ]):
       categories["submersibles_and_vehicles"].append(s)
     elif any(k in low for k in [
-        "/game/maps/", "basecamp", "campone", "shallow", "kelp", "thermal",
-        "garden", "crevasse", "lifepod", "outpost",
+        "/game/maps/",
+        "basecamp",
+        "campone",
+        "shallow",
+        "kelp",
+        "thermal",
+        "garden",
+        "crevasse",
+        "lifepod",
+        "outpost",
     ]):
       categories["map_zones_and_pois"].append(s)
     elif any(k in low for k in [
-        "blueprint", "unlocked", "techtype", "fragment", "progress",
-        "databank", "recipe",
+        "blueprint",
+        "unlocked",
+        "techtype",
+        "fragment",
+        "progress",
+        "databank",
+        "recipe",
     ]):
       categories["blueprints_and_pda"].append(s)
     elif any(
@@ -513,7 +585,8 @@ def format_markdown_report(data: Dict[str, Any], git_hash: str) -> str:
   if decoded_sav:
     main_size_kb = f"{decoded_sav.get('size_bytes', 0) / 1024:.1f} KB"
 
-  tools_gear = telem.get("survival_gear_and_tools", clean_tools + clean_resources)
+  tools_gear = telem.get("survival_gear_and_tools",
+                         clean_tools + clean_resources)
   base_mods = telem.get("constructed_base_modules", base_pieces)
   vehicles = telem.get("submersibles_and_vehicles", [])
   pois_list = telem.get("map_zones_and_pois", pois)
@@ -528,8 +601,8 @@ def format_markdown_report(data: Dict[str, Any], git_hash: str) -> str:
              if len(tools_gear) > 12 else ", ".join(clean_resources))
   base_str = (", ".join(f"`{bp}`" for bp in base_mods[:10])
               if base_mods else "`BP_SupplyLocker`, `FloatingLocker`")
-  vehicles_str = (", ".join(f"`{v}`" for v in vehicles) if vehicles
-                  else "*None detected in current save register*")
+  vehicles_str = (", ".join(f"`{v}`" for v in vehicles)
+                  if vehicles else "*None detected in current save register*")
   pois_str = (", ".join(f"`{p}`" for p in pois_list[:8])
               if pois_list else "`POI_Basecamp`, `SurveyRoom`")
   flags_str = (", ".join(f"`{fl}`" for fl in quests_list[:8])

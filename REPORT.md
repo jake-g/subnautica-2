@@ -6,7 +6,7 @@ Live progression telemetry and configuration summary generated via SSH from gami
 * **Game Title**: Subnautica 2 (Early Access Standalone | Unreal Engine 5)
 * **Gaming Host**: `pc` (`192.168.0.100` | Windows 11 x64 | User: `jake`)
 * **Platform Provider**: Steam (`OnlineSubsystemSteam` | Player ID `76561198797039235`)
-* **Active Save File**: `savegame_1.sav` (1014.8 KB | Last Saved: `2026-06-24 01:03:32`)
+* **Active Save File**: `savegame_1.sav` (1095.9 KB | Last Saved: `2026-06-25 23:32:43`)
 * **Auto-Save State**: **Enabled** (`UWESaveSystemUserSetting.ini` | `bAutoSaveEnabled=True`)
 * **Display Config**: `1280x720` dynamic render resolution scaling to `3840x2160` output (TSR Upscaling Quality Mode 3 | FPS Cap: 120)
 * **Remote Git Repository**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/.git/` (Pristine tree `4df49f6`)
@@ -18,9 +18,9 @@ Raw extracted equipment items and resource nodes actively discovered in workspac
 
 | Category | Discovered Symbols | Verification Status |
 | :--- | :--- | :--- |
-| **Tools** | `!Repair`, `%!HabitatBuilder`, `'CZzQuartz`, `)Salt`, `*&SeafloP divgFloodChartRoomSilvAirtank`, `+'BatteryTermina` | Equipped in active `AUWEBaseItem` slots. |
-| **Survival Gear** | `,(PowerCellTermin`, `- Chap (silver)3k`, `-)BuilderTool`, `1ToolFlares`, `1ToolsFlares`, `1bo2.` | +45.0 Max Oxygen Set Component verified. |
-| **Raw Resources** | `2DfquartzU`, `2o2c`, `3O2$2`, `8DA Water.Count`, `9!BP MedKit`, `9!ItemMedKit`, `9!MedKit`, `9E'asicBattery`, `:DA Copper.Count`, `A(Blueprints/Items/Toolscanner` | Serialized in resource node prototypes. |
+| **Tools** | `'CZzQuartz`, `'Game/Bluepnts/Items/BP BasicBattery`, `(Game/Bluepnts/Items/Tools/BP Scanner`, `)Salt`, `)Saltalt`, `- Chap (silver)3k` | Equipped in active `AUWEBaseItem` slots. |
+| **Survival Gear** | `.*Jubilee2 QuartzChi`, `.KGTitanium`, `/Resource/DA Titanium`, `1ToolsFlares`, `1bo2.`, `2o2c` | +45.0 Max Oxygen Set Component verified. |
+| **Raw Resources** | `3O2$2`, `84PFabricCurtaiSeaWSolarPaneradlhBatteryTerminHalf`, `8DA Water.Count`, `9!BP MedKit`, `9!MedKit`, `9E'BP BasicBattery`, `A(Scanner`, `BA(Scanner`, `BranchingCoralWaterslug`, `Builder` | Serialized in resource node prototypes. |
 
 ## Biome Coordinates
 Telemetry engine confirms player traversal across the following core world partitions:
@@ -42,28 +42,28 @@ Telemetry engine confirms player traversal across the following core world parti
 * **Black Box Investigation**: `CoralGardensRadioMessageBlackBox`
 
 ## Constructed Facilities & Vehicles
-* **Base Modules & Tech**: `%!BTubaJubileeP DestroyedBiobed`, `(BlueprBP BioLab C`, `-Blueprints/ing/BP Locker Wall C`, `.L.BaseLocker Floor`, `/BP Fabricator C9`, `/DeployFloatingLocker Carr`, `1O,Blueprints/ItemWorldSupplyLocker`, `1O,ItemWorldSupplyLocker`, `53E*Items/ToolWakemaker`, `6ingBioLab WelcomeCenter`
-* **Submersibles & Hulls**: `0,G TadpoleFragm`, `GSofaofa StraRMOuter WInnaNTadpoleDockMoonPool .VehicleBayFabricat`, `TadpolePensNoA Trigger%JF5`, `WInnaNTadpoleDockMoonPool .VehicleBayFabricat`
-* **Discovered POIs**: `/InvesgPOI PZ Basecamp`, `3/oralGardens BlackBox Singh 01 DB`, `:6Investigationker Unlock CoralGardens`, `Blueprints/EnvironmentGardenG BulbFl`, `CampOne+*%`, `CoralGardenCG BulbFlx`, `EnvironmenalGardenCG BulbFl`, `EnvironmenalGardens/BP CG BulbFl C`
-* **World Engine Milestones**: `.dDied Blackbox`, `.dPrototypDied Blackbox`, `/Narrative//DA  Signal Habitat Hide`, `3/ersonnelBlackbox Manti`, `8TriggerUnlockStoryGoalAction`, `Blackbox 2GCNoA`, `Blackbox 2GNoA`, `ClosedEventStoryGoals`
+* **Base Modules & Tech**: `"Corridor&NkDoor`, `"Corridor&NkDoorOveeSnapping`, `$ BasePiece Processor`, `($Tools DeployableLocker`, `(BioLab`, `+Bluepnts/ing/BP Hatch C`, `,E*Items/ToolsWakemaker`, `,E*Wakemaker`, `-Blueprints/ing/BP Locker Wall C`, `/+TadpolePensNoA Trigger%JFPlateBlue4HydroelectricTurbineExodus1PTransmiCeiLSmPedSalGeordiCell`
+* **Submersibles & Hulls**: `Tadpole Fragment`, `TadpolePens06`
+* **Discovered POIs**: `/InvesgPOI PZ Basecamp`, `7WandTrigger CoralGardens`, `AcidRaion SGFeatherKelprancWerslug`, `Art/Environment/BioalGarden/efabsWafers/BP CG  02b`, `BFrKelpABranGsPsh1`, `Blueprints/EnvironmenalGardenG BulbFlx`, `CampOne+*%`, `EnvironmenalGardens/4`
+* **World Engine Milestones**: `.dPrototypDied Blackbox`, `/+BlackBox Investigation Quaker`, `/Narrative//DA  Signal Habitat Hide`, `Blackbox 2GCNoA`, `ClosedEventStoryGoal`, `ClosedEventStoryGoals`, `DA OxygenTunic StoryGoal`, `I2jxdPlayerDied Blackbox`
 * **Decoded Progression Guide**: [savegame_1_decoded.md](./backups/savegame_1_decoded.md)
 
 ## Live Spatial Geometry (Save Coordinates Matrix)
-* `BP_WorldSupplyLocker (X=-0, Y=-36916, Z=0) | ~369.2m dist, 0.0m depth`
 * `BP_WorldSupplyLocker (X=-0, Y=116, Z=-0) | ~1.2m dist, -0.0m depth`
-* `BP_WorldSupplyLocker (X=-0, Y=2934, Z=-0) | ~29.3m dist, -0.0m depth`
 * `BP_WorldSupplyLocker (X=-0, Y=9293, Z=-0) | ~92.9m dist, -0.0m depth`
 * `BP_WorldSupplyLocker (X=-240806, Y=0, Z=0) | ~2408.1m dist, 0.0m depth`
-* `BP_WorldSupplyLocker (X=-2416, Y=-0, Z=9293) | ~24.2m dist, 92.9m depth`
-* `BP_WorldSupplyLocker (X=-36916, Y=0, Z=-0) | ~369.2m dist, -0.0m depth`
+* `BP_WorldSupplyLocker (X=-3878, Y=-0, Z=9293) | ~38.8m dist, 92.9m depth`
 * `BP_WorldSupplyLocker (X=-3878, Y=0, Z=-0) | ~38.8m dist, -0.0m depth`
 * `BP_WorldSupplyLocker (X=-9692, Y=0, Z=0) | ~96.9m dist, 0.0m depth`
 * `BP_WorldSupplyLocker (X=0, Y=-26184, Z=-0) | ~261.8m dist, -0.0m depth`
-* `BP_WorldSupplyLocker (X=2934, Y=-0, Z=-0) | ~29.3m dist, -0.0m depth`
+* `BP_WorldSupplyLocker (X=14462, Y=0, Z=0) | ~144.6m dist, 0.0m depth`
 * `BP_WorldSupplyLocker (X=34148, Y=0, Z=0) | ~341.5m dist, 0.0m depth`
 * `BP_WorldSupplyLocker (X=9293, Y=-0, Z=-0) | ~92.9m dist, -0.0m depth`
+* `Beacon (X=-0, Y=-71434, Z=0) | ~714.3m dist, 0.0m depth`
+* `Beacon (X=0, Y=2455, Z=0) | ~24.6m dist, 0.0m depth`
 * `BioBed (X=-0, Y=-1312, Z=0) | ~13.1m dist, 0.0m depth`
 * `BioBed (X=-0, Y=-422, Z=2) | ~4.2m dist, 0.0m depth`
+* `BioBed (X=-0, Y=135, Z=-0) | ~1.3m dist, -0.0m depth`
 
 ## Graphics Configuration
 Summary extracted from [GameUserSettings.ini](./backups/GameUserSettings.ini):
@@ -75,11 +75,11 @@ Summary extracted from [GameUserSettings.ini](./backups/GameUserSettings.ini):
 Snapshot of diagnostic gameplay session events logged by engine:
 
 ```text
-[2026.06.24-08.04.10:135][126]LogBlueprintUserMessages: [WBP_CompilingShadersScreen_C_2147480318] *** DECONSTRUCT
+[2026.06.26-06.37.11:793][666]LogBlueprintUserMessages: [WBP_CompilingShadersScreen_C_2147480722] *** DECONSTRUCT
 access-control-expose-headers: x-sentry-error,x-sentry-rate-limits,retry-after
-[2026.06.24-08.04.10:245][126]LogMoviePlayer: Shutting down movie player
-[2026.06.24-08.04.10:723][126]LogRHI: FPipelineFileCacheManager Incremental saved 172 total, 9 new, 0 removed, 0 co
-[2026.06.24-08.04.11:161][126]LogHttp: Warning: 	verb=[POST] url=[https://api.live.subnautica.net/api/v1/player/log
+[2026.06.26-06.37.11:910][666]LogMoviePlayer: Shutting down movie player
+[2026.06.26-06.37.12:394][666]LogRHI: FPipelineFileCacheManager Incremental saved 182 total, 10 new, 0 removed, 0 c
+[2026.06.26-06.37.12:827][666]LogHttp: Warning: 	verb=[POST] url=[https://api.live.subnautica.net/api/v1/player/log
 ```
 
 ## Reference Links
