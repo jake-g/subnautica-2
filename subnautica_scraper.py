@@ -415,6 +415,7 @@ def execute_pull() -> None:
 
   print("-> Auto-decoding newly synced binary save files...")
   decode_all_saves()
+  update_official_changelog_from_rss()
 
 
 def execute_push() -> None:
@@ -746,6 +747,118 @@ Snapshot of diagnostic gameplay session events logged by engine:
   return report
 
 
+def fetch_steam_news_rss(app_id: int = 1962700) -> List[Dict[str, Any]]:
+  """Downloads and parses Steam's RSS news feed for the given app ID."""
+  import urllib.request
+  import xml.etree.ElementTree as ET
+
+  url = f"https://store.steampowered.com/feeds/news/app/{app_id}"
+  req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+  updates = []
+  try:
+    with urllib.request.urlopen(req) as response:
+      content = response.read()
+      root = ET.fromstring(content)
+      for item in root.findall(".//channel/item"):
+        title_el = item.find("title")
+        link_el = item.find("link")
+        pub_date_el = item.find("pubDate")
+
+        title = title_el.text if title_el is not None and title_el.text else "Untitled"
+        link = link_el.text if link_el is not None and link_el.text else ""
+        pub_date_str = pub_date_el.text if pub_date_el is not None and pub_date_el.text else ""
+
+        # Parse pubDate (e.g., "Thu, 04 Jun 2026 15:00:26 +0000")
+        try:
+          clean_date = pub_date_str[:25].strip()
+          dt = datetime.datetime.strptime(clean_date, "%a, %d %b %Y %H:%M:%S")
+          date_formatted = dt.strftime("%Y-%m-%d %H:%M:%S")
+        except Exception:
+          date_formatted = pub_date_str
+
+        updates.append({
+            "date":
+                date_formatted,
+            "milestone":
+                f"[Game Update] {title}",
+            "summary":
+                f"Official Subnautica 2 release/news update: {title}. See Steam link.",
+            "status":
+                f"[Steam News]({link})"
+        })
+  except Exception as e:
+    print(f"Warning: Failed to fetch Steam news RSS: {e}", file=sys.stderr)
+  return updates
+
+
+def update_official_changelog_from_rss() -> None:
+  """Downloads Steam RSS news feed and writes/updates CHANGELOG_SUBNAUTICA_2.md."""
+  official_changelog_path = os.path.join(WORKSPACE_ROOT,
+                                         "CHANGELOG_SUBNAUTICA_2.md")
+  game_updates = fetch_steam_news_rss()
+  if not game_updates:
+    return
+
+  # Rebuild the markdown table
+  table_header = "| Date | Update | Summary | Link |\n| :--- | :--- | :--- | :--- |\n"
+  table_body = ""
+  for s in game_updates:
+    date_field = f"**{s['date']}**"
+    clean_title = s['milestone'].replace("[Game Update] ", "")
+    table_body += f"| {date_field} | {clean_title} | {s['summary']} | {s['status']} |\n"
+
+  # Build Mermaid timeline for official updates
+  mermaid_code = """```mermaid
+graph TD
+    %% Styling
+    classDef update fill:#2d3748,stroke:#319795,stroke-width:2px,color:#fff;
+
+    Start[Early Access Launch: 2026-05-14]"""
+
+  last_node = "Start"
+  node_counter = 1
+  node_styles = []
+
+  # Sort chronologically for the timeline (oldest first)
+  chrono_updates = list(reversed(game_updates))
+  for ev in chrono_updates:
+    node_id = f"U{node_counter}"
+    node_counter += 1
+
+    title = ev["milestone"].replace("[Game Update] ", "")
+    clean_title = title.replace("\"", "'")
+    if len(clean_title) > 40:
+      clean_title = clean_title[:37] + "..."
+
+    display_date = ev["date"].split(" ")[0]
+
+    mermaid_code += f"\n    {last_node} --> {node_id}[\"{display_date}: {clean_title}\"]"
+    node_styles.append(f"    class {node_id} update;")
+    last_node = node_id
+
+  mermaid_code += "\n\n" + "\n".join(node_styles)
+  mermaid_code += "\n```"
+
+  content = f"""# Subnautica 2 Official Game Changelog
+
+This ledger tracks the official game updates, hotfixes, and dev logs released by Unknown Worlds for **Subnautica 2** (Early Access). Automatically synchronized via Steam RSS feed.
+
+## 🗺️ Official Update Timeline
+
+{mermaid_code}
+
+## 📋 Official Updates Ledger
+
+{table_header}{table_body}
+"""
+
+  with open(official_changelog_path, "w", encoding="utf-8") as f:
+    f.write(content)
+  print(
+      f"-> Successfully updated official game changelog at: {official_changelog_path}"
+  )
+
+
 def execute_report() -> None:
   """Executes live telemetry scraping and updates REPORT.md."""
   pull_remote_engine_log()
@@ -755,6 +868,7 @@ def execute_report() -> None:
   with open(REPORT_PATH, "w", encoding="utf-8") as f:
     f.write(md_content)
   print(f"-> Successfully generated fresh diagnostic report at: {REPORT_PATH}")
+  update_official_changelog_from_rss()
 
 
 def main() -> None:
