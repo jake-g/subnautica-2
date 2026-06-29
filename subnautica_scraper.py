@@ -59,6 +59,85 @@ UE_NOISE = {
     "level",
 }
 
+# Mapping of raw Unreal Engine serialization IDs to clean, human-readable names
+SYMBOL_MAPPER = {
+    # Tools & Gear
+    "builder": "Habitat Builder",
+    "scanner": "Scanner",
+    "flashlight": "Flashlight",
+    "tank": "Oxygen Tank",
+    "battery": "Battery",
+    "medkit": "First Aid Kit",
+    "repair": "Repair Tool",
+    "laser": "Laser Cutter",
+    "resonator": "Sonic Resonator",
+    "bladder": "Air Bladder",
+    "elevator": "Dive Elevator",
+    "flare": "Flare",
+    "knife": "Survival Knife",
+    "rebreather": "Rebreather",
+
+    # Raw Resources
+    "titanium": "Titanium",
+    "copper": "Copper",
+    "quartz": "Quartz",
+    "silver": "Silver",
+    "lead": "Lead",
+    "glass": "Glass",
+    "wire": "Copper Wire",
+    "gold": "Gold",
+    "diamond": "Diamond",
+    "magnetite": "Magnetite",
+    "lithium": "Lithium",
+    "sulfur": "Sulfur",
+    "silicone": "Silicone Rubber",
+    "lubricant": "Lubricant",
+    "fibermesh": "Fiber Mesh",
+    "germanium": "Germanium",
+    "salt": "Salt",
+    "water": "Water",
+
+    # Base Pieces / Facilities
+    "hatch": "Hatch",
+    "locker": "Locker",
+    "solarpanel": "Solar Panel",
+    "biobed": "Biobed",
+    "scannerroom": "Scanner Room",
+    "biolab": "Biolab",
+    "processor": "Processor (Ingot Fabricator)",
+    "turbine": "Hydroelectric Turbine",
+    "transmitter": "Power Transmitter",
+    "charger": "Battery Charger",
+    "power wall": "Power Wall",
+    "room": "Room Module",
+    "corridor": "Corridor",
+    "foundation": "Foundation",
+    "fabricator": "Fabricator",
+    "bioreactor": "Bioreactor",
+    "waterfilter": "Water Filtration",
+    "growbed": "Growbed",
+    "wakemaker": "Wake Maker",
+    "chair": "Chair",
+    "bench": "Bench",
+    "table": "Table",
+    "floodlight": "Floodlight",
+
+    # Submersibles / Vehicles
+    "tadpole": "Tadpole Submersible",
+    "seaglide": "Seaglide",
+    "seamoth": "Seamoth",
+    "prawn": "Prawn Suit",
+    "dock": "Moonpool Dock",
+
+    # Narrative Triggers / POIs / Beacons
+    "welcomecent": "Welcome Center",
+    "habitatsignal": "Habitat Signal",
+    "lifepod": "Emergency Lifepod Signal",
+    "blackbox": "Black Box Radio Signal",
+    "basecamp": "Alterra Basecamp",
+    "campone": "Camp One Wreckage",
+}
+
 REMOTE_PULL_SCRIPT = """
 import os
 import base64
@@ -78,22 +157,17 @@ if os.path.exists(save_dir):
         payload['saves'][f] = base64.b64encode(raw).decode('ascii')
 
 for sub in ['Config/Windows', 'ImGui']:
-  d = os.path.join(cfg_root, sub)
-  if os.path.exists(d):
-    for f in os.listdir(d):
-      if any(f.endswith(ext) for ext in ['.ini', '.json', '.cfg']) and 'UWESaveSystem' not in f:
-        p = os.path.join(d, f)
-        if os.path.isfile(p):
-          payload['configs'][f] = open(p, 'r', errors='ignore').read()
-
-log_dir = os.path.join(cfg_root, 'Logs')
-if os.path.exists(log_dir):
-  p = os.path.join(log_dir, 'Subnautica2.log')
-  if os.path.isfile(p):
-    try:
-      payload['configs']['Subnautica2.log'] = open(p, 'r', errors='ignore').read()
-    except Exception:
-      pass
+  p = os.path.join(cfg_root, sub)
+  if os.path.exists(p):
+    for f in os.listdir(p):
+      if f.endswith('.ini') or f.endswith('.json'):
+        raw_p = os.path.join(p, f)
+        if os.path.isfile(raw_p):
+          try:
+            content = open(raw_p, 'r', encoding='utf-8', errors='ignore').read()
+            payload['configs'][f"{sub.replace('/', '_')}_{f}"] = content
+          except Exception:
+            pass
 
 print(json.dumps(payload))
 """
@@ -103,15 +177,13 @@ print(json.dumps(payload))
 # ==============================================================================
 
 
-def is_junk_string(text: str) -> bool:
-  """Evaluates whether an ASCII string is binary serialization noise."""
-  s_str = text.strip()
+def is_junk_string(s: str) -> bool:
+  """Returns True if string is likely binary garbage or serialization noise."""
+  s_str = s.strip()
   if len(s_str) < 4:
     return True
-  if any(char * 3 in s_str for char in "/.-*+!#$&_=:?~"):
-    return True
   low = s_str.lower()
-  if any(noise == low for noise in UE_NOISE):
+  if any(ns == low for ns in UE_NOISE):
     return True
   if low.startswith("ue4") or low.startswith("ue5"):
     return True
@@ -122,9 +194,31 @@ def is_junk_string(text: str) -> bool:
 
 
 def clean_game_string(text: str) -> str:
-  """Cleans prefix asset paths for clean presentation."""
-  cleaned = re.sub(r"^.*(?:/Game/|/Script/|/Data/|/Blueprints/)", "", text)
+  """Cleans prefix asset paths and maps symbols to human-readable names."""
+  # Strip long folder path prefixing
+  cleaned = re.sub(
+      r"^.*(?:/Game/|/Script/|/Data/|/Blueprints/|/Items/|/Tools/|/Refined/|/ResourceNodes/|/WorldEntities/)",
+      "",
+      text,
+  )
   cleaned = cleaned.strip("_ ").replace("_", " ")
+
+  # Remove trailing component suffixes like " C"
+  if cleaned.endswith(" C"):
+    cleaned = cleaned[:-2]
+
+  low = cleaned.lower().strip()
+
+  # 1. Exact match
+  if low in SYMBOL_MAPPER:
+    return SYMBOL_MAPPER[low]
+
+  # 2. Substring match (longest keys first to avoid partial matches)
+  for key in sorted(SYMBOL_MAPPER.keys(), key=len, reverse=True):
+    if key in low:
+      return SYMBOL_MAPPER[key]
+
+  # Fallback: preserve original cleaned string casing
   return cleaned
 
 
@@ -583,21 +677,21 @@ def format_markdown_report(data: Dict[str, Any], git_hash: str) -> str:
   logs = data.get("recent_logs", [])
 
   clean_tools = [
-      "Habitat Builder (`BP_Builder`)",
-      "Scanner (`BP_Scanner`)",
-      "Flashlight (`Tools_Flashlight`)",
-      "Small Oxygen Tank (`BP_OxygenTank_Small`)",
-      "Basic Battery (`BP_BasicBattery`)",
-      "First Aid MedKit (`BP_MedKit`)",
+      "Habitat Builder",
+      "Scanner",
+      "Flashlight",
+      "Standard Oxygen Tank",
+      "Battery",
+      "First Aid Kit",
   ]
   clean_resources = [
-      "Titanium (`DA_Titanium`)",
-      "Copper (`DA_Copper`)",
-      "Quartz (`DA_Quartz`)",
-      "Silver (`DA_Silver`)",
-      "Lead (`DA_Lead`)",
-      "Glass (`FullGlass`)",
-      "Copper Wire (`CopperWire`)",
+      "Titanium",
+      "Copper",
+      "Quartz",
+      "Silver",
+      "Lead",
+      "Glass",
+      "Copper Wire",
   ]
 
   base_pieces = data.get("constructed_base_pieces", [])
@@ -625,13 +719,35 @@ def format_markdown_report(data: Dict[str, Any], git_hash: str) -> str:
   res_str = (", ".join(f"`{t}`" for t in tools_gear[12:22])
              if len(tools_gear) > 12 else ", ".join(clean_resources))
   base_str = (", ".join(f"`{bp}`" for bp in base_mods[:10])
-              if base_mods else "`BP_SupplyLocker`, `FloatingLocker`")
+              if base_mods else "`Wall Locker`, `Floating Locker`")
   vehicles_str = (", ".join(f"`{v}`" for v in vehicles)
                   if vehicles else "*None detected in current save register*")
   pois_str = (", ".join(f"`{p}`" for p in pois_list[:8])
-              if pois_list else "`POI_Basecamp`, `SurveyRoom`")
-  flags_str = (", ".join(f"`{fl}`" for fl in quests_list[:8])
-               if quests_list else "`bStartupItemsHaveBeenAdded=True`")
+              if pois_list else "`Basecamp`, `Survey Room`")
+
+  # Dynamically build active signals table
+  active_quests = set()
+  for q in quests_list:
+    low_q = q.lower()
+    if "welcomecent" in low_q:
+      active_quests.add(
+          "| **Alterra Welcome Center** | 🟢 Active | Primary distress signal beacon |"
+      )
+    elif "habitat" in low_q:
+      active_quests.add(
+          "| **Habitat Beacon** | 🟢 Active | Base builder tutorial signal |")
+    elif "lifepod" in low_q:
+      active_quests.add(
+          "| **Emergency Lifepod** | 🟢 Active | Initial crash pod beacon |")
+    elif "blackbox" in low_q:
+      active_quests.add(
+          "| **Crashed Black Box** | 🟢 Active | Wreckage radio recording waypoint |"
+      )
+
+  quests_table = "\n".join(
+      sorted(list(active_quests))
+  ) if active_quests else "| *No active story signals detected in save register* | | |"
+
   coords_str = ("\n".join(f"* `{c}`" for c in coords_list)
                 if coords_list else "*Origin Pod (X=0, Y=0, Z=0)*")
 
@@ -654,13 +770,13 @@ def format_markdown_report(data: Dict[str, Any], git_hash: str) -> str:
   is_streaming = (res_x == "1280" and
                   res_y == "720") or (last_confirm_x == "1280" and
                                       last_confirm_y == "720")
-  session_type = "Streaming Session (Steam Remote Play / Cloud)" if is_streaming else "Direct PC Session"
+  session_type = "Streaming Session (Steam Remote Play)" if is_streaming else "Direct PC Session"
 
   report = f"""# Subnautica 2 Telemetry Report
 
 Live progression telemetry and configuration summary generated via SSH from gaming rig `{PC_SSH_HOST}`. All binary saves and plaintext configs are mirrored locally in `backups/`.
 
-## Session Specifications
+## 🖥️ Session Specifications
 * **Game Title**: Subnautica 2 (Early Access Standalone | Unreal Engine 5)
 * **Gaming Host**: `pc` (`192.168.0.100` | Windows 11 x64 | User: `jake`)
 * **Platform Provider**: Steam (`OnlineSubsystemSteam` | Player ID `76561198797039235`)
@@ -671,51 +787,51 @@ Live progression telemetry and configuration summary generated via SSH from gami
 * **Save Directory**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/SaveGames/`
 * **Log File**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/Logs/Subnautica2.log`
 
-## Equipment Status
-Raw extracted equipment items and resource nodes actively discovered in workspace:
+## 🛠️ Discovered Equipment & Resources
 
-| Category | Discovered Symbols | Verification Status |
+| Category | Discovered Items | Verification Status |
 | :--- | :--- | :--- |
-| **Tools** | {tools_str} | Equipped in active `AUWEBaseItem` slots. |
+| **Tools** | {tools_str} | Equipped in active slots. |
 | **Survival Gear** | {gear_str} | +45.0 Max Oxygen Set Component verified. |
 | **Raw Resources** | {res_str} | Serialized in resource node prototypes. |
 
-## Biome Coordinates
-Telemetry engine confirms player traversal across the following core world partitions:
+## 🏗️ Constructed Facilities & Vehicles
 
-| Partition / Zone | Evaluated Telemetry Symbols | Approx Depth | Distance & Direction from Pod | Relative to Angel Comb Habitat | Threat Level |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Safe Shallows / Pod** | `L_Main`, `Lifepod_SignalOriginal` | ~0m | Origin (`X: 0m, Y: 0m`) | ~238m East | None |
-| **Angel Comb Habitat** | `CoralGardens`, `BioBed`, `SolarPanel` | ~30m | ~238m West (`X: 0.1m, Y: -237.8m W`) | Core Base Reference Point | Low |
-| **Crashed Black Box** | `CoralGardensRadioMessageBlackBox` | ~45m | ~380m North | ~250m Northeast | Low |
-| **Kelp Forest Border** | `FeatherKelp`, `KelpRandomNode` | ~50m-90m | ~250m-400m West / Southwest | Directly South & Adjacent | Medium |
-| **Welcome Center BioLab**| `DA__Signal_WelcomeCent_Hide` | ~60m | ~500m Northwest | ~300m North-Northwest | Medium |
-| **Abandoned Basecamp** | `InvesgPOI_PZ_Basecamp`, `ColonistBunker052` | ~70m | ~420m West | ~180m West along canyon shelf | High |
-| **Thermal Vents** | `SmallVent`, `VentFall` | ~80m-120m | ~450m Northeast / East | ~550m East-Northeast | High |
+| Category | Discovered Assets |
+| :--- | :--- |
+| **Base Modules & Tech** | {base_str} |
+| **Submersibles & Hulls** | {vehicles_str} |
+| **Discovered POIs** | {pois_str} |
 
-## Narrative Quests & Radio Signals
-* **Welcome Center Signal**: `DA__Signal_WelcomeCent_Hide`
-* **Habitat Beacon**: `DA__Signal_Habitat_Hide`
-* **Emergency Lifepod**: `Lifepod_SignalOriginal`
-* **Black Box Investigation**: `CoralGardensRadioMessageBlackBox`
+## 📡 Active Signals & Story Goals
 
-## Constructed Facilities & Vehicles
-* **Base Modules & Tech**: {base_str}
-* **Submersibles & Hulls**: {vehicles_str}
-* **Discovered POIs**: {pois_str}
-* **World Engine Milestones**: {flags_str}
-* **Decoded Progression Guide**: [savegame_1_decoded.md](./backups/savegame_1_decoded.md)
+| Signal / Quest | Status | Details |
+| :--- | :--- | :--- |
+{quests_table}
 
-## Live Spatial Geometry (Save Coordinates Matrix)
+## 🗺️ Biome Coordinates
+Player traversal history across core world partitions:
+
+| Partition / Zone | Approx Depth | Distance & Direction from Pod | Relative to Angel Comb Habitat | Threat Level |
+| :--- | :---: | :--- | :--- | :---: |
+| **Safe Shallows / Pod** | ~0m | Origin (`X: 0m, Y: 0m`) | ~238m East | None |
+| **Angel Comb Habitat** | ~30m | ~238m West (`X: 0.1m, Y: -237.8m W`) | Core Base Reference Point | Low |
+| **Crashed Black Box** | ~45m | ~380m North | ~250m Northeast | Low |
+| **Kelp Forest Border** | ~50m-90m | ~250m-400m West / Southwest | Directly South & Adjacent | Medium |
+| **Welcome Center BioLab**| ~60m | ~500m Northwest | ~300m North-Northwest | Medium |
+| **Abandoned Basecamp** | ~70m | ~420m West | ~180m West along canyon shelf | High |
+| **Thermal Vents** | ~80m-120m | ~450m Northeast / East | ~550m East-Northeast | High |
+
+## 📍 Live Spatial Geometry (Save Coordinates Matrix)
 {coords_str}
 
-## Graphics Configuration
+## ⚙️ Graphics Configuration
 Summary extracted from [GameUserSettings.ini](./backups/GameUserSettings.ini):
-* **Resolution**: ResolutionSizeX={res_x}, ResolutionSizeY={res_y} (Last Confirmed: {last_confirm_x}x{last_confirm_y})
-* **Frame Rate Cap**: FrameRateLimit={frame_rate}
+* **Resolution**: {res_x}x{res_y} (Last Confirmed: {last_confirm_x}x{last_confirm_y})
+* **Frame Rate Cap**: {frame_rate} FPS
 * **Upscaling Quality**: ScalabilityQuality_TSR={tsr_mode}
 
-## Recent Engine Events
+## 📝 Recent Engine Events
 Snapshot of diagnostic gameplay session events logged by engine:
 
 ```text
@@ -753,6 +869,7 @@ def fetch_steam_news_rss(app_id: int = 1962700) -> List[Dict[str, Any]]:
   import xml.etree.ElementTree as ET
 
   url = f"https://store.steampowered.com/feeds/news/app/{app_id}"
+
   req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
   updates = []
   try:

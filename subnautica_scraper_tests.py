@@ -39,10 +39,9 @@ class TestSubnauticaScraper(unittest.TestCase):
     self.assertEqual(clean_game_string("/Script/CoreUObject/Class"),
                      "CoreUObject/Class")
     self.assertEqual(clean_game_string("/Data/Blueprints/BP_Seamoth"),
-                     "BP Seamoth")
-    self.assertEqual(clean_game_string("BP_OxygenTank_Small"),
-                     "BP OxygenTank Small")
-    self.assertEqual(clean_game_string("_DA_Copper_"), "DA Copper")
+                     "Seamoth")
+    self.assertEqual(clean_game_string("BP_OxygenTank_Small"), "Oxygen Tank")
+    self.assertEqual(clean_game_string("_DA_Copper_"), "Copper")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,7 @@
 # Subnautica 2 Progression Roadmap & Exploration Tracker
 
+[Sitemap](SITEMAP.md) | [Guide](GUIDE.md) | [Roadmap](TODO.md) | [Changelog](CHANGELOG.md)
+
 A structured coaching roadmap and systematic exploration checklist for **Subnautica 2** (Early Access Standalone / Unreal Engine 5).
 
 > [!NOTE]
@@ -10,78 +12,84 @@ A structured coaching roadmap and systematic exploration checklist for **Subnaut
 
 ## 📋 Sequenced Action Roadmap (Next Session Focus)
 
-> [!IMPORTANT]
-> **Active Origin**: Starting safely inside **Angel Comb Base** (`~30m depth`) with a functional power grid (6 Solar, 3 Hydro Turbines), Biolab, Processor, Scanner Station, Moonpool (with Tadpole Dock), Battery Charger, and Power Wall.
+```mermaid
+graph LR
+    classDef active fill:#1a365d,stroke:#3182ce,stroke-width:2px,color:#fff;
+    classDef next fill:#2d3748,stroke:#4a5568,stroke-width:1px,color:#a0aec0;
 
-### 📍 Step 1: Scanner Room Calibration & visor HUD Setup
-* [ ] **Harvest Table Coral & Copper**: Use your Survival Knife on canyon walls to slice red/green shelf corals for **Table Coral Samples** (`BP_TableCoral`). Gather Copper.
-* [ ] **Craft Scanner Room Upgrades**:
-  - [ ] Craft **Scanner Room Range Upgrades** (`BP_ScannerRoomUpgrade_Range`) at the Scanner Room console to extend radar coverage.
-  - [ ] Craft the **Scanner Room HUD Chip** at the Fabricator and equip it. *This highlights scanned resources directly on your visor!*
-* [ ] **Locate Key Materials**: Set Scanner Room to target **Galena Outcrops** (for Lead) and **Table Coral** to stock up on building materials.
+    S1(1. Calibrate Scanner):::active --> S2(2. Gather Blueprints):::next
+    S2 --> S3(3. Build Tadpole Sub):::next
+    S3 --> S4(4. Transition Deep):::next
+```
+
+> [!IMPORTANT]
+> **Active Origin**: Starting at **Angel Comb Base** (`~30m depth`) with 6 Solar, 3 Hydro Turbines, Biolab, Processor, Scanner Station, Moonpool (with Tadpole Dock), Battery Charger, and Power Wall.
+
+### 📍 Step 1: Scanner Room Calibration & Visor HUD Setup
+* [ ] **Harvest Table Coral & Copper**:
+  - Slice red/green shelf corals at base canyon walls with Survival Knife -> **Table Coral Samples** (`BP_TableCoral`).
+  - Break limestone nodes -> **Copper Ore**.
+* [ ] **Craft Scanner Room Upgrades** (at Scanner Room console):
+  - [ ] **Range Upgrade** (`BP_ScannerRoomUpgrade_Range`) — *Extends radar range*
+  - [ ] **HUD Chip** — *Highlights resources directly on your visor (Fabricator)*
+* [ ] **Target Outcrops**: Set Scanner Room to target **Galena Outcrops** (Lead) and **Table Coral**.
 
 ### 🏊‍♂️ Step 2: Basic Tools & Utility Blueprint Close-out
-Set your Scanner Room to target **Technology Fragments** to locate these missing blueprints:
-* [ ] **Repair Tool** (`BP_RepairTool`) — *(2/3 fragments, `+1` left)*
-  * **Quick Location**: **Camp One Wreckage** (~180m West | ~70m depth). Search inside the metal wreckage corridors and on shelves.
-* [ ] **Work Light** (`BP_WorkLight`) — *(1/2 fragments, `+1` left)*
-  * **Quick Location**: **Camp One Wreckage** (~180m West | ~70m depth) or inside cargo crates immediately outside the site.
-* [ ] **Seaglide** (`BP_Seaglide`) — *(Not yet unlocked)*
-  * **Quick Location**: **Kelp Forest Biome** (~250m–400m West/Southwest | ~50m–90m depth). Look on the grassy seabed and around the roots of Creepvines.
-* [ ] **Laser Cutter** (`BP_LaserCutter`) — *(Not yet unlocked)*
-  * **Quick Location**: Search in deep metal cargo crates surrounding the **Crashed Black Box** area (~380m North | ~45m depth).
-* [ ] **Rebreather** — *(Not yet unlocked)*
-  * **Quick Location**: Inspect data consoles and equipment lockers inside the **Welcome Center BioLab** (~500m Northwest | ~60m depth).
-* [ ] **Wall Rack** (`BP_WallRack`) — *(1/3 fragments, `+2` left)*
-  * **Quick Location**: Camp One Wreckage module walls and shelves.
-* [ ] Set Camp One Beacon to **Green** / OFF once clear.
+* [ ] **Repair Tool** (`BP_RepairTool`) — `[2/3 fragments | Need 1]`
+  - **Location**: **Camp One Wreckage** `[~70m depth | 180m W]`. Search inside corridors & on shelves.
+* [ ] **Work Light** (`BP_WorkLight`) — `[1/2 fragments | Need 1]`
+  - **Location**: **Camp One Wreckage** `[~70m depth | 180m W]`. Check cargo crates outside.
+* [ ] **Seaglide** (`BP_Seaglide`) — `[0/3 fragments | Need 3]`
+  - **Location**: **Kelp Forest Biome** `[~50m-90m depth | 250m-400m W/SW]`. Grassy seabed & Creepvine roots.
+* [ ] **Laser Cutter** (`BP_LaserCutter`) — `[0/3 fragments | Need 3]`
+  - **Location**: **Crashed Black Box** `[~45m depth | 380m N]`. Search deep cargo crates around wreckage.
+* [ ] **Rebreather** — `[Not Unlocked]`
+  - **Location**: **Welcome Center BioLab** `[~60m depth | 500m NW]`. Inspect data consoles & lockers.
+* [ ] **Wall Rack** (`BP_WallRack`) — `[1/3 fragments | Need 2]`
+  - **Location**: **Camp One Wreckage** `[~70m depth | 180m W]`. Scan wall mounts.
+* [ ] **Signal Cleanup**: Set Camp One Beacon to **Green / OFF** in PDA once cleared.
 
 ### 🏗️ Step 3: Vehicle Construction & Refinement
-* [ ] **Build Moonpool Vehicle Fabricator**: Establish a fabricator inside the Moonpool. *(Requires expanding/relocating Moonpool to a deeper water/high-clearance zone to fit the fabricator/sub).*
-* [ ] **Build Tadpole Submersible** (`BP_Tadpole`): Build at the Moonpool Vehicle Fabricator.
-* [ ] **Scan Vehicle Modification Station fragments**: Search for fragments to construct the wall-mounted console.
+* [ ] **Build Moonpool Vehicle Fabricator**: Install inside the Moonpool.
+* [ ] **Build Tadpole Submersible** (`BP_Tadpole`): Assemble at the Moonpool Vehicle Fabricator.
+* [ ] **Scan Vehicle Modification Station fragments**: Search wreck sites to construct the wall-mounted console.
 
 ### 🧭 Step 4: Deeper Exploration Transition
-* [ ] **Search for Dive Elevator**: Sweep the Thermal Vents border and deeper areas for the remaining **Dive Elevator** (`BP_DiveElevator`) fragment (1/2 completed, `+1` left) to enable easy vertical transport to deeper biomes.
+* [ ] **Search for Dive Elevator**: Sweep the Thermal Vents border `[80m-120m depth | 450m NE/E]` for the remaining **Dive Elevator** (`BP_DiveElevator`) fragment `[1/2 completed | Need 1]`.
 
 ---
 
-## 🧭 Exploration Verification SOP ("Closing Out" & Disabling Signals)
+## 🧭 Exploration Verification SOP
 
-Before marking an area as **Closed / Fully Explored** and toggling OFF its HUD Beacon in your PDA Signals tab, verify against these 3 concrete pieces of evidence:
-1. **Telemetry StoryGoal Trigger (`_Hide`)**: Check [savegame_1_decoded.md](./backups/savegame_1_decoded.md#L227). When you interact with a major signal's core terminal, the engine records `DA__Signal_..._Hide`. If `_Hide` is present, the primary narrative objective is 100% complete.
-2. **Zero Partial Blueprints (No Leftover Crates)**: Open your PDA **Blueprints** tab under `In Progress`. If you have unresolved fractions (like `2/3 Repair Tool`, `1/2 Dive Elevator`), wreckage sites you previously visited still contain un-scanned cargo crates!
-3. **Sealed Bulkhead Audit (Laser Cutter Check)**: Many crashed Alterra structures contain sealed titanium bulkhead doors requiring a **Laser Cutter** (`BP_LaserCutter`). Do not disable its signal until you return with a cutting tool!
+Before turning OFF a HUD Beacon in your PDA Signals tab, verify:
+1. **StoryGoal Complete**: Decoded save shows `DA__Signal_..._Hide` (terminal interacted).
+2. **Blueprints Complete**: No fractional blueprints (e.g., `2/3`) remaining in PDA.
+3. **Sealed Doors Cut**: All bulkheads cut open with **Laser Cutter** (`BP_LaserCutter`).
 
-### Active Perimeter Destination Tracker
+---
 
-#### 1. Crashed Black Box (Alterra Emergency Signal)
-- **Approx Location**: `~45m depth` | `~380m North` of Lifepod (`~250m Northeast` of Angel Comb Base).
-- **Status**: **IN PROGRESS** (Partially Explored)
-  - [ ] Scan Light Stick / Floodlight fragments and Bar Table / Bench decorative furniture blueprints.
-  - [ ] Salvage nearby Titanium cargo crates and copper wire nodes.
+## 🗺️ Active Perimeter Destination Tracker
 
-#### 2. Thermal Vents & Hydrothermal Fissures (Volcanic Trenches)
-- **Approx Location**: `~80m-120m depth` | `~450m NE/E` of Lifepod (`~550m ENE` of Angel Comb Base).
+### 1. Crashed Black Box (Alterra Emergency Signal)
+- **Location**: `~45m depth | ~380m North` (250m NE of base)
+- **Status**: **IN PROGRESS**
+  - [ ] Scan **Light Stick** / **Floodlight** & **Bar Table** / **Bench** blueprints.
+  - [ ] Salvage surrounding Titanium cargo crates.
+
+### 2. Thermal Vents & Hydrothermal Fissures (Volcanic Trenches)
+- **Location**: `~80m-120m depth | ~450m NE/E` (550m ENE of base)
 - **Status**: **SCOUTED / UNCLOSED**
-  - [ ] Scan Thermal Plant fragments and Power Transmitter fragments near active volcanic vents.
-  - [ ] Scan Vehicle Modification Station fragments.
-  - [ ] Identify and harvest Magnetite and crystalline Lithium deposits surrounding hydrothermal fissures.
+  - [ ] Scan **Thermal Plant** & **Power Transmitter** fragments near vents.
+  - [ ] Scan **Vehicle Modification Station** fragments.
+  - [ ] Harvest **Magnetite** and **Lithium** surrounding fissures.
 
-#### 3. Tadpole Pens (New Narrative Outpost)
-- **Approx Location**: Unlocked via PDA story goal (`DA_StoryGoal_Investigation_TadpolePensNoA`).
+### 3. Tadpole Pens (New Narrative Outpost)
+- **Location**: Unlocked via `DA_StoryGoal_Investigation_TadpolePensNoA`
 - **Status**: **UNEXPLORED**
-  - [ ] Explore the Tadpole Pens area and scan technology fragments.
+  - [ ] Explore outpost & scan technology fragments.
   - [ ] Locate the source of the story goal transmission.
 
-* **Visual Telemetry via Screenshots**: Capture in-game screenshots of your **PDA Blueprints tab** and **Base Storage Lockers**. Share or drop these screenshots directly in chat for 100% AI vision verification!
-
 ---
 
-## 🛠️ Repository Maintenance & Save Hygiene
-
-Keep the save backup vault and progression reports synchronized by incorporating these steps into your play sessions:
-* [ ] **Pre-Session Pull**: Run `make pull` before starting the game to ensure your local backup vault has the latest remote files.
-* [ ] **Post-Session Snapshot**: Run `make snapshot` immediately after exiting the game. This commits the latest save state (`savegame_1.sav`) and logs to the remote Git repository and updates [REPORT.md](./REPORT.md).
-* [ ] **Co-op Sync Check**: If playing co-op, follow the **Locker Drop** protocol in [MULTIPLAYER.md](./MULTIPLAYER.md) before exporting or importing any 8-digit share codes.
-* [ ] **Diagram Updates**: As you transition to **Phase 2**, update the active phase indicator in [GUIDE.md](./GUIDE.md) and append the milestone to [CHANGELOG.md](./CHANGELOG.md).
+## 📸 Visual Telemetry via Screenshots
+* Capture in-game screenshots of your **PDA Blueprints tab** and **Base Storage Lockers**. Drop them directly in chat for AI visual verification of your progress!

@@ -1,6 +1,9 @@
 # Subnautica 2 Progression Guide
 
+[Sitemap](SITEMAP.md) | [Guide](GUIDE.md) | [Roadmap](TODO.md) | [Changelog](CHANGELOG.md)
+
 A clinical progression guide, geographic biome compendium, and new-player coaching manual for **Subnautica 2** (Early Access Standalone / Unreal Engine 5).
+
 
 All telemetry and biome coordinates verified via live SSH SaveGame inspection (`192.168.0.100` | `savegame_1.sav`).
 
@@ -8,19 +11,21 @@ All telemetry and biome coordinates verified via live SSH SaveGame inspection (`
 
 ## 🌟 Core Survival Principles
 
-Curated community wisdom and essential beginner mechanics (strictly filtered to prevent narrative storyline spoilers):
-- **The "Rule of Three" (Power & Oxygen Security)**: Always maintain at least +2 surplus Solar Panels (`BP_SolarPanel`) or a secondary power generator before building heavy appliances (like Water Filtration or Scanner Rooms). Running out of base energy at night completely stops interior life-support oxygen generation!
-- **Beacon Discipline**: Craft Beacons (`BP_Beacon`) early using Copper + Titanium. Deploy and clearly label them at perimeter resource drops (e.g., "Deep Sandstone Shelf - Gold/Dia", "Kelp Trench - Seed Pods", "Basecamp Entrance") so you never waste daylight or O₂ hunting for narrow canyon openings.
-- **Scanner Room Overdrive**: Attaching an adjacent Scanner Room (`BP_ScannerRoom`) and equipping it with 4x Range Upgrades transforms your starter base into an automated radar network, highlighting local limestone/sandstone nodes and unmapped wreck fragments through canyon walls.
-- **Stow Before You Go**: Dedicate 1 empty Wall Locker entirely to quick-drop loot. Before scouting perimeter wreckage (>400m away), deposit all non-essential ores and spare tools so you have 100% free inventory slots for Titanium salvage and tech blueprints.
-- **Dive Envelope Discipline**: Never descend below your current oxygen tank's comfortable dive envelope (100m depth for Standard Tank) without a Rebreather and a Seaglide. Swimming vertically without a submersible vehicle consumes excessive oxygen during emergency ascents.
-- **HUD Signal Triage**: Keep core reference beacons active (**Lifepod**, **Angel Comb Base**, custom Beacons) in your PDA Signals menu, but disable investigated wreckage and cleared story signals (**Welcome Center**, **Blackbox** beacons, **Camp One**) once fully scouted so your compass remains clean.
+## 🌟 Core Survival Principles
+
+* **Base Power & O₂**: Maintain +2 surplus Solar Panels before building heavy appliances (Water Filtration, Scanner Rooms). Base power depletion at night completely stops interior O₂ generation.
+* **Beacon Discipline**: Craft Beacons early. Deploy and label them at key resource zones (e.g. `"Kelp Trench"`, `"Basecamp"`) to avoid getting lost in dark or deep canyons.
+* **Scanner Room Range**: Build a Scanner Room with 4x Range Upgrades. It highlights local resource nodes and wreckage fragments through walls in real-time.
+* **Inventory Management**: Before scouting wreckage (>400m away), stow all non-essential items in a dedicated "Quick-Drop" base locker to maximize slot capacity for salvage.
+* **Oxygen & Depth Safety**: Never descend below 100m without a Rebreather and a Seaglide. Vertical emergency ascents consume excessive O₂.
+* **HUD Signal Triage**: Disable investigated wreckage and story beacons in your PDA once fully cleared to keep your compass clean.
 
 ---
 
 ## 🪜 High-Level Progression Sequence (Spoiler-Free)
 
-A macro-level sequence of major progression tiers across the game. For immediate actionable execution checklists and specific item targets, refer to [TODO.md](./TODO.md).
+A macro-level sequence of major progression tiers across the game. For immediate actionable checklists, refer to [TODO.md](./TODO.md).
+
 
 ```mermaid
 graph TD

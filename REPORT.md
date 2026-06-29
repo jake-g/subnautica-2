@@ -2,53 +2,53 @@
 
 Live progression telemetry and configuration summary generated via SSH from gaming rig `jake@192.168.0.100`. All binary saves and plaintext configs are mirrored locally in `backups/`.
 
-## Session Specifications
+## 🖥️ Session Specifications
 * **Game Title**: Subnautica 2 (Early Access Standalone | Unreal Engine 5)
 * **Gaming Host**: `pc` (`192.168.0.100` | Windows 11 x64 | User: `jake`)
 * **Platform Provider**: Steam (`OnlineSubsystemSteam` | Player ID `76561198797039235`)
 * **Active Save File**: `savegame_1.sav` (1175.1 KB | Last Saved: `2026-06-27 17:49:59`)
 * **Auto-Save State**: **Enabled** (`UWESaveSystemUserSetting.ini` | `bAutoSaveEnabled=True`)
-* **Display Config**: `3840x2160` (Streaming Session (Steam Remote Play / Cloud) | FPS Cap: 120)
+* **Display Config**: `3840x2160` (Streaming Session (Steam Remote Play) | FPS Cap: 120)
 * **Remote Git Repository**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/.git/` (Pristine tree `4df49f6`)
 * **Save Directory**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/SaveGames/`
 * **Log File**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/Logs/Subnautica2.log`
 
-## Equipment Status
-Raw extracted equipment items and resource nodes actively discovered in workspace:
+## 🛠️ Discovered Equipment & Resources
 
-| Category | Discovered Symbols | Verification Status |
+| Category | Discovered Items | Verification Status |
 | :--- | :--- | :--- |
-| **Tools** | `'CZzQuartz`, `(Game/Bluepnts/Items/Tools/BP Scanner`, `)Salt`, `*&SalvaonicResonator 01`, `*source/DA Titanium ItemType`, `- Chap (silver)3k` | Equipped in active `AUWEBaseItem` slots. |
-| **Survival Gear** | `.*Jubilee2 QuartzChi`, `.KGTitanium`, `/+Databank Kurultai9 QuartzChip`, `/Resource/DA Titanium`, `/Resource/DA Titanium .33`, `1ToolsFlares` | +45.0 Max Oxygen Set Component verified. |
-| **Raw Resources** | `1bo2.`, `2o2c`, `3O2$2`, `3o2C`, `62Tools HandheldScanner`, `6asicBatteryTerminal`, `84PFabricCurtaiSeaWSolarPaneradlhBatteryTerminHalf`, `84PFabricCurtaiSeaWolarPaneradlhBatteryHalf`, `8DA Water.Count`, `8Water` | Serialized in resource node prototypes. |
+| **Tools** | `1bo2.`, `2o2c`, `3O2$2`, `3o2C`, `Battery`, `Biobed` | Equipped in active slots. |
+| **Survival Gear** | `CG DomSonicResonatoicadaWreck02Lea`, `CG DomSonicResonatoicadaWreck02LeaProcess`, `Copper`, `Copper Wire`, `Corridor`, `CuubThPo2` | +45.0 Max Oxygen Set Component verified. |
+| **Raw Resources** | `Emergency Lifepod Signal`, `Fiber Mesh`, `First Aid Kit`, `Flare`, `Flashlight`, `Glass`, `Habitat Builder`, `JO2D`, `Lead`, `Lyo2Y` | Serialized in resource node prototypes. |
 
-## Biome Coordinates
-Telemetry engine confirms player traversal across the following core world partitions:
+## 🏗️ Constructed Facilities & Vehicles
 
-| Partition / Zone | Evaluated Telemetry Symbols | Approx Depth | Distance & Direction from Pod | Relative to Angel Comb Habitat | Threat Level |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Safe Shallows / Pod** | `L_Main`, `Lifepod_SignalOriginal` | ~0m | Origin (`X: 0m, Y: 0m`) | ~238m East | None |
-| **Angel Comb Habitat** | `CoralGardens`, `BioBed`, `SolarPanel` | ~30m | ~238m West (`X: 0.1m, Y: -237.8m W`) | Core Base Reference Point | Low |
-| **Crashed Black Box** | `CoralGardensRadioMessageBlackBox` | ~45m | ~380m North | ~250m Northeast | Low |
-| **Kelp Forest Border** | `FeatherKelp`, `KelpRandomNode` | ~50m-90m | ~250m-400m West / Southwest | Directly South & Adjacent | Medium |
-| **Welcome Center BioLab**| `DA__Signal_WelcomeCent_Hide` | ~60m | ~500m Northwest | ~300m North-Northwest | Medium |
-| **Abandoned Basecamp** | `InvesgPOI_PZ_Basecamp`, `ColonistBunker052` | ~70m | ~420m West | ~180m West along canyon shelf | High |
-| **Thermal Vents** | `SmallVent`, `VentFall` | ~80m-120m | ~450m Northeast / East | ~550m East-Northeast | High |
+| Category | Discovered Assets |
+| :--- | :--- |
+| **Base Modules & Tech** | `Beacon`, `Biobed`, `Biolab`, `Chair`, `Corridor`, `Fabricator`, `Foundation`, `Hatch`, `Hydroelectric Turbine`, `Locker` |
+| **Submersibles & Hulls** | `Moonpool Dock`, `Tadpole Submersible` |
+| **Discovered POIs** | `Alterra Basecamp`, `BFrKelpABranGsPsh1`, `Blueprints/EnvironmenalGardenG BulbFlx`, `Blueprints/EnvironmentGardenG BulbFlx`, `Camp One Wreckage`, `DA  NarrativeSignal Investigation CoralGardens 2 Anita`, `Emergency Lifepod Signal`, `EnvironmenalGardens/BP CG BulbFl` |
 
-## Narrative Quests & Radio Signals
-* **Welcome Center Signal**: `DA__Signal_WelcomeCent_Hide`
-* **Habitat Beacon**: `DA__Signal_Habitat_Hide`
-* **Emergency Lifepod**: `Lifepod_SignalOriginal`
-* **Black Box Investigation**: `CoralGardensRadioMessageBlackBox`
+## 📡 Active Signals & Story Goals
 
-## Constructed Facilities & Vehicles
-* **Base Modules & Tech**: `"Corridor&NkDoor`, `"Corridor&NkDoorOveeSnapping`, `"SculpturalBase..Corridor`, `$ BasePiece Processor`, `'#DA Tools DeployableLocker`, `($Tools DeployableLocker`, `(BioLab`, `+Bluepnts/ing/BP Hatch C`, `,E*Items/ToolsWakemaker`, `,EWakemaker`
-* **Submersibles & Hulls**: `BluepntsBP P Dock C`, `N/MoonPool Dock%mi`, `TadpolePens06`
-* **Discovered POIs**: `/InvesgPOI PZ Basecamp`, `BFrKelpABranGsPsh1`, `Blueprints/EnvironmenalGardenG BulbFlx`, `Blueprints/EnvironmentGardenG BulbFlx`, `CampOne+*%`, `DA  NarrativeSignal Investigation CoralGardens 2 Anita`, `EnvironmenalGardens/BP CG BulbFl C`, `EnvironmenalGardens/BP CG BulbFl CF`
-* **World Engine Milestones**: `.*BlackBox`, `.dDied Blackbox`, `.dPrototypDied Blackbox`, `/Narrative//DA  Signal Habitat Hide`, `Blackbox 2GCNoA`, `ClosedEventStoryGoal`, `ClosedEventStoryGoals`, `DA OxygenTunic StoryGoal`
-* **Decoded Progression Guide**: [savegame_1_decoded.md](./backups/savegame_1_decoded.md)
+| Signal / Quest | Status | Details |
+| :--- | :--- | :--- |
+| **Habitat Beacon** | 🟢 Active | Base builder tutorial signal |
 
-## Live Spatial Geometry (Save Coordinates Matrix)
+## 🗺️ Biome Coordinates
+Player traversal history across core world partitions:
+
+| Partition / Zone | Approx Depth | Distance & Direction from Pod | Relative to Angel Comb Habitat | Threat Level |
+| :--- | :---: | :--- | :--- | :---: |
+| **Safe Shallows / Pod** | ~0m | Origin (`X: 0m, Y: 0m`) | ~238m East | None |
+| **Angel Comb Habitat** | ~30m | ~238m West (`X: 0.1m, Y: -237.8m W`) | Core Base Reference Point | Low |
+| **Crashed Black Box** | ~45m | ~380m North | ~250m Northeast | Low |
+| **Kelp Forest Border** | ~50m-90m | ~250m-400m West / Southwest | Directly South & Adjacent | Medium |
+| **Welcome Center BioLab**| ~60m | ~500m Northwest | ~300m North-Northwest | Medium |
+| **Abandoned Basecamp** | ~70m | ~420m West | ~180m West along canyon shelf | High |
+| **Thermal Vents** | ~80m-120m | ~450m Northeast / East | ~550m East-Northeast | High |
+
+## 📍 Live Spatial Geometry (Save Coordinates Matrix)
 * `BP_WorldSupplyLocker (X=-0, Y=-2275, Z=-0) | ~22.7m dist, -0.0m depth`
 * `BP_WorldSupplyLocker (X=-0, Y=116, Z=-0) | ~1.2m dist, -0.0m depth`
 * `BP_WorldSupplyLocker (X=-0, Y=9293, Z=-0) | ~92.9m dist, -0.0m depth`
@@ -65,13 +65,13 @@ Telemetry engine confirms player traversal across the following core world parti
 * `Beacon (X=0, Y=2455, Z=0) | ~24.6m dist, 0.0m depth`
 * `BioBed (X=-0, Y=-12081, Z=0) | ~120.8m dist, 0.0m depth`
 
-## Graphics Configuration
+## ⚙️ Graphics Configuration
 Summary extracted from [GameUserSettings.ini](./backups/GameUserSettings.ini):
-* **Resolution**: ResolutionSizeX=3840, ResolutionSizeY=2160 (Last Confirmed: 1280x720)
-* **Frame Rate Cap**: FrameRateLimit=120.000000
+* **Resolution**: 3840x2160 (Last Confirmed: 1280x720)
+* **Frame Rate Cap**: 120.000000 FPS
 * **Upscaling Quality**: ScalabilityQuality_TSR=3
 
-## Recent Engine Events
+## 📝 Recent Engine Events
 Snapshot of diagnostic gameplay session events logged by engine:
 
 ```text

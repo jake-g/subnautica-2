@@ -1,6 +1,9 @@
 # Subnautica 2 Changelog
 
+[Sitemap](SITEMAP.md) | [Guide](GUIDE.md) | [Roadmap](TODO.md) | [Changelog](CHANGELOG.md)
+
 Primary chronological ledger recording gameplay coaching sessions, remote snapshots (`192.168.0.100`), vault backups (`backups/`), and live SaveGame inspections (`savegame_1.sav`). Organized in reverse-chronological order.
+
 
 ## 🗺️ Journey Progression Timeline
 
