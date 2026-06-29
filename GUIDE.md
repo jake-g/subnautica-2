@@ -14,7 +14,7 @@ Curated community wisdom and essential beginner mechanics (strictly filtered to 
 - **Scanner Room Overdrive**: Attaching an adjacent Scanner Room (`BP_ScannerRoom`) and equipping it with 4x Range Upgrades transforms your starter base into an automated radar network, highlighting local limestone/sandstone nodes and unmapped wreck fragments through canyon walls.
 - **Stow Before You Go**: Dedicate 1 empty Wall Locker entirely to quick-drop loot. Before scouting perimeter wreckage (>400m away), deposit all non-essential ores and spare tools so you have 100% free inventory slots for Titanium salvage and tech blueprints.
 - **Dive Envelope Discipline**: Never descend below your current oxygen tank's comfortable dive envelope (100m depth for Standard Tank) without a Rebreather and a Seaglide. Swimming vertically without a submersible vehicle consumes excessive oxygen during emergency ascents.
-- **HUD Signal Triage**: Keep core reference beacons active (**Lifepod**, **Angel Comb Base**, custom Beacons) in your PDA Signals menu, but disable investigated wreckage and cleared story signals (**Welcome Center**, **Blackbox** beacons, **Camp One**) once fully scouted so your compass remains clean. 
+- **HUD Signal Triage**: Keep core reference beacons active (**Lifepod**, **Angel Comb Base**, custom Beacons) in your PDA Signals menu, but disable investigated wreckage and cleared story signals (**Welcome Center**, **Blackbox** beacons, **Camp One**) once fully scouted so your compass remains clean.
 
 ---
 

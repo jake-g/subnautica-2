@@ -84,5 +84,5 @@ C:\Users\<Your-Username>\AppData\Local\Subnautica2\Saved\SaveGames\
 
 ### Automated Backups (Using this Repository)
 You can use the local scraper toolkit in this repository to automate your save game backups:
-* **Pull Remote Saves**: Run `make pull` (or `python3 subnautica_scraper.py --pull`) to mirror all remote saves and configuration files into the local [backups/](file:///Users/jakegarrison/Downloads/projects/subnautica-2/backups) folder.
-* **Inspect Progression**: Run `make report` to decode the binary save file and compile a progress report in [REPORT.md](file:///Users/jakegarrison/Downloads/projects/subnautica-2/REPORT.md).
+* **Pull Remote Saves**: Run `make pull` (or `python3 subnautica_scraper.py --pull`) to mirror all remote saves and configuration files into the local [backups/](backups/) folder.
+* **Inspect Progression**: Run `make report` to decode the binary save file and compile a progress report in [REPORT.md](REPORT.md).

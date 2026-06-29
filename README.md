@@ -71,15 +71,16 @@ When inspecting live binary Unreal Engine 5 `.sav` files (`savegame_1.sav`), the
 ## Structure
 | File | Description |
 | :--- | :--- |
-| [subnautica_scraper.py](file:///Users/jakegarrison/Downloads/projects/subnautica-2/subnautica_scraper.py) | Unified telemetry scraper, vault sync engine, and binary save decoder. |
-| [Makefile](file:///Users/jakegarrison/Downloads/projects/subnautica-2/Makefile) | Developer CLI automation targets. |
-| [TODO.md](file:///Users/jakegarrison/Downloads/projects/subnautica-2/TODO.md) | Active exploration tracker, crafting milestones, and habitat progression roadmap. |
-| [REPORT.md](file:///Users/jakegarrison/Downloads/projects/subnautica-2/REPORT.md) | Generated live progression telemetry and game settings report. |
-| [CHANGELOG.md](file:///Users/jakegarrison/Downloads/projects/subnautica-2/CHANGELOG.md) | Chronological ledger recording developer milestones. |
+| [subnautica_scraper.py](subnautica_scraper.py) | Unified telemetry scraper, vault sync engine, and binary save decoder. |
+| [Makefile](Makefile) | Developer CLI automation targets. |
+| [TODO.md](TODO.md) | Active exploration tracker, crafting milestones, and habitat progression roadmap. |
+| [REPORT.md](REPORT.md) | Generated live progression telemetry and game settings report. |
+| [CHANGELOG.md](CHANGELOG.md) | Chronological ledger recording developer milestones. |
 | `backups/` | Local flat archive containing synced `.sav` files, INI configs, and logs. |
 
 ## Usage
-Use the included [Makefile](file:///Users/jakegarrison/Downloads/projects/subnautica-2/Makefile) to manage remote inspection and vault sync:
+Use the included [Makefile](Makefile) to manage remote inspection and vault sync:
+
 
 ```bash
 # Scrape live save game over SSH and regenerate REPORT.md
