@@ -1,4 +1,4 @@
-# Subnautica 2 Progression Roadmap & Exploration Tracker
+# Subnautica 2 Tracker
 
 [Sitemap](SITEMAP.md) | [Guide](GUIDE.md) | [Roadmap](TODO.md) | [Changelog](CHANGELOG.md)
 
@@ -117,13 +117,38 @@ graph TD
 
 
 ### 🏗️ Step 3: Vehicle Construction & Refinement
-* [ ] **Build Moonpool Vehicle Fabricator**: Install inside the Moonpool.
-* [ ] **Build Tadpole Submersible** (`BP_Tadpole`): Assemble at the Moonpool Vehicle Fabricator.
-* [ ] **Scan Vehicle Modification Station fragments**: Search wreck sites to construct the wall-mounted console.
 
-### 🧭 Step 4: Deeper Exploration Transition
+```mermaid
+graph TD
+    classDef active fill:#1a365d,stroke:#3182ce,stroke-width:2px,color:#fff;
+    classDef required fill:#2d3748,stroke:#d69e2e,stroke-width:2px,color:#fff;
+    classDef upgrade fill:#2c3e50,stroke:#18bc9c,stroke-width:2px,color:#fff;
+    
+    A[Gather Ingredients]:::active --> B(Titanium Ingot)
+    A --> C(Lubricant)
+    A --> D(Power Cell)
+    A --> E(Glass x2)
+    
+    B --> F[Tadpole Submersible]:::required
+    C --> F
+    D --> F
+    E --> F
+    
+    F --> G[Vehicle Modification Station]:::upgrade
+    G --> H[Depth Module Mk1]:::upgrade
+    G --> I[Storage Module]:::upgrade
+```
+
+* [ ] **Build Moonpool Vehicle Fabricator**: Install inside the Moonpool using the Habitat Builder.
+* [ ] **Build Tadpole Submersible** (`BP_Tadpole`): Assemble at the Moonpool Vehicle Fabricator. Needs Titanium Ingot, Lubricant, Power Cell, and Glass.
+* [ ] **Scan Vehicle Modification Station fragments**: Search wreck sites to construct the wall-mounted console.
+* [ ] **Craft Depth Module Mk1**: Upgrade Tadpole depth to 300m to allow Medium-Depth Scouting.
+
+### 🧭 Step 4: Deeper Exploration Transition (Phase 2 Prep)
 * [ ] **Search for Dive Elevator**: Sweep the **Thermal Vents** border `[80m-120m depth]` for the remaining **Dive Elevator** (`BP_DiveElevator`) fragment `[1/2 completed | Need 1]`.
   - **Navigation**: Swim `~450m Northeast/East` of the **Lifepod** (or `~550m East-Northeast` of **Angel Comb Base**) until you reach the volcanic trenches. Search around the edges of the active vents.
+* [ ] **Scout the Lilypad Islands / Twisty Bridges**: Begin mapping the deeper zones (100m - 300m) to identify large resource nodes.
+* [ ] **Establish Forward Outposts**: Pack supplies for mini-bases (Hatch, Multipurpose Room, Solar Panel/Bioreactor) to place down when exploring deeper trenches.
 
 
 ---

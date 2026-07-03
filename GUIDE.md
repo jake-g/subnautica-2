@@ -11,8 +11,6 @@ All telemetry and biome coordinates verified via live SSH SaveGame inspection (`
 
 ## 🌟 Core Survival Principles
 
-## 🌟 Core Survival Principles
-
 * **Base Power & O₂**: Maintain +2 surplus Solar Panels before building heavy appliances (Water Filtration, Scanner Rooms). Base power depletion at night completely stops interior O₂ generation.
 * **Beacon Discipline**: Craft Beacons early. Deploy and label them at key resource zones (e.g. `"Kelp Trench"`, `"Basecamp"`) to avoid getting lost in dark or deep canyons.
 * **Scanner Room Range**: Build a Scanner Room with 4x Range Upgrades. It highlights local resource nodes and wreckage fragments through walls in real-time.
@@ -49,6 +47,21 @@ graph TD
         C4[Interior Fabricator Built]:::criteria
     end
     C1 & C2 & C3 & C4 -.-> P1
+
+    subgraph Phase 2 Transition Criteria
+        D1[Mobile Vehicle Bay]:::criteria
+        D2[Tadpole Submersible]:::criteria
+        D3[Depth Module Mk1]:::criteria
+        D4[Laser Cutter]:::criteria
+    end
+    D1 & D2 & D3 & D4 -.-> P2
+
+    subgraph Phase 3 Transition Criteria
+        E1[Depth Module Mk2]:::criteria
+        E2[Thermal Plant Built]:::criteria
+        E3[Prawn Suit Assembled]:::criteria
+    end
+    E1 & E2 & E3 -.-> P3
 ```
 
 ### 1. Phase 1: Surface & Perimeter Survival (0-100m) *(Current Phase)*

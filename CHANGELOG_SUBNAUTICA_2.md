@@ -16,3 +16,4 @@ This ledger tracks the official game updates, hotfixes, and dev logs released by
 | **2026-05-11 15:03:32** | Pre-purchase and Pre-load Subnautica 2 Early Access Starting Today! | Official Subnautica 2 release/news update: Pre-purchase and Pre-load Subnautica 2 Early Access Starting Today!. See Steam link. | [Steam News](https://store.steampowered.com/news/app/1962700/view/655979911377323530) |
 | **2026-05-11 13:00:15** | A Thank You to Our Community for 5 Million Wishlists | Official Subnautica 2 release/news update: A Thank You to Our Community for 5 Million Wishlists. See Steam link. | [Steam News](https://store.steampowered.com/news/app/1962700/view/655979911377323528) |
 | **2026-05-09 18:05:35** | Subnautica 2 Early Access Gameplay Trailer Released! | Official Subnautica 2 release/news update: Subnautica 2 Early Access Gameplay Trailer Released!. See Steam link. | [Steam News](https://store.steampowered.com/news/app/1962700/view/655979911377323201) |
+
