@@ -6,7 +6,7 @@ Live progression telemetry and configuration summary generated via SSH from gami
 * **Game Title**: Subnautica 2 (Early Access Standalone | Unreal Engine 5)
 * **Gaming Host**: `pc` (`192.168.0.100` | Windows 11 x64 | User: `jake`)
 * **Platform Provider**: Steam (`OnlineSubsystemSteam` | Player ID `76561198797039235`)
-* **Active Save File**: `savegame_1.sav` (1175.1 KB | Last Saved: `2026-06-27 17:49:59`)
+* **Active Save File**: `savegame_1.sav` (1342.8 KB | Last Saved: `2026-07-03 22:48:26`)
 * **Auto-Save State**: **Enabled** (`UWESaveSystemUserSetting.ini` | `bAutoSaveEnabled=True`)
 * **Display Config**: `3840x2160` (Streaming Session (Steam Remote Play) | FPS Cap: 120)
 * **Remote Git Repository**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/.git/` (Pristine tree `4df49f6`)
@@ -17,17 +17,17 @@ Live progression telemetry and configuration summary generated via SSH from gami
 
 | Category | Discovered Items | Verification Status |
 | :--- | :--- | :--- |
-| **Tools** | `1bo2.`, `2o2c`, `3O2$2`, `3o2C`, `Battery`, `Biobed` | Equipped in active slots. |
-| **Survival Gear** | `CG DomSonicResonatoicadaWreck02Lea`, `CG DomSonicResonatoicadaWreck02LeaProcess`, `Copper`, `Copper Wire`, `Corridor`, `CuubThPo2` | +45.0 Max Oxygen Set Component verified. |
-| **Raw Resources** | `Emergency Lifepod Signal`, `Fiber Mesh`, `First Aid Kit`, `Flare`, `Flashlight`, `Glass`, `Habitat Builder`, `JO2D`, `Lead`, `Lyo2Y` | Serialized in resource node prototypes. |
+| **Tools** | `1bo2.`, `2o2c`, `3O2$2`, `Battery`, `Biobed`, `Copper` | Equipped in active slots. |
+| **Survival Gear** | `Copper Wire`, `Corridor`, `Fiber Mesh`, `First Aid Kit`, `Flare`, `Flashlight` | +45.0 Max Oxygen Set Component verified. |
+| **Raw Resources** | `Glass`, `Habitat Builder`, `Lead`, `Lyo2Y`, `Maps/Main/L Ma/ Generated /1H3SXUGLR6QXXO2WZEKBFDQR2.:PstentLevel.c UAID D85ED3E2E85E632402 1257970022bSet`, `O2Da`, `O2c"`, `Oxygen Tank`, `Quartz`, `Repair Tool` | Serialized in resource node prototypes. |
 
 ## 🏗️ Constructed Facilities & Vehicles
 
 | Category | Discovered Assets |
 | :--- | :--- |
-| **Base Modules & Tech** | `Beacon`, `Biobed`, `Biolab`, `Chair`, `Corridor`, `Fabricator`, `Foundation`, `Hatch`, `Hydroelectric Turbine`, `Locker` |
+| **Base Modules & Tech** | `Biobed`, `Biolab`, `Chair`, `Corridor`, `Fabricator`, `Foundation`, `Hatch`, `Hydroelectric Turbine`, `Locker`, `Processor (Ingot Fabricator)` |
 | **Submersibles & Hulls** | `Moonpool Dock`, `Tadpole Submersible` |
-| **Discovered POIs** | `Alterra Basecamp`, `BFrKelpABranGsPsh1`, `Blueprints/EnvironmenalGardenG BulbFlx`, `Blueprints/EnvironmentGardenG BulbFlx`, `Camp One Wreckage`, `DA  NarrativeSignal Investigation CoralGardens 2 Anita`, `Emergency Lifepod Signal`, `EnvironmenalGardens/BP CG BulbFl` |
+| **Discovered POIs** | `7ion BioB TriggoralGardens`, `AcidRaionFerKelpranWerslugComb1ColonistBunker05Jubilee2Biob`, `Alterra Basecamp`, `BFrKelpABranGsPsh1`, `Blueprints/EnvironmentGardenG BulbFlx`, `Camp One Wreckage`, `Emergency Lifepod Signal`, `EnvironmenalGardenCG BulbFlx` |
 
 ## 📡 Active Signals & Story Goals
 
@@ -49,21 +49,21 @@ Player traversal history across core world partitions:
 | **Thermal Vents** | ~80m-120m | ~450m Northeast / East | ~550m East-Northeast | High |
 
 ## 📍 Live Spatial Geometry (Save Coordinates Matrix)
-* `BP_WorldSupplyLocker (X=-0, Y=-2275, Z=-0) | ~22.7m dist, -0.0m depth`
-* `BP_WorldSupplyLocker (X=-0, Y=116, Z=-0) | ~1.2m dist, -0.0m depth`
-* `BP_WorldSupplyLocker (X=-0, Y=9293, Z=-0) | ~92.9m dist, -0.0m depth`
-* `BP_WorldSupplyLocker (X=-2275, Y=-0, Z=0) | ~22.7m dist, 0.0m depth`
+* `BP_WorldSupplyLocker (X=-0, Y=2934, Z=-0) | ~29.3m dist, -0.0m depth`
 * `BP_WorldSupplyLocker (X=-240806, Y=0, Z=0) | ~2408.1m dist, 0.0m depth`
-* `BP_WorldSupplyLocker (X=-3878, Y=-0, Z=9293) | ~38.8m dist, 92.9m depth`
-* `BP_WorldSupplyLocker (X=-3878, Y=0, Z=-0) | ~38.8m dist, -0.0m depth`
+* `BP_WorldSupplyLocker (X=-2416, Y=0, Z=-0) | ~24.2m dist, -0.0m depth`
 * `BP_WorldSupplyLocker (X=-9692, Y=0, Z=0) | ~96.9m dist, 0.0m depth`
-* `BP_WorldSupplyLocker (X=0, Y=-26184, Z=-0) | ~261.8m dist, -0.0m depth`
-* `BP_WorldSupplyLocker (X=14462, Y=0, Z=0) | ~144.6m dist, 0.0m depth`
+* `BP_WorldSupplyLocker (X=2934, Y=-0, Z=-0) | ~29.3m dist, -0.0m depth`
 * `BP_WorldSupplyLocker (X=34148, Y=0, Z=0) | ~341.5m dist, 0.0m depth`
-* `BP_WorldSupplyLocker (X=9293, Y=-0, Z=-0) | ~92.9m dist, -0.0m depth`
-* `Beacon (X=-0, Y=-71434, Z=0) | ~714.3m dist, 0.0m depth`
-* `Beacon (X=0, Y=2455, Z=0) | ~24.6m dist, 0.0m depth`
-* `BioBed (X=-0, Y=-12081, Z=0) | ~120.8m dist, 0.0m depth`
+* `BioBed (X=-0, Y=135, Z=-0) | ~1.3m dist, -0.0m depth`
+* `BioBed (X=-0, Y=20061, Z=3) | ~200.6m dist, 0.0m depth`
+* `BioBed (X=-118074, Y=0, Z=-0) | ~1180.7m dist, -0.0m depth`
+* `BioBed (X=-11893, Y=0, Z=-0) | ~118.9m dist, -0.0m depth`
+* `BioBed (X=-156, Y=-0, Z=0) | ~1.6m dist, 0.0m depth`
+* `BioBed (X=-182372, Y=-0, Z=0) | ~1823.7m dist, 0.0m depth`
+* `BioBed (X=-1989, Y=0, Z=-0) | ~19.9m dist, -0.0m depth`
+* `BioBed (X=-2, Y=45686, Z=0) | ~456.9m dist, 0.0m depth`
+* `BioBed (X=-381, Y=0, Z=4) | ~3.8m dist, 0.0m depth`
 
 ## ⚙️ Graphics Configuration
 Summary extracted from [GameUserSettings.ini](./backups/GameUserSettings.ini):
@@ -75,11 +75,11 @@ Summary extracted from [GameUserSettings.ini](./backups/GameUserSettings.ini):
 Snapshot of diagnostic gameplay session events logged by engine:
 
 ```text
-[2026.06.28-00.50.05:689][784]LogBlueprintUserMessages: [WBP_CompilingShadersScreen_C_2147480720] *** DECONSTRUCT
+[2026.07.04-05.48.33:207][490]LogBlueprintUserMessages: [WBP_CompilingShadersScreen_C_2147479699] *** DECONSTRUCT
 access-control-expose-headers: x-sentry-error,x-sentry-rate-limits,retry-after
-[2026.06.28-00.50.05:866][784]LogMoviePlayer: Shutting down movie player
-[2026.06.28-00.50.06:186][784]LogRHI: FPipelineFileCacheManager Incremental saved 215 total, 0 new, 0 removed, 0 co
-[2026.06.28-00.50.06:428][784]LogHttp: Warning: 	verb=[POST] url=[https://api.live.subnautica.net/api/v1/player/log
+[2026.07.04-05.48.33:379][490]LogMoviePlayer: Shutting down movie player
+[2026.07.04-05.48.33:818][490]LogRHI: FPipelineFileCacheManager Incremental saved 216 total, 1 new, 0 removed, 0 co
+[2026.07.04-05.48.34:114][490]LogHttp: Warning: 	verb=[POST] url=[https://api.live.subnautica.net/api/v1/player/log
 ```
 
 ## Reference Links
