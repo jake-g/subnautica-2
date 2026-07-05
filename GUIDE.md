@@ -49,7 +49,7 @@ graph TD
     C1 & C2 & C3 & C4 -.-> P1
 
     subgraph Phase 2 Transition Criteria
-        D1[Mobile Vehicle Bay]:::criteria
+        D1[Moonpool Vehicle Fabricator]:::criteria
         D2[Tadpole Submersible]:::criteria
         D3[Depth Module Mk1]:::criteria
         D4[Laser Cutter]:::criteria

@@ -27,6 +27,7 @@ graph TD
     B3 --> B4[2026-06-25: Tech Infrastructure Built<br/>Biolab, Processor, & Scanner Room]:::milestone
     B4 --> B5[2026-06-27: Moonpool Constructed<br/>Tadpole Launcher Docked]:::milestone
     B5 --> B6[2026-06-28: Documentation Reorg<br/>Sitemap & Visual Flowcharts]:::software
+    B5 --> B7[2026-07-04: Vehicle Fabricator Built<br/>Target: Storing Acid & Acid Anemone]:::milestone
 
     subgraph Hardware & Performance
         H1
@@ -47,6 +48,7 @@ graph TD
         B3
         B4
         B5
+        B7
     end
 ```
 
@@ -54,6 +56,7 @@ graph TD
 
 | Date | Milestone | Summary | Status |
 | :--- | :--- | :--- | :--- |
+| **2026-07-04 22:50:00** | Vehicle Fabricator Installed & Synthetic Acid Goal | Constructed Moonpool Vehicle Fabricator inside Moonpool. Identified next core objective: harvesting Acid Anemone (`BP_AcidAnemone`) and Salt/Gold to craft Synthetic Acid / Hydrochloric Acid for high-grade battery & storage crafting. | **Verified**: Save telemetry and user session confirmation. |
 | **2026-06-28 21:30:00** | Visual Timelines, Progression Flowcharts & Multiplayer Reorg | Added Mermaid journey timeline to [CHANGELOG.md](CHANGELOG.md), progression flowchart to [GUIDE.md](GUIDE.md), and a detailed "Pass the Torch" sequence diagram to [MULTIPLAYER.md](MULTIPLAYER.md). Integrated historical pre-organization sessions (GPU upgrade benchmarks). | **Verified**: Documents compiled and formatted. |
 | **2026-06-27 10:30:00** | Base Expansion, Moonpool & Vehicle Launcher | Constructed Moonpool and Moonpool Dock (Tadpole Launcher). Added Battery Charger, Power Wall, and other base infrastructure. Crafted Air Bladder (`BP_AirBladder`). Scanned blueprints for Angled Room and Hatch. Checked off HUD beacon triage for cleared zones (Wu Lianghai, Old Habitat, Blackbox - Ruby, Camp One). | **Verified**: Save telemetry and user confirmation. |
 | **2026-06-25 23:27:00** | Biolab, Processor & Hydro Power Grid Expansion | Crafted Sonic Resonator. Built Biolab, Processor (refined Titanium Ingot & Germanium Ingot), and Scanner Station. Expanded base power with 3x Hydroelectric Turbines, 2x Power Transmitters, and 6x Solar Panels. Discovered Tadpole Pens narrative investigation story goal. | **Verified**: User progress update & telemetry verification. |

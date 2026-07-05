@@ -23,7 +23,7 @@ graph LR
 ```
 
 > [!IMPORTANT]
-> **Active Origin**: Starting at **Angel Comb Base** (`~30m depth`) with 6 Solar, 3 Hydro Turbines, Biolab, Processor, Scanner Station, Moonpool (with Tadpole Dock), Battery Charger, and Power Wall.
+> **Active Origin**: Starting at **Angel Comb Base** (`~30m depth`) with 6 Solar, 3 Hydro Turbines, Biolab, Processor, Scanner Station, Moonpool (with Vehicle Fabricator & Tadpole Dock), Battery Charger, and Power Wall.
 
 ### 📍 Step 1: Scanner Room Calibration & Visor HUD Setup
 * [ ] **Harvest Table Coral & Copper**:
@@ -136,10 +136,14 @@ graph TD
     
     F --> G[Vehicle Modification Station]:::upgrade
     G --> H[Depth Module Mk1]:::upgrade
-    G --> I[Storage Module]:::upgrade
+    G --> I[Storage Module & Acid Storage]:::upgrade
 ```
 
-* [ ] **Build Moonpool Vehicle Fabricator**: Install inside the Moonpool using the Habitat Builder.
+* [x] **Build Moonpool Vehicle Fabricator**: Installed inside the Moonpool using the Habitat Builder.
+* [ ] **Harvest Acid Anemone & Craft Synthetic Acid / Acid Storage**:
+  - Slice/Harvest **Acid Anemone** (`BP_AcidAnemone` / `BP_AcidAnem`) in Coral Gardens / Angel Comb canyons.
+  - Combine Acid Anemone Samples + **Salt Deposits** / **Gold** at the Fabricator/Processor to synthesize **Hydrochloric / Synthetic Acid**.
+  - Craft **Acid Storage** containers and high-tier battery cells for base & vehicle power.
 * [ ] **Build Tadpole Submersible** (`BP_Tadpole`): Assemble at the Moonpool Vehicle Fabricator. Needs Titanium Ingot, Lubricant, Power Cell, and Glass.
 * [ ] **Scan Vehicle Modification Station fragments**: Search wreck sites to construct the wall-mounted console.
 * [ ] **Craft Depth Module Mk1**: Upgrade Tadpole depth to 300m to allow Medium-Depth Scouting.
