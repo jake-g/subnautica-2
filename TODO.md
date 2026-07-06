@@ -123,17 +123,17 @@ graph TD
     classDef active fill:#1a365d,stroke:#3182ce,stroke-width:2px,color:#fff;
     classDef required fill:#2d3748,stroke:#d69e2e,stroke-width:2px,color:#fff;
     classDef upgrade fill:#2c3e50,stroke:#18bc9c,stroke-width:2px,color:#fff;
-    
+
     A[Gather Ingredients]:::active --> B(Titanium Ingot)
     A --> C(Lubricant)
     A --> D(Power Cell)
     A --> E(Glass x2)
-    
+
     B --> F[Tadpole Submersible]:::required
     C --> F
     D --> F
     E --> F
-    
+
     F --> G[Vehicle Modification Station]:::upgrade
     G --> H[Depth Module Mk1]:::upgrade
     G --> I[Storage Module & Acid Storage]:::upgrade

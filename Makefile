@@ -4,7 +4,7 @@ PC_SSH ?= jake@192.168.0.100
 REMOTE_SAVE_ROOT ?= C:/Users/jake/AppData/Local/Subnautica2/Saved
 LOCAL_SCRIPT ?= subnautica_scraper.py
 
-.PHONY: help report status configs pull push pull-saves push-saves sync format decode git-status git-log git-diff snapshot ssh logs tail test lint setup
+.PHONY: help report status configs benchmark start-sensor-log pull push pull-saves push-saves sync format decode git-status git-log git-diff snapshot ssh logs tail test lint setup
 
 help:
 	@echo "===================================================================="
@@ -12,6 +12,7 @@ help:
 	@echo "===================================================================="
 	@echo "Telemetry & Reporting:"
 	@echo "  make report     - Scrape live Windows save games over SSH and update report"
+	@echo "  make benchmark  - Start HWiNFO sensor log for Subnautica 2 gameplay session"
 	@echo "  make format     - Re-format progression guides and auto-decode all saves"
 	@echo "  make status     - Query active save files and modification dates over SSH"
 	@echo "  make configs    - Dump active GameUserSettings.ini graphics/fps settings"
@@ -34,6 +35,18 @@ help:
 	@echo "Remote Access:"
 	@echo "  make ssh        - Open interactive SSH terminal session into gaming PC"
 	@echo "===================================================================="
+
+benchmark start-sensor-log:
+	@echo "-> Initiating Subnautica 2 benchmark session & HWiNFO telemetry over SSH..."
+	-@ssh -o ConnectTimeout=5 $(PC_SSH) 'powershell -Command "\
+		$$ts = Get-Date -f \"yyyy-MM-dd_HH-mm-ss\"; \
+		$$dir = \"D:\projects\_Projects_Synced\pc-build\pc_data\benchmarks\"; \
+		$$csv = Join-Path $$dir \"PC_$${ts}_Subnautica2_tuned.csv\"; \
+		Write-Host \"Target CSV: $$csv\"; \
+		Start-Process \"C:\Program Files\HWiNFO64\HWiNFO64.exe\" -ArgumentList \"-csv\",$$csv,\"-silent\"; \
+		Start-Process \"steam://rungameid/1944510\"; \
+		Write-Host \"Subnautica 2 launched with HWiNFO telemetry logging!\" \
+	"'
 
 report:
 	@echo "-> Triggering Subnautica 2 save game inspection over SSH ($(PC_SSH))..."
