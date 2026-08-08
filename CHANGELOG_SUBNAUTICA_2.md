@@ -6,6 +6,9 @@ This ledger tracks the official game updates, hotfixes, and dev logs released by
 
 | Date | Update | Summary | Link |
 | :--- | :--- | :--- | :--- |
+| **2026-07-14 15:04:06** | Subnautica 2 Early Access Hotfix 4 | Official Subnautica 2 release/news update: Subnautica 2 Early Access Hotfix 4. See Steam link. | [Steam News](https://store.steampowered.com/news/app/1962700/view/703273597028796065) |
+| **2026-07-08 15:11:56** | Subnautica 2 Early Access 1.1 - Adaptive Measures Update | Official Subnautica 2 release/news update: Subnautica 2 Early Access 1.1 - Adaptive Measures Update. See Steam link. | [Steam News](https://store.steampowered.com/news/app/1962700/view/699894448411121467) |
+| **2026-07-07 16:00:54** | Update Vlog - Early Access 1.1 (Adaptive Measures) | Official Subnautica 2 release/news update: Update Vlog - Early Access 1.1 (Adaptive Measures). See Steam link. | [Steam News](https://store.steampowered.com/news/app/1962700/view/699894448411121133) |
 | **2026-06-04 15:00:26** | Dev Vlog - Swimming Forward | Official Subnautica 2 release/news update: Dev Vlog - Swimming Forward. See Steam link. | [Steam News](https://store.steampowered.com/news/app/1962700/view/702144344758419829) |
 | **2026-06-01 20:10:14** | Subnautica 2 Early Access Hotfix 3 | Official Subnautica 2 release/news update: Subnautica 2 Early Access Hotfix 3. See Steam link. | [Steam News](https://store.steampowered.com/news/app/1962700/view/671744413105391825) |
 | **2026-05-22 16:35:57** | Subnautica 2 Early Access Hotfix 2 | Official Subnautica 2 release/news update: Subnautica 2 Early Access Hotfix 2. See Steam link. | [Steam News](https://store.steampowered.com/news/app/1962700/view/705520776093106741) |

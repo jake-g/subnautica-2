@@ -16,8 +16,11 @@ import subprocess
 import sys
 from typing import Any, Dict, List
 
-PC_SSH_HOST = "jake@192.168.0.100"
-REMOTE_SAVE_DIR = "C:/Users/jake/AppData/Local/Subnautica2/Saved"
+from dotenv import load_dotenv
+load_dotenv()
+
+PC_SSH_HOST = os.environ.get("PC_SSH_HOST", "PC")
+REMOTE_SAVE_DIR = os.environ.get("REMOTE_SAVE_DIR", "C:/Users/PC/AppData/Local/Subnautica2/Saved")
 REMOTE_SCRIPT_PATH = f"{REMOTE_SAVE_DIR}/subnautica_telemetry.py"
 
 WORKSPACE_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -143,8 +146,8 @@ import os
 import base64
 import json
 
-save_dir = 'C:/Users/jake/AppData/Local/Subnautica2/Saved/SaveGames'
-cfg_root = 'C:/Users/jake/AppData/Local/Subnautica2/Saved'
+save_dir = os.path.expanduser('~/AppData/Local/Subnautica2/Saved/SaveGames')
+cfg_root = os.path.expanduser('~/AppData/Local/Subnautica2/Saved')
 
 payload = {'saves': {}, 'configs': {}}
 
@@ -778,14 +781,14 @@ Live progression telemetry and configuration summary generated via SSH from gami
 
 ## 🖥️ Session Specifications
 * **Game Title**: Subnautica 2 (Early Access Standalone | Unreal Engine 5)
-* **Gaming Host**: `pc` (`192.168.0.100` | Windows 11 x64 | User: `jake`)
+* **Gaming Host**: `pc` (`{PC_SSH_HOST}` | Windows 11 x64)
 * **Platform Provider**: Steam (`OnlineSubsystemSteam` | Player ID `76561198797039235`)
 * **Active Save File**: `savegame_1.sav` ({main_size_kb} | Last Saved: `{main_mod}`)
 * **Auto-Save State**: **Enabled** (`UWESaveSystemUserSetting.ini` | `bAutoSaveEnabled=True`)
 * **Display Config**: `{res_x}x{res_y}` ({session_type} | FPS Cap: {float(frame_rate):.0f})
 * **Remote Git Repository**: `{REMOTE_SAVE_DIR}/.git/` (Pristine tree `{git_hash}`)
-* **Save Directory**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/SaveGames/`
-* **Log File**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/Logs/Subnautica2.log`
+* **Save Directory**: `{REMOTE_SAVE_DIR}/SaveGames/`
+* **Log File**: `{REMOTE_SAVE_DIR}/Logs/Subnautica2.log`
 
 ## 🛠️ Discovered Equipment & Resources
 

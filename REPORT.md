@@ -1,17 +1,17 @@
 # Subnautica 2 Telemetry Report
 
-Live progression telemetry and configuration summary generated via SSH from gaming rig `jake@192.168.0.100`. All binary saves and plaintext configs are mirrored locally in `backups/`.
+Live progression telemetry and configuration summary generated via SSH from gaming rig `PC`. All binary saves and plaintext configs are mirrored locally in `backups/`.
 
 ## 🖥️ Session Specifications
 * **Game Title**: Subnautica 2 (Early Access Standalone | Unreal Engine 5)
-* **Gaming Host**: `pc` (`192.168.0.100` | Windows 11 x64 | User: `jake`)
+* **Gaming Host**: `pc` (`PC` | Windows 11 x64 | User: `jake`)
 * **Platform Provider**: Steam (`OnlineSubsystemSteam` | Player ID `76561198797039235`)
 * **Active Save File**: `savegame_1.sav` (1342.8 KB | Last Saved: `2026-07-03 22:48:26`)
 * **Auto-Save State**: **Enabled** (`UWESaveSystemUserSetting.ini` | `bAutoSaveEnabled=True`)
 * **Display Config**: `3840x2160` (Streaming Session (Steam Remote Play) | FPS Cap: 120)
-* **Remote Git Repository**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/.git/` (Pristine tree `4df49f6`)
-* **Save Directory**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/SaveGames/`
-* **Log File**: `C:/Users/jake/AppData/Local/Subnautica2/Saved/Logs/Subnautica2.log`
+* **Remote Git Repository**: `C:/Users/username/AppData/Local/Subnautica2/Saved/.git/` (Pristine tree `4df49f6`)
+* **Save Directory**: `C:/Users/username/AppData/Local/Subnautica2/Saved/SaveGames/`
+* **Log File**: `C:/Users/username/AppData/Local/Subnautica2/Saved/Logs/Subnautica2.log`
 
 ## 🛠️ Discovered Equipment & Resources
 

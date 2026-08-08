@@ -79,7 +79,7 @@ If you want to perform manual file backups or inspect your saves:
 ```text
 C:\Users\<Your-Username>\AppData\Local\Subnautica2\Saved\SaveGames\
 ```
-* **Active Save File**: [savegame_1.sav](file:///C:/Users/jake/AppData/Local/Subnautica2/Saved/SaveGames/savegame_1.sav) (Slot 1)
+* **Active Save File**: [savegame_1.sav](backups/savegame_1.sav) (Slot 1)
 * **Backup Files**: `savegame_1_0.bak` through `savegame_1_9.bak` (automatically rotated by the engine)
 
 ### Automated Backups (Using this Repository)

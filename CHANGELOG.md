@@ -2,7 +2,7 @@
 
 [Sitemap](SITEMAP.md) | [Guide](GUIDE.md) | [Roadmap](TODO.md) | [Changelog](CHANGELOG.md)
 
-Primary chronological ledger recording gameplay coaching sessions, remote snapshots (`192.168.0.100`), vault backups (`backups/`), and live SaveGame inspections (`savegame_1.sav`). Organized in reverse-chronological order.
+Primary chronological ledger recording gameplay coaching sessions, remote snapshots (`PC`), vault backups (`backups/`), and live SaveGame inspections (`savegame_1.sav`). Organized in reverse-chronological order.
 
 
 ## 🗺️ Journey Progression Timeline
@@ -28,6 +28,7 @@ graph TD
     B4 --> B5[2026-06-27: Moonpool Constructed<br/>Tadpole Launcher Docked]:::milestone
     B5 --> B6[2026-06-28: Documentation Reorg<br/>Sitemap & Visual Flowcharts]:::software
     B5 --> B7[2026-07-04: Vehicle Fabricator Built<br/>Target: Storing Acid & Acid Anemone]:::milestone
+    B7 --> S1[2026-08-08: Security Audit & Local Configs<br/>Refactored IP and Auth secrets into .env]:::software
 
     subgraph Hardware & Performance
         H1
@@ -38,6 +39,7 @@ graph TD
     subgraph Repo & Automation
         R1
         B6
+        S1
     end
 
     subgraph Gameplay Progression
@@ -56,6 +58,8 @@ graph TD
 
 | Date | Milestone | Summary | Status |
 | :--- | :--- | :--- | :--- |
+| **2026-08-08 14:40:00** | Security Audit & Config Abstraction | Conducted a codebase security audit to remove hardcoded IP addresses, paths, and auth keys. Refactored `Makefile`, `README.md`, and `subnautica_scraper.py` to source sensitive parameters from a generic `.env` configuration file via `python-dotenv`. Synced latest official Subnautica 2 game changelogs. | **Verified**: Standalone toolkit operational with `.env`. |
+| **2026-07-05 17:13:30** | HWiNFO Benchmark Automation | Added automated `make benchmark` and `make start-sensor-log` targets to `Makefile` for triggering remote HWiNFO64 telemetry collection and launching Subnautica 2 over SSH. Updated `.gitignore` patterns for cache directories. | **Verified**: Makefile targets operational. |
 | **2026-07-04 22:50:00** | Vehicle Fabricator Installed & Synthetic Acid Goal | Constructed Moonpool Vehicle Fabricator inside Moonpool. Identified next core objective: harvesting Acid Anemone (`BP_AcidAnemone`) and Salt/Gold to craft Synthetic Acid / Hydrochloric Acid for high-grade battery & storage crafting. | **Verified**: Save telemetry and user session confirmation. |
 | **2026-06-28 21:30:00** | Visual Timelines, Progression Flowcharts & Multiplayer Reorg | Added Mermaid journey timeline to [CHANGELOG.md](CHANGELOG.md), progression flowchart to [GUIDE.md](GUIDE.md), and a detailed "Pass the Torch" sequence diagram to [MULTIPLAYER.md](MULTIPLAYER.md). Integrated historical pre-organization sessions (GPU upgrade benchmarks). | **Verified**: Documents compiled and formatted. |
 | **2026-06-27 10:30:00** | Base Expansion, Moonpool & Vehicle Launcher | Constructed Moonpool and Moonpool Dock (Tadpole Launcher). Added Battery Charger, Power Wall, and other base infrastructure. Crafted Air Bladder (`BP_AirBladder`). Scanned blueprints for Angled Room and Hatch. Checked off HUD beacon triage for cleared zones (Wu Lianghai, Old Habitat, Blackbox - Ruby, Camp One). | **Verified**: Save telemetry and user confirmation. |
@@ -71,8 +75,8 @@ graph TD
 | **2026-06-21 18:57:00** | Standalone Repository Migration | Relocated all Subnautica 2 telemetry scrapers, Makefiles, backup vaults (`backups/`), and markdown guides out of parent `pc-build` homelab repository into standalone `subnautica-2` repository. Reconfigured relative path constants across scripts. | **Verified**: Standalone toolkit operational. |
 | **2026-06-21 16:08:48** | Flat Backup Vault & Binary Decoder | Created bi-directional file sync bridge (`sync_remote_vault.py`) storing binary saves, engine logs, and plaintext INIs flat in `backups/`. Built de-junked binary decoder (`decode_sav.py`) converting raw `savegame_*.sav` files into clean markdown guides. | **Verified**: Synchronized 11 binary saves locally. |
 | **2026-06-21 15:52:49** | Chat Archive & Local Log Integration | Replaced raw web chat UI noise with engineering archive (`subnuatica_2_previous_chat.md`). Configured automatic local dumping of remote engine logs (`Subnautica2.log`) on every report run. | **Verified**: Tracking remote commit `4df49f6`. |
-| **2026-06-21 15:47:26** | Remote Git Rollback Engine | Initialized Git repository directly on remote gaming rig inside `C:/Users/jake/AppData/Local/Subnautica2/Saved/.git/` with custom `.gitignore` blocking heavy `.bak` auto-backups and shader caches. | **Verified**: Baseline commit `4df49f6` guarding saves. |
-| **2026-06-21 15:45:00** | Telemetry Scraper & Makefile Setup | Initialized progression scraper (`subnautica_scraper.py`) tracking remote Windows Unreal Engine 5 save state over SSH (`192.168.0.100`). Added developer `Makefile` automating progression polling (`make report`) and vault syncing. | **Verified**: Extracted inventory and equipment telemetry. |
+| **2026-06-21 15:47:26** | Remote Git Rollback Engine | Initialized Git repository directly on remote gaming rig inside `C:/Users/username/AppData/Local/Subnautica2/Saved/.git/` with custom `.gitignore` blocking heavy `.bak` auto-backups and shader caches. | **Verified**: Baseline commit `4df49f6` guarding saves. |
+| **2026-06-21 15:45:00** | Telemetry Scraper & Makefile Setup | Initialized progression scraper (`subnautica_scraper.py`) tracking remote Windows Unreal Engine 5 save state over SSH (`PC`). Added developer `Makefile` automating progression polling (`make report`) and vault syncing. | **Verified**: Extracted inventory and equipment telemetry. |
 | **2026-06-15 14:20:00** | Historical Chat Baseline | Early interactive chat coaching session analyzing initial gameplay discovery. Scouted ~239m West into Infected Crevasse near Infected Angel Bloom, mined Silver ore veins, gathered starter ore, and planned starter habitat base construction. | **Archived**: Documented in `subnuatica_2_previous_chat.md`. |
 | **2026-06-08 21:34:16** | Tuned Fan Curves Gameplay Stress Test | Played a 20-minute real-world gameplay session to audit thermal performance of the newly tuned BIOS fan curves. Peak GPU temperature stabilized at 67.9°C (motherboard temperature at 41.0°C). | **Verified**: Telemetry log `PC_2026-06-08_21-34-16_Subnautica2_gameplay_stress_tuned.csv`. |
 | **2026-05-24 to 2026-06-15** | Early Exploration Phase (Unorganized) | Played ~4 hours of unorganized exploration. Crafted basic Scanner and Multitool (Habitat Builder) while scouting shallow areas. | **Unorganized**: No telemetry or structured logs. |

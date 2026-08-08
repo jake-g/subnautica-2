@@ -1,7 +1,11 @@
 # Makefile for Subnautica 2 Telemetry Scraping, Diagnostics, and Remote Inspection.
 
-PC_SSH ?= jake@192.168.0.100
-REMOTE_SAVE_ROOT ?= C:/Users/jake/AppData/Local/Subnautica2/Saved
+-include .env
+export
+
+PC_SSH_HOST ?= PC
+REMOTE_SAVE_DIR ?= C:/Users/username/AppData/Local/Subnautica2/Saved
+PC_BENCHMARK_DIR ?= D:/benchmarks
 LOCAL_SCRIPT ?= subnautica_scraper.py
 
 .PHONY: help report status configs benchmark start-sensor-log pull push pull-saves push-saves sync format decode git-status git-log git-diff snapshot ssh logs tail test lint setup
@@ -38,9 +42,9 @@ help:
 
 benchmark start-sensor-log:
 	@echo "-> Initiating Subnautica 2 benchmark session & HWiNFO telemetry over SSH..."
-	-@ssh -o ConnectTimeout=5 $(PC_SSH) 'powershell -Command "\
+	-@ssh -o ConnectTimeout=5 $(PC_SSH_HOST) 'powershell -Command "\
 		$$ts = Get-Date -f \"yyyy-MM-dd_HH-mm-ss\"; \
-		$$dir = \"D:\projects\_Projects_Synced\pc-build\pc_data\benchmarks\"; \
+		$$dir = \"$(PC_BENCHMARK_DIR)\"; \
 		$$csv = Join-Path $$dir \"PC_$${ts}_Subnautica2_tuned.csv\"; \
 		Write-Host \"Target CSV: $$csv\"; \
 		Start-Process \"C:\Program Files\HWiNFO64\HWiNFO64.exe\" -ArgumentList \"-csv\",$$csv,\"-silent\"; \
@@ -49,16 +53,16 @@ benchmark start-sensor-log:
 	"'
 
 report:
-	@echo "-> Triggering Subnautica 2 save game inspection over SSH ($(PC_SSH))..."
+	@echo "-> Triggering Subnautica 2 save game inspection over SSH ($(PC_SSH_HOST))..."
 	python3 $(LOCAL_SCRIPT)
 
 status:
 	@echo "-> Inspecting remote Subnautica 2 save game folder..."
-	-@ssh -o ConnectTimeout=5 $(PC_SSH) 'powershell -Command "Get-ChildItem \"$(REMOTE_SAVE_ROOT)/SaveGames\" | Select-Object Name, Length, LastWriteTime | Format-Table -AutoSize"'
+	-@ssh -o ConnectTimeout=5 $(PC_SSH_HOST) 'powershell -Command "Get-ChildItem \"$(REMOTE_SAVE_DIR)/SaveGames\" | Select-Object Name, Length, LastWriteTime | Format-Table -AutoSize"'
 
 configs:
 	@echo "-> Inspecting GameUserSettings.ini graphics telemetry..."
-	-@ssh -o ConnectTimeout=5 $(PC_SSH) 'powershell -Command "Get-Content \"$(REMOTE_SAVE_ROOT)/Config/Windows/GameUserSettings.ini\""'
+	-@ssh -o ConnectTimeout=5 $(PC_SSH_HOST) 'powershell -Command "Get-Content \"$(REMOTE_SAVE_DIR)/Config/Windows/GameUserSettings.ini\""'
 
 pull pull-saves:
 	@echo "-> Pulling remote Unreal Engine save games and configs locally..."
@@ -77,28 +81,28 @@ git-push push-all:
 
 git-status:
 	@echo "-> Inspecting remote save repository Git working tree..."
-	-@ssh -o ConnectTimeout=5 $(PC_SSH) 'powershell -Command "git -C \"$(REMOTE_SAVE_ROOT)\" status -s"'
+	-@ssh -o ConnectTimeout=5 $(PC_SSH_HOST) 'powershell -Command "git -C \"$(REMOTE_SAVE_DIR)\" status -s"'
 
 git-log:
 	@echo "-> Querying remote progression snapshot commit trajectory..."
-	-@ssh -o ConnectTimeout=5 $(PC_SSH) 'powershell -Command "git -C \"$(REMOTE_SAVE_ROOT)\" log --oneline -n 10"'
+	-@ssh -o ConnectTimeout=5 $(PC_SSH_HOST) 'powershell -Command "git -C \"$(REMOTE_SAVE_DIR)\" log --oneline -n 10"'
 
 git-diff:
 	@echo "-> Inspecting unstaged progression and configuration changes..."
-	-@ssh -o ConnectTimeout=5 $(PC_SSH) 'powershell -Command "git -C \"$(REMOTE_SAVE_ROOT)\" diff"'
+	-@ssh -o ConnectTimeout=5 $(PC_SSH_HOST) 'powershell -Command "git -C \"$(REMOTE_SAVE_DIR)\" diff"'
 
 snapshot:
 	@echo "-> Staging and committing gameplay state snapshot over SSH..."
-	-@ssh -o ConnectTimeout=5 $(PC_SSH) 'powershell -Command "git -C \"$(REMOTE_SAVE_ROOT)\" add SaveGames/*.sav Config/ ImGui/ ; git -C \"$(REMOTE_SAVE_ROOT)\" commit -m \"chore: gameplay progression save snapshot\""'
+	-@ssh -o ConnectTimeout=5 $(PC_SSH_HOST) 'powershell -Command "git -C \"$(REMOTE_SAVE_DIR)\" add SaveGames/*.sav Config/ ImGui/ ; git -C \"$(REMOTE_SAVE_DIR)\" commit -m \"chore: gameplay progression save snapshot\""'
 	@make report
 
 logs:
 	@echo "-> Inspecting recent engine events in Subnautica2.log..."
-	-@ssh -o ConnectTimeout=5 $(PC_SSH) 'powershell -Command "Get-Content \"$(REMOTE_SAVE_ROOT)/Logs/Subnautica2.log\" -Tail 50"'
+	-@ssh -o ConnectTimeout=5 $(PC_SSH_HOST) 'powershell -Command "Get-Content \"$(REMOTE_SAVE_DIR)/Logs/Subnautica2.log\" -Tail 50"'
 
 tail:
 	@echo "-> Streaming Subnautica2.log live telemetry..."
-	-@ssh -o ConnectTimeout=5 $(PC_SSH) 'powershell -Command "Get-Content \"$(REMOTE_SAVE_ROOT)/Logs/Subnautica2.log\" -Wait -Tail 20"'
+	-@ssh -o ConnectTimeout=5 $(PC_SSH_HOST) 'powershell -Command "Get-Content \"$(REMOTE_SAVE_DIR)/Logs/Subnautica2.log\" -Wait -Tail 20"'
 
 format decode:
 	@echo "-> Formatting progression markdown guides and decoding backup save files..."
@@ -106,7 +110,7 @@ format decode:
 	@make report
 
 ssh:
-	@ssh $(PC_SSH)
+	@ssh $(PC_SSH_HOST)
 
 setup:
 	@if [ ! -d "venv" ]; then python3 -m venv venv && venv/bin/pip install -r requirements.txt; fi

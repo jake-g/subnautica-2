@@ -1,12 +1,12 @@
 # Subnautica 2 Telemetry Toolkit
 
-A dedicated engineering toolkit and automated coaching bridge for **Subnautica 2** (Early Access Standalone / Unreal Engine 5). This repository connects to a remote Windows 11 gaming rig over SSH (`192.168.0.100`), inspects live binary Unreal Engine 5 SaveGame files (`.sav`), synchronizes save vaults locally, and generates clinical coaching walkthroughs and diagnostic telemetry reports ([REPORT.md](./REPORT.md)).
+A dedicated engineering toolkit and automated coaching bridge for **Subnautica 2** (Early Access Standalone / Unreal Engine 5). This repository connects to a remote Windows 11 gaming rig over SSH (`PC`), inspects live binary Unreal Engine 5 SaveGame files (`.sav`), synchronizes save vaults locally, and generates clinical coaching walkthroughs and diagnostic telemetry reports ([REPORT.md](./REPORT.md)).
 
 ## Features
-- **Remote Telemetry Bridge**: Connects to the gaming rig (`jake@192.168.0.100`), runs Python regex parsers against binary save files, and extracts player inventory, equipped tools, and visited biomes.
+- **Remote Telemetry Bridge**: Connects to the gaming rig (`PC`), runs Python regex parsers against binary save files, and extracts player inventory, equipped tools, and visited biomes.
 - **File Synchronization**: Bi-directional base64 transfer tool (`sync_remote_vault.py`) that pulls binary saves (`.sav`) and engine config profiles (`GameUserSettings.ini`) flat into local backups (`backups/`).
 - **SaveGame Decoder**: Plaintext converter (`decode_sav.py`) that filters out boilerplate UE5 serialization noise and dumps progression registers to markdown guides.
-- **Remote Rollback**: Tracks remote progression states directly inside `C:/Users/jake/AppData/Local/Subnautica2/Saved/.git` on the gaming host, preventing save corruption.
+- **Remote Rollback**: Tracks remote progression states directly inside `C:/Users/username/AppData/Local/Subnautica2/Saved/.git` on the gaming host, preventing save corruption.
 - **Diagnostic Telemetry**: Synthesizes live binary save inspection and GameUserSettings.ini profiles into [REPORT.md](./REPORT.md).
 
 ## 📚 Documentation
@@ -24,10 +24,10 @@ This repository enforces a strict separation of concerns across its core Markdow
 
 ## Architecture & Capabilities
 This repository automates live gameplay inspection, file synchronization, and clinical coaching guide generation using a three-tier telemetry bridge:
-1. **Live Remote Scraping (`make report`)**: Connects to the gaming rig (`jake@192.168.0.100`) via SSH, inspects active binary Unreal Engine 5 SaveGame files (`.sav`) and `GameUserSettings.ini`, and synthesizes diagnostic summaries into [REPORT.md](./REPORT.md).
+1. **Live Remote Scraping (`make report`)**: Connects to the gaming rig (`PC`) via SSH, inspects active binary Unreal Engine 5 SaveGame files (`.sav`) and `GameUserSettings.ini`, and synthesizes diagnostic summaries into [REPORT.md](./REPORT.md).
 2. **Vault Synchronization (`make pull` / `make push`)**: Bi-directional base64 transfer engine (`subnautica_scraper.py`) that mirrors remote `.sav` vaults and configuration profiles flat into local archives (`backups/`).
 3. **SaveGame Decoder (`make decode`)**: Strips UE5 serialization noise from binary save archives, extracts progression registers (`backups/savegame_1_decoded.md`), and updates [TODO.md](./TODO.md).
-4. **Remote Git Rollback Engine**: Tracks remote progression states directly inside `C:/Users/jake/AppData/Local/Subnautica2/Saved/.git` on the gaming PC, preventing save corruption.
+4. **Remote Git Rollback Engine**: Tracks remote progression states directly inside `C:/Users/username/AppData/Local/Subnautica2/Saved/.git` on the gaming PC, preventing save corruption.
 
 ## Multiplayer
 For comprehensive guidelines on Subnautica 2 Early Access multiplayer cloud copy/paste snapshot semantics, "Pass the Torch" re-sync protocols, inventory reset bugs, and third-party background syncing daemons (`SaveSync`), consult [MULTIPLAYER.md](./MULTIPLAYER.md).
@@ -77,6 +77,16 @@ When inspecting live binary Unreal Engine 5 `.sav` files (`savegame_1.sav`), the
 | [REPORT.md](REPORT.md) | Generated live progression telemetry and game settings report. |
 | [CHANGELOG.md](CHANGELOG.md) | Chronological ledger recording developer milestones. |
 | `backups/` | Local flat archive containing synced `.sav` files, INI configs, and logs. |
+
+## Configuration
+
+This project relies on environment variables for remote SSH and file paths. Create a `.env` file in the root of the project with your specific configuration.
+
+Example `.env`:
+```env
+PC_SSH_HOST=user@192.168.1.3
+REMOTE_SAVE_DIR=C:/Users/username/AppData/Local/Subnautica2/Saved
+```
 
 ## Usage
 Use the included [Makefile](Makefile) to manage remote inspection and vault sync:

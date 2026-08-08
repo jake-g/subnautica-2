@@ -5,7 +5,7 @@
 A clinical progression guide, geographic biome compendium, and new-player coaching manual for **Subnautica 2** (Early Access Standalone / Unreal Engine 5).
 
 
-All telemetry and biome coordinates verified via live SSH SaveGame inspection (`192.168.0.100` | `savegame_1.sav`).
+All telemetry and biome coordinates verified via live SSH SaveGame inspection (`PC` | `savegame_1.sav`).
 
 ---
 
