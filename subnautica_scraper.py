@@ -17,16 +17,17 @@ import sys
 from typing import Any, Dict, List
 
 from dotenv import load_dotenv
+
 load_dotenv()
 
 PC_SSH_HOST = os.environ.get("PC_SSH_HOST", "PC")
-REMOTE_SAVE_DIR = os.environ.get("REMOTE_SAVE_DIR", "C:/Users/PC/AppData/Local/Subnautica2/Saved")
+REMOTE_SAVE_DIR = os.environ.get("REMOTE_SAVE_DIR",
+                                 "C:/Users/PC/AppData/Local/Subnautica2/Saved")
 REMOTE_SCRIPT_PATH = f"{REMOTE_SAVE_DIR}/subnautica_telemetry.py"
 
 WORKSPACE_ROOT = os.path.abspath(os.path.dirname(__file__))
 REPORT_PATH = os.path.join(WORKSPACE_ROOT, "REPORT.md")
 BACKUP_DIR = os.path.join(WORKSPACE_ROOT, "backups")
-PREV_CHAT_PATH = os.path.join(BACKUP_DIR, "subnuatica_2_previous_chat.md")
 LOCAL_LOG_PATH = os.path.join(BACKUP_DIR, "Subnautica2.log")
 
 # Boilerplate UE5 serialization noise to strip out during decoding
@@ -774,10 +775,13 @@ def format_markdown_report(data: Dict[str, Any], git_hash: str) -> str:
                   res_y == "720") or (last_confirm_x == "1280" and
                                       last_confirm_y == "720")
   session_type = "Streaming Session (Steam Remote Play)" if is_streaming else "Direct PC Session"
-  
-  import re
-  masked_ssh_host = re.sub(r'^[^@]+@', 'username@', PC_SSH_HOST) if '@' in PC_SSH_HOST else PC_SSH_HOST
-  masked_save_dir = re.sub(r'(/|\\)Users(/|\\)[^/\\]+', r'\1Users\2username', REMOTE_SAVE_DIR, flags=re.IGNORECASE)
+
+  masked_ssh_host = re.sub(r'^[^@]+@', 'username@',
+                           PC_SSH_HOST) if '@' in PC_SSH_HOST else PC_SSH_HOST
+  masked_save_dir = re.sub(r'(/|\\)Users(/|\\)[^/\\]+',
+                           r'\1Users\2username',
+                           REMOTE_SAVE_DIR,
+                           flags=re.IGNORECASE)
 
   report = f"""# Subnautica 2 Telemetry Report
 
@@ -937,8 +941,7 @@ This ledger tracks the official game updates, hotfixes, and dev logs released by
 
 ## 📋 Official Updates Ledger
 
-{table_header}{table_body}
-"""
+{table_header}{table_body}"""
 
   with open(official_changelog_path, "w", encoding="utf-8") as f:
     f.write(content)
