@@ -774,21 +774,25 @@ def format_markdown_report(data: Dict[str, Any], git_hash: str) -> str:
                   res_y == "720") or (last_confirm_x == "1280" and
                                       last_confirm_y == "720")
   session_type = "Streaming Session (Steam Remote Play)" if is_streaming else "Direct PC Session"
+  
+  import re
+  masked_ssh_host = re.sub(r'^[^@]+@', 'username@', PC_SSH_HOST) if '@' in PC_SSH_HOST else PC_SSH_HOST
+  masked_save_dir = re.sub(r'(/|\\)Users(/|\\)[^/\\]+', r'\1Users\2username', REMOTE_SAVE_DIR, flags=re.IGNORECASE)
 
   report = f"""# Subnautica 2 Telemetry Report
 
-Live progression telemetry and configuration summary generated via SSH from gaming rig `{PC_SSH_HOST}`. All binary saves and plaintext configs are mirrored locally in `backups/`.
+Live progression telemetry and configuration summary generated via SSH from gaming rig `{masked_ssh_host}`. All binary saves and plaintext configs are mirrored locally in `backups/`.
 
 ## 🖥️ Session Specifications
 * **Game Title**: Subnautica 2 (Early Access Standalone | Unreal Engine 5)
-* **Gaming Host**: `pc` (`{PC_SSH_HOST}` | Windows 11 x64)
+* **Gaming Host**: `pc` (`{masked_ssh_host}` | Windows 11 x64)
 * **Platform Provider**: Steam (`OnlineSubsystemSteam` | Player ID `76561198797039235`)
 * **Active Save File**: `savegame_1.sav` ({main_size_kb} | Last Saved: `{main_mod}`)
 * **Auto-Save State**: **Enabled** (`UWESaveSystemUserSetting.ini` | `bAutoSaveEnabled=True`)
 * **Display Config**: `{res_x}x{res_y}` ({session_type} | FPS Cap: {float(frame_rate):.0f})
-* **Remote Git Repository**: `{REMOTE_SAVE_DIR}/.git/` (Pristine tree `{git_hash}`)
-* **Save Directory**: `{REMOTE_SAVE_DIR}/SaveGames/`
-* **Log File**: `{REMOTE_SAVE_DIR}/Logs/Subnautica2.log`
+* **Remote Git Repository**: `{masked_save_dir}/.git/` (Pristine tree `{git_hash}`)
+* **Save Directory**: `{masked_save_dir}/SaveGames/`
+* **Log File**: `{masked_save_dir}/Logs/Subnautica2.log`
 
 ## 🛠️ Discovered Equipment & Resources
 

@@ -1,10 +1,10 @@
 # Subnautica 2 Telemetry Report
 
-Live progression telemetry and configuration summary generated via SSH from gaming rig `PC`. All binary saves and plaintext configs are mirrored locally in `backups/`.
+Live progression telemetry and configuration summary generated via SSH from gaming rig `username@192.168.0.100`. All binary saves and plaintext configs are mirrored locally in `backups/`.
 
 ## 🖥️ Session Specifications
 * **Game Title**: Subnautica 2 (Early Access Standalone | Unreal Engine 5)
-* **Gaming Host**: `pc` (`PC` | Windows 11 x64 | User: `jake`)
+* **Gaming Host**: `pc` (`username@192.168.0.100` | Windows 11 x64)
 * **Platform Provider**: Steam (`OnlineSubsystemSteam` | Player ID `76561198797039235`)
 * **Active Save File**: `savegame_1.sav` (1342.8 KB | Last Saved: `2026-07-03 22:48:26`)
 * **Auto-Save State**: **Enabled** (`UWESaveSystemUserSetting.ini` | `bAutoSaveEnabled=True`)
