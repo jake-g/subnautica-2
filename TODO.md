@@ -16,16 +16,17 @@ A structured coaching roadmap and systematic exploration checklist for **Subnaut
 graph LR
     classDef active fill:#1a365d,stroke:#3182ce,stroke-width:2px,color:#fff;
     classDef next fill:#2d3748,stroke:#4a5568,stroke-width:1px,color:#a0aec0;
+    classDef done fill:#1f4d29,stroke:#276749,stroke-width:2px,color:#fff;
 
-    S1(1. Calibrate Scanner):::active --> S2(2. Gather Blueprints):::next
-    S2 --> S3(3. Build Tadpole Sub):::next
+    S1(1. Calibrate Scanner):::active --> S2(2. Gather Blueprints):::active
+    S2 --> S3(3. Build Tadpole Sub):::done
     S3 --> S4(4. Transition Deep):::next
 ```
 
 > [!IMPORTANT]
 > **Active Origin**: Starting at **Angel Comb Base** (`~30m depth`) with 6 Solar, 3 Hydro Turbines, Biolab, Processor, Scanner Station, Moonpool (with Vehicle Fabricator & Tadpole Dock), Battery Charger, and Power Wall.
 
-### 📍 Step 1: Scanner Room Calibration & Visor HUD Setup
+### 📍 Step 1: Scanner Room Calibration & Pro-Tip Survival Gear
 * [ ] **Harvest Table Coral & Copper**:
   - Slice red/green shelf corals at base canyon walls with Survival Knife -> **Table Coral Samples** (`BP_TableCoral`). *Location: Look on the vertical rock walls of the Angel Comb canyon directly outside your base hatch (they grow in large red and green circular plates).*
   - Break limestone nodes -> **Copper Ore**. *Location: Plentiful on the shallow sandy ledges and seabed immediately surrounding your base and the origin Lifepod.*
@@ -34,6 +35,11 @@ graph LR
   - [ ] **Range Upgrade** (`BP_ScannerRoomUpgrade_Range`) `[Need: 1x Copper Ore, 1x Magnetite]` — *Extends radar range*
   - [ ] **HUD Chip** `[Need: 1x Computer Chip (2x Table Coral, 1x Gold, 1x Copper Wire), 1x Magnetite]` — *Highlights resources directly on your visor (Fabricator)*
 * [ ] **Target Outcrops**: Set Scanner Room to target **Galena Outcrops** (Lead) and **Table Coral**.
+
+* [ ] **Craft Essential Survival Gear (Pro-Tips)**:
+  - [ ] **2x Beacons** `[Need: 2x Copper, 2x Titanium]` — Always keep unassigned beacons to mark unexpected wreckages.
+  - [ ] **Air Bladder** `[Need: 1x Silicone Rubber, 1x Bladderfish]` — Crucial for near-instant ascents during deep dives.
+  - [ ] **Spare Standard O₂ Tank** `[Need: 2x Titanium]` — Keep in inventory for mid-dive swapping.
 
 ### 🏊‍♂️ Step 2: Basic Tools & Utility Blueprint Sweeps
 
@@ -100,7 +106,7 @@ graph TD
 
 * [ ] **Camp One Wreckage** `[~70m depth | 180m W of Base]`
   - *Targets*:
-    - [ ] **Repair Tool** (`BP_RepairTool`) — `[2/3 fragments | Need 1]`.
+    - [x] **Repair Tool** (`BP_RepairTool`) — `[Completed]`.
       - *Primary*: Scan inside the metal corridors/shelves at **Camp One** (follow signal beacon).
       - *Backup*: Search the nearby **Abandoned Basecamp** `[~70m depth | 180m W]` or crates outside **Welcome Center Lab** `[~60m depth | 300m NNW]`.
     - [ ] **Work Light** (`BP_WorkLight`) — `[1/2 fragments | Need 1]`.
@@ -144,7 +150,7 @@ graph TD
   - Slice/Harvest **Acid Anemone** (`BP_AcidAnemone` / `BP_AcidAnem`) in Coral Gardens / Angel Comb canyons.
   - Combine Acid Anemone Samples + **Salt Deposits** / **Gold** at the Fabricator/Processor to synthesize **Hydrochloric / Synthetic Acid**.
   - Craft **Acid Storage** containers and high-tier battery cells for base & vehicle power.
-* [ ] **Build Tadpole Submersible** (`BP_Tadpole`): Assemble at the Moonpool Vehicle Fabricator. Needs Titanium Ingot, Lubricant, Power Cell, and Glass.
+* [x] **Build Tadpole Submersible** (`BP_Tadpole`): Assemble at the Moonpool Vehicle Fabricator. Needs Titanium Ingot, Lubricant, Power Cell, and Glass.
 * [ ] **Scan Vehicle Modification Station fragments**: Search wreck sites to construct the wall-mounted console.
 * [ ] **Craft Depth Module Mk1**: Upgrade Tadpole depth to 300m to allow Medium-Depth Scouting.
 

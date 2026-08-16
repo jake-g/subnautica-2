@@ -9,13 +9,16 @@ All telemetry and biome coordinates verified via live SSH SaveGame inspection (`
 
 ---
 
-## 🌟 Core Survival Principles
+## 🌟 Core Survival Principles & Pro Strategies
 
 * **Base Power & O₂**: Maintain +2 surplus Solar Panels before building heavy appliances (Water Filtration, Scanner Rooms). Base power depletion at night completely stops interior O₂ generation.
-* **Beacon Discipline**: Craft Beacons early. Deploy and label them at key resource zones (e.g. `"Kelp Trench"`, `"Basecamp"`) to avoid getting lost in dark or deep canyons.
-* **Scanner Room Range**: Build a Scanner Room with 4x Range Upgrades. It highlights local resource nodes and wreckage fragments through walls in real-time.
+* **Beacon Discipline**: Craft Beacons early. Deploy and label them at key resource zones (e.g. `"Kelp Trench"`, `"Basecamp"`) to avoid getting lost in dark or deep canyons. **Pro-tip: Always carry 1-2 unassigned beacons in your inventory** to mark unexpected wreckages or deep biome entrances.
+* **Scanner Room Range & Outposts**: Build a Scanner Room with 4x Range Upgrades. It highlights local resource nodes and wreckage fragments through walls in real-time. **Pro-tip: Build mini-outposts** (1 compartment, hatch, solar panel, scanner room) in new biomes rather than one giant base, acting as a radar network.
 * **Inventory Management**: Before scouting wreckage (>400m away), stow all non-essential items in a dedicated "Quick-Drop" base locker to maximize slot capacity for salvage.
 * **Oxygen & Depth Safety**: Never descend below 100m without a Rebreather and a Seaglide. Vertical emergency ascents consume excessive O₂.
+* **Emergency Air Bladder (Pro-Tip)**: Craft an Air Bladder early. It allows for near-instant ascents from 100m+ without consuming O₂, saving you from drowning during early deep dives.
+* **Spare Equipment**: Keep a fully charged **Spare Battery** and **Spare O₂ Tank** in your inventory. Swapping O₂ tanks mid-dive gives you an emergency buffer.
+* **Growbed Farming**: Plant Creepvine Seed Clusters and Acid Anemones in exterior growbeds right outside your base. This provides infinite, safe access to Fiber Mesh, batteries, and bioluminescent lighting.
 * **HUD Signal Triage**: Disable investigated wreckage and story beacons in your PDA once fully cleared to keep your compass clean.
 
 ---

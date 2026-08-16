@@ -29,6 +29,7 @@ graph TD
     B5 --> B6[2026-06-28: Documentation Reorg<br/>Sitemap & Visual Flowcharts]:::software
     B5 --> B7[2026-07-04: Vehicle Fabricator Built<br/>Target: Storing Acid & Acid Anemone]:::milestone
     B7 --> S1[2026-08-08: Security Audit & Local Configs<br/>Refactored IP and Auth secrets into .env]:::software
+    S1 --> S2[2026-08-15: Strategy Guide Integration<br/>Incorporated Pro-tips & Strategy Guides]:::software
 
     subgraph Hardware & Performance
         H1
@@ -40,6 +41,7 @@ graph TD
         R1
         B6
         S1
+        S2
     end
 
     subgraph Gameplay Progression
@@ -58,6 +60,7 @@ graph TD
 
 | Date | Milestone | Summary | Status |
 | :--- | :--- | :--- | :--- |
+| **2026-08-15 22:48:00** | Strategy Guide Integration | Reviewed online strategy guides and integrated pro-tips into `GUIDE.md` and `TODO.md`. Added Air Bladder, spare equipment, and beacon discipline as priority tasks. | **Verified**: Strategy and TODO docs updated. |
 | **2026-08-08 14:40:00** | Security Audit & Config Abstraction | Conducted a codebase security audit to remove hardcoded IP addresses, paths, and auth keys. Refactored `Makefile`, `README.md`, and `subnautica_scraper.py` to source sensitive parameters from a generic `.env` configuration file via `python-dotenv`. Synced latest official Subnautica 2 game changelogs. | **Verified**: Standalone toolkit operational with `.env`. |
 | **2026-07-05 17:13:30** | HWiNFO Benchmark Automation | Added automated `make benchmark` and `make start-sensor-log` targets to `Makefile` for triggering remote HWiNFO64 telemetry collection and launching Subnautica 2 over SSH. Updated `.gitignore` patterns for cache directories. | **Verified**: Makefile targets operational. |
 | **2026-07-04 22:50:00** | Vehicle Fabricator Installed & Synthetic Acid Goal | Constructed Moonpool Vehicle Fabricator inside Moonpool. Identified next core objective: harvesting Acid Anemone (`BP_AcidAnemone`) and Salt/Gold to craft Synthetic Acid / Hydrochloric Acid for high-grade battery & storage crafting. | **Verified**: Save telemetry and user session confirmation. |
